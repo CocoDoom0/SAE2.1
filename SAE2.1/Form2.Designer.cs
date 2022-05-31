@@ -37,7 +37,13 @@ namespace SAE2._1
             this.cmdValider = new System.Windows.Forms.Button();
             this.cmdRetour = new System.Windows.Forms.Button();
             this.cboChoixLigneModif = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblNArret = new System.Windows.Forms.Label();
+            this.lblNomArret = new System.Windows.Forms.Label();
+            this.lblHoraire = new System.Windows.Forms.Label();
+            this.lblOrdre = new System.Windows.Forms.Label();
             this.grpModif.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblChoixLigne
@@ -79,6 +85,7 @@ namespace SAE2._1
             // 
             // grpModif
             // 
+            this.grpModif.Controls.Add(this.tableLayoutPanel1);
             this.grpModif.Controls.Add(this.cmdValider);
             this.grpModif.Location = new System.Drawing.Point(262, 12);
             this.grpModif.Name = "grpModif";
@@ -115,6 +122,69 @@ namespace SAE2._1
             this.cboChoixLigneModif.TabIndex = 7;
             this.cboChoixLigneModif.Text = "Choisir une ligne";
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.lblOrdre, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblHoraire, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblNomArret, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblNArret, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 19);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(718, 356);
+            this.tableLayoutPanel1.TabIndex = 8;
+            this.tableLayoutPanel1.Visible = false;
+            // 
+            // lblNArret
+            // 
+            this.lblNArret.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblNArret.Location = new System.Drawing.Point(3, 0);
+            this.lblNArret.Name = "lblNArret";
+            this.lblNArret.Size = new System.Drawing.Size(173, 23);
+            this.lblNArret.TabIndex = 0;
+            this.lblNArret.Text = "N°Arret";
+            this.lblNArret.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNArret.Visible = false;
+            // 
+            // lblNomArret
+            // 
+            this.lblNomArret.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblNomArret.Location = new System.Drawing.Point(182, 0);
+            this.lblNomArret.Name = "lblNomArret";
+            this.lblNomArret.Size = new System.Drawing.Size(173, 23);
+            this.lblNomArret.TabIndex = 1;
+            this.lblNomArret.Text = "Nom Arret";
+            this.lblNomArret.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNomArret.Visible = false;
+            // 
+            // lblHoraire
+            // 
+            this.lblHoraire.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblHoraire.Location = new System.Drawing.Point(361, 0);
+            this.lblHoraire.Name = "lblHoraire";
+            this.lblHoraire.Size = new System.Drawing.Size(173, 23);
+            this.lblHoraire.TabIndex = 2;
+            this.lblHoraire.Text = "Horaire";
+            this.lblHoraire.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblHoraire.Visible = false;
+            // 
+            // lblOrdre
+            // 
+            this.lblOrdre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblOrdre.Location = new System.Drawing.Point(540, 0);
+            this.lblOrdre.Name = "lblOrdre";
+            this.lblOrdre.Size = new System.Drawing.Size(173, 23);
+            this.lblOrdre.TabIndex = 3;
+            this.lblOrdre.Text = "Ordre de passage";
+            this.lblOrdre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblOrdre.Visible = false;
+            // 
             // frmModification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -134,6 +204,7 @@ namespace SAE2._1
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmModification_FormClosed);
             this.Load += new System.EventHandler(this.frmModification_Load);
             this.grpModif.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,5 +220,10 @@ namespace SAE2._1
         private System.Windows.Forms.Button cmdValider;
         private System.Windows.Forms.Button cmdRetour;
         private System.Windows.Forms.ComboBox cboChoixLigneModif;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label lblOrdre;
+        private System.Windows.Forms.Label lblHoraire;
+        private System.Windows.Forms.Label lblNomArret;
+        private System.Windows.Forms.Label lblNArret;
     }
 }
