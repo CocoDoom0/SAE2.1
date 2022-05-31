@@ -85,6 +85,16 @@ namespace SAE2._1
             ChangeVisible(true);
             List<Table> lesTables;
             lesTables = BDD.GetLigne(Convert.ToString(cboChoixLigneModif.SelectedItem));
+            int ligne = 1;
+            foreach (Table t in lesTables)
+            {
+                AjoutLabel(t.numArret.ToString(), ligne, 0);
+                AjoutLabel(t.nomArret, ligne, 1);
+                AjoutLabel(t.Horaire, ligne, 2);
+                AjoutLabel(t.ordrePassage.ToString(), ligne, 3);
+
+                ligne++;
+            }
         }
     }
 

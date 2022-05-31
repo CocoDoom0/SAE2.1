@@ -36,6 +36,38 @@ namespace BD
                 return _nomligne;
             }
         }
+
+        public int numArret
+        {
+            get
+            {
+                return _numarret;
+            }
+        }
+
+        public string nomArret
+        {
+            get
+            {
+                return _nomarret;
+            }
+        }
+
+        public string Horaire
+        {
+            get
+            {
+                return _horaire;
+            }
+        }
+
+        public int ordrePassage
+        {
+            get
+            {
+                return _ordrepassage;
+            }
+        }
     }
 
 
