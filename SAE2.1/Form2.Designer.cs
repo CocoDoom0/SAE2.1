@@ -43,7 +43,6 @@ namespace SAE2._1
             this.lblHoraire = new System.Windows.Forms.Label();
             this.lblOrdre = new System.Windows.Forms.Label();
             this.grpModif.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblChoixLigne
@@ -85,8 +84,12 @@ namespace SAE2._1
             // 
             // grpModif
             // 
+            this.grpModif.Controls.Add(this.lblOrdre);
             this.grpModif.Controls.Add(this.tableLayoutPanel1);
+            this.grpModif.Controls.Add(this.lblHoraire);
             this.grpModif.Controls.Add(this.cmdValider);
+            this.grpModif.Controls.Add(this.lblNomArret);
+            this.grpModif.Controls.Add(this.lblNArret);
             this.grpModif.Location = new System.Drawing.Point(262, 12);
             this.grpModif.Name = "grpModif";
             this.grpModif.Size = new System.Drawing.Size(730, 410);
@@ -125,30 +128,30 @@ namespace SAE2._1
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel1.AutoScroll = true;
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.lblOrdre, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblHoraire, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblNomArret, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblNArret, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 19);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.08662F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.80943F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.05198F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.05198F));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 49);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(718, 356);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(724, 355);
             this.tableLayoutPanel1.TabIndex = 8;
             this.tableLayoutPanel1.Visible = false;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // lblNArret
             // 
             this.lblNArret.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblNArret.Location = new System.Drawing.Point(4, 1);
+            this.lblNArret.Location = new System.Drawing.Point(13, 23);
             this.lblNArret.Name = "lblNArret";
-            this.lblNArret.Size = new System.Drawing.Size(172, 23);
+            this.lblNArret.Size = new System.Drawing.Size(173, 23);
             this.lblNArret.TabIndex = 0;
             this.lblNArret.Text = "N°Arret";
             this.lblNArret.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -157,9 +160,9 @@ namespace SAE2._1
             // lblNomArret
             // 
             this.lblNomArret.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblNomArret.Location = new System.Drawing.Point(183, 1);
+            this.lblNomArret.Location = new System.Drawing.Point(192, 23);
             this.lblNomArret.Name = "lblNomArret";
-            this.lblNomArret.Size = new System.Drawing.Size(172, 23);
+            this.lblNomArret.Size = new System.Drawing.Size(173, 23);
             this.lblNomArret.TabIndex = 1;
             this.lblNomArret.Text = "Nom Arret";
             this.lblNomArret.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -168,9 +171,9 @@ namespace SAE2._1
             // lblHoraire
             // 
             this.lblHoraire.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblHoraire.Location = new System.Drawing.Point(362, 1);
+            this.lblHoraire.Location = new System.Drawing.Point(371, 23);
             this.lblHoraire.Name = "lblHoraire";
-            this.lblHoraire.Size = new System.Drawing.Size(172, 23);
+            this.lblHoraire.Size = new System.Drawing.Size(173, 23);
             this.lblHoraire.TabIndex = 2;
             this.lblHoraire.Text = "Horaire";
             this.lblHoraire.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -179,7 +182,7 @@ namespace SAE2._1
             // lblOrdre
             // 
             this.lblOrdre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblOrdre.Location = new System.Drawing.Point(541, 1);
+            this.lblOrdre.Location = new System.Drawing.Point(550, 23);
             this.lblOrdre.Name = "lblOrdre";
             this.lblOrdre.Size = new System.Drawing.Size(173, 23);
             this.lblOrdre.TabIndex = 3;
@@ -206,7 +209,6 @@ namespace SAE2._1
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmModification_FormClosed);
             this.Load += new System.EventHandler(this.frmModification_Load);
             this.grpModif.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

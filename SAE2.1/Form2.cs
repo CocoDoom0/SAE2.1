@@ -64,13 +64,13 @@ namespace SAE2._1
             lblOrdre.Visible = Visible;
         }
 
-        private void AjoutLabel(string val, int ligne, int colonne)
+        private void AjoutLabel(string val, int colonne, int ligne)
         {
             Label lbl = new Label();
             lbl.AutoSize = false;
             lbl.Size = lblChoixLigne.Size;
-            lbl.Font = new Font(FontFamily.GenericSansSerif, 9, FontStyle.Regular);
-            lbl.TextAlign = ContentAlignment.MiddleCenter;
+            //lbl.Font = new Font(FontFamily.GenericSansSerif, 9, FontStyle.Regular);
+            //lbl.TextAlign = ContentAlignment.MiddleCenter;
             lbl.Text = val;
             tableLayoutPanel1.Controls.Add(lbl, ligne, colonne);
         }
@@ -82,9 +82,12 @@ namespace SAE2._1
 
         private void cboChoixLigneModif_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ChangeVisible(true);
+
+            ChangeVisible(false);
+            tableLayoutPanel1.Controls.Clear();
+            tableLayoutPanel1.RowStyles.Clear();
             List<Table> lesTables;
-            lesTables = BDD.GetLigne(Convert.ToString(cboChoixLigneModif.SelectedItem));
+            lesTables = BDD.GetLigne(cboChoixLigneModif.SelectedIndex+1);
             int ligne = 1;
             foreach (Table t in lesTables)
             {
@@ -92,9 +95,19 @@ namespace SAE2._1
                 AjoutLabel(t.nomArret, ligne, 1);
                 AjoutLabel(t.Horaire, ligne, 2);
                 AjoutLabel(t.ordrePassage.ToString(), ligne, 3);
-
                 ligne++;
+                
             }
+            AjoutLabel(" ", ligne, 0);
+            AjoutLabel(" ", ligne, 1);
+            AjoutLabel(" ", ligne, 2);
+            AjoutLabel(" ", ligne, 3);
+            ChangeVisible(true);
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 
