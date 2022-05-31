@@ -30,13 +30,13 @@ namespace SAE2._1
         private void InitializeComponent()
         {
             this.lblChoixLigne = new System.Windows.Forms.Label();
-            this.dudChoixLigne = new System.Windows.Forms.DomainUpDown();
             this.cmdModif = new System.Windows.Forms.Button();
             this.cmdSupp = new System.Windows.Forms.Button();
             this.cmdAjouter = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmdValider = new System.Windows.Forms.Button();
             this.cmdRetour = new System.Windows.Forms.Button();
+            this.cboChoixLigneModif = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,14 +49,6 @@ namespace SAE2._1
             this.lblChoixLigne.Size = new System.Drawing.Size(125, 20);
             this.lblChoixLigne.TabIndex = 0;
             this.lblChoixLigne.Text = "Choisir une ligne";
-            // 
-            // dudChoixLigne
-            // 
-            this.dudChoixLigne.Location = new System.Drawing.Point(71, 93);
-            this.dudChoixLigne.Name = "dudChoixLigne";
-            this.dudChoixLigne.Size = new System.Drawing.Size(120, 20);
-            this.dudChoixLigne.TabIndex = 1;
-            this.dudChoixLigne.Text = "N°Ligne";
             // 
             // cmdModif
             // 
@@ -114,17 +106,25 @@ namespace SAE2._1
             this.cmdRetour.Text = "Retour";
             this.cmdRetour.UseVisualStyleBackColor = true;
             // 
+            // cboChoixLigneModif
+            // 
+            this.cboChoixLigneModif.FormattingEnabled = true;
+            this.cboChoixLigneModif.Location = new System.Drawing.Point(70, 96);
+            this.cboChoixLigneModif.Name = "cboChoixLigneModif";
+            this.cboChoixLigneModif.Size = new System.Drawing.Size(121, 21);
+            this.cboChoixLigneModif.TabIndex = 7;
+            // 
             // frmModification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1004, 521);
+            this.Controls.Add(this.cboChoixLigneModif);
             this.Controls.Add(this.cmdRetour);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cmdAjouter);
             this.Controls.Add(this.cmdSupp);
             this.Controls.Add(this.cmdModif);
-            this.Controls.Add(this.dudChoixLigne);
             this.Controls.Add(this.lblChoixLigne);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmModification";
@@ -139,12 +139,12 @@ namespace SAE2._1
         #endregion
 
         private System.Windows.Forms.Label lblChoixLigne;
-        private System.Windows.Forms.DomainUpDown dudChoixLigne;
         private System.Windows.Forms.Button cmdModif;
         private System.Windows.Forms.Button cmdSupp;
         private System.Windows.Forms.Button cmdAjouter;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button cmdValider;
         private System.Windows.Forms.Button cmdRetour;
+        private System.Windows.Forms.ComboBox cboChoixLigneModif;
     }
 }
