@@ -54,6 +54,7 @@ namespace SAE2._1
             this.cmdModification.TabIndex = 1;
             this.cmdModification.Text = "Modification";
             this.cmdModification.UseVisualStyleBackColor = true;
+            this.cmdModification.Click += new System.EventHandler(this.cmdModification_Click);
             // 
             // cmdRecherche
             // 
