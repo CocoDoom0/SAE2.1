@@ -33,11 +33,11 @@ namespace SAE2._1
             this.cmdModif = new System.Windows.Forms.Button();
             this.cmdSupp = new System.Windows.Forms.Button();
             this.cmdAjouter = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpModif = new System.Windows.Forms.GroupBox();
             this.cmdValider = new System.Windows.Forms.Button();
             this.cmdRetour = new System.Windows.Forms.Button();
             this.cboChoixLigneModif = new System.Windows.Forms.ComboBox();
-            this.groupBox1.SuspendLayout();
+            this.grpModif.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblChoixLigne
@@ -77,15 +77,15 @@ namespace SAE2._1
             this.cmdAjouter.Text = "Ajouter une ligne ";
             this.cmdAjouter.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // grpModif
             // 
-            this.groupBox1.Controls.Add(this.cmdValider);
-            this.groupBox1.Location = new System.Drawing.Point(262, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(730, 410);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.grpModif.Controls.Add(this.cmdValider);
+            this.grpModif.Location = new System.Drawing.Point(262, 12);
+            this.grpModif.Name = "grpModif";
+            this.grpModif.Size = new System.Drawing.Size(730, 410);
+            this.grpModif.TabIndex = 5;
+            this.grpModif.TabStop = false;
+            this.grpModif.Text = "Modification :";
             // 
             // cmdValider
             // 
@@ -121,7 +121,7 @@ namespace SAE2._1
             this.ClientSize = new System.Drawing.Size(1004, 521);
             this.Controls.Add(this.cboChoixLigneModif);
             this.Controls.Add(this.cmdRetour);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grpModif);
             this.Controls.Add(this.cmdAjouter);
             this.Controls.Add(this.cmdSupp);
             this.Controls.Add(this.cmdModif);
@@ -130,7 +130,9 @@ namespace SAE2._1
             this.Name = "frmModification";
             this.ShowIcon = false;
             this.Text = "Modification";
-            this.groupBox1.ResumeLayout(false);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmModification_FormClosed);
+            this.Load += new System.EventHandler(this.frmModification_Load);
+            this.grpModif.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,7 +144,7 @@ namespace SAE2._1
         private System.Windows.Forms.Button cmdModif;
         private System.Windows.Forms.Button cmdSupp;
         private System.Windows.Forms.Button cmdAjouter;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpModif;
         private System.Windows.Forms.Button cmdValider;
         private System.Windows.Forms.Button cmdRetour;
         private System.Windows.Forms.ComboBox cboChoixLigneModif;
