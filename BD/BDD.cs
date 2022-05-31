@@ -111,6 +111,50 @@ namespace BD
             // retour de la liste des parties
             return listeParties;
         }
+        public static List<Table> GetLigne(string nomLigne)
+        {
+            // lecture des données de la table partie
+            // retourne une liste de parties
 
+            // instanciation d'une liste de partie
+            List<Table> listeParties = new List<Table>();
+
+            // définition de la requête d'interrogation et instanciation le la commande servant à exécuter la requête
+            string sql = $"SELECT ARRET.N_Arret,NomArret,DelaisArret,OrdrePassage from LIGNE,PASSAGE,ARRET WHERE LIGNE.N_Ligne=PASSAGE.N_Ligne AND ARRET.N_Arret=PASSAGE.N_Arret AND LIGNE.NomLigne={nomLigne} AND N_Trajet=1 ORDER BY OrdrePassage;;";
+            MySqlCommand cmd = new MySqlCommand(sql, maCnx);
+
+            try
+            {
+                // exécution de la requête et récupération des données dans un DataReader
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                //Parcours du DataReader
+                while (rdr.Read())
+                {
+                    // lecture d'un enregistrement
+
+                    int numarret = (int)rdr[0];
+                    string nomarret = (string)rdr[1];
+                    string horaire = (string)rdr[2];
+                    int ordrepassage = (int)rdr[1];
+                    // définition d'une partie
+                    Table uneTable = new Table(numarret,nomarret,horaire,ordrepassage);
+
+                    // ajout de la partie définie à la liste des parties
+                    listeParties.Add(uneTable);
+                }
+
+                // fermeture du reader et libération de la mémoire
+                rdr.Close();
+                cmd.Dispose();
+            }
+            catch (Exception ex)
+            {
+                Debug.Print(ex.Message);
+            }
+
+            // retour de la liste des parties
+            return listeParties;
+        }
     }
 }

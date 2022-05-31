@@ -125,6 +125,7 @@ namespace SAE2._1
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -145,9 +146,9 @@ namespace SAE2._1
             // lblNArret
             // 
             this.lblNArret.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblNArret.Location = new System.Drawing.Point(3, 0);
+            this.lblNArret.Location = new System.Drawing.Point(4, 1);
             this.lblNArret.Name = "lblNArret";
-            this.lblNArret.Size = new System.Drawing.Size(173, 23);
+            this.lblNArret.Size = new System.Drawing.Size(172, 23);
             this.lblNArret.TabIndex = 0;
             this.lblNArret.Text = "N°Arret";
             this.lblNArret.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -156,9 +157,9 @@ namespace SAE2._1
             // lblNomArret
             // 
             this.lblNomArret.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblNomArret.Location = new System.Drawing.Point(182, 0);
+            this.lblNomArret.Location = new System.Drawing.Point(183, 1);
             this.lblNomArret.Name = "lblNomArret";
-            this.lblNomArret.Size = new System.Drawing.Size(173, 23);
+            this.lblNomArret.Size = new System.Drawing.Size(172, 23);
             this.lblNomArret.TabIndex = 1;
             this.lblNomArret.Text = "Nom Arret";
             this.lblNomArret.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -167,9 +168,9 @@ namespace SAE2._1
             // lblHoraire
             // 
             this.lblHoraire.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblHoraire.Location = new System.Drawing.Point(361, 0);
+            this.lblHoraire.Location = new System.Drawing.Point(362, 1);
             this.lblHoraire.Name = "lblHoraire";
-            this.lblHoraire.Size = new System.Drawing.Size(173, 23);
+            this.lblHoraire.Size = new System.Drawing.Size(172, 23);
             this.lblHoraire.TabIndex = 2;
             this.lblHoraire.Text = "Horaire";
             this.lblHoraire.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -178,7 +179,7 @@ namespace SAE2._1
             // lblOrdre
             // 
             this.lblOrdre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblOrdre.Location = new System.Drawing.Point(540, 0);
+            this.lblOrdre.Location = new System.Drawing.Point(541, 1);
             this.lblOrdre.Name = "lblOrdre";
             this.lblOrdre.Size = new System.Drawing.Size(173, 23);
             this.lblOrdre.TabIndex = 3;

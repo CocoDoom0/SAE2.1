@@ -64,6 +64,16 @@ namespace SAE2._1
             lblOrdre.Visible = Visible;
         }
 
+        private void AjoutLabel(string val, int ligne, int colonne)
+        {
+            Label lbl = new Label();
+            lbl.AutoSize = false;
+            lbl.Size = lblChoixLigne.Size;
+            lbl.Font = new Font(FontFamily.GenericSansSerif, 9, FontStyle.Regular);
+            lbl.TextAlign = ContentAlignment.MiddleCenter;
+            lbl.Text = val;
+            tableLayoutPanel1.Controls.Add(lbl, ligne, colonne);
+        }
 
         private void frmModification_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -73,6 +83,8 @@ namespace SAE2._1
         private void cboChoixLigneModif_SelectedIndexChanged(object sender, EventArgs e)
         {
             ChangeVisible(true);
+            List<Table> lesTables;
+            lesTables = BDD.GetLigne(Convert.ToString(cboChoixLigneModif.SelectedItem));
         }
     }
 
