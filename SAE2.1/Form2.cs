@@ -53,9 +53,26 @@ namespace SAE2._1
             }
         }
 
+        private void ChangeVisible(bool Visible)
+        {
+
+            tableLayoutPanel1.Visible = Visible;
+            lblChoixLigne.Visible = Visible;
+            lblHoraire.Visible = Visible;
+            lblNArret.Visible = Visible;
+            lblNomArret.Visible = Visible;
+            lblOrdre.Visible = Visible;
+        }
+
+
         private void frmModification_FormClosed(object sender, FormClosedEventArgs e)
         {
             BDD.FermerConnexion();
+        }
+
+        private void cboChoixLigneModif_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ChangeVisible(true);
         }
     }
 

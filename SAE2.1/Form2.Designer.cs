@@ -121,6 +121,7 @@ namespace SAE2._1
             this.cboChoixLigneModif.Size = new System.Drawing.Size(121, 21);
             this.cboChoixLigneModif.TabIndex = 7;
             this.cboChoixLigneModif.Text = "Choisir une ligne";
+            this.cboChoixLigneModif.SelectedIndexChanged += new System.EventHandler(this.cboChoixLigneModif_SelectedIndexChanged);
             // 
             // tableLayoutPanel1
             // 
