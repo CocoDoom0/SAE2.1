@@ -47,9 +47,9 @@ namespace SAE2._1
             this.rbLigneExistante = new System.Windows.Forms.RadioButton();
             this.rbNouvelleLigne = new System.Windows.Forms.RadioButton();
             this.grpAjouter1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboLigneExistante = new System.Windows.Forms.ComboBox();
+            this.txtbNvlLigne = new System.Windows.Forms.TextBox();
+            this.cboTypeTrajetAjout = new System.Windows.Forms.ComboBox();
             this.lblTypeTrajetAdd = new System.Windows.Forms.Label();
             this.cmdValiderAjouter = new System.Windows.Forms.Button();
             this.cmdAnnulerAjouter = new System.Windows.Forms.Button();
@@ -239,6 +239,7 @@ namespace SAE2._1
             this.rbLigneExistante.TabStop = true;
             this.rbLigneExistante.Text = "Ligne Existante";
             this.rbLigneExistante.UseVisualStyleBackColor = true;
+            this.rbLigneExistante.CheckedChanged += new System.EventHandler(this.rbLigneExistante_CheckedChanged);
             // 
             // rbNouvelleLigne
             // 
@@ -249,15 +250,16 @@ namespace SAE2._1
             this.rbNouvelleLigne.TabIndex = 12;
             this.rbNouvelleLigne.Text = "Nouvelle Ligne";
             this.rbNouvelleLigne.UseVisualStyleBackColor = true;
+            this.rbNouvelleLigne.CheckedChanged += new System.EventHandler(this.rbNouvelleLigne_CheckedChanged);
             // 
             // grpAjouter1
             // 
             this.grpAjouter1.Controls.Add(this.cmdAnnulerAjouter);
             this.grpAjouter1.Controls.Add(this.cmdValiderAjouter);
             this.grpAjouter1.Controls.Add(this.lblTypeTrajetAdd);
-            this.grpAjouter1.Controls.Add(this.comboBox2);
-            this.grpAjouter1.Controls.Add(this.textBox1);
-            this.grpAjouter1.Controls.Add(this.comboBox1);
+            this.grpAjouter1.Controls.Add(this.cboTypeTrajetAjout);
+            this.grpAjouter1.Controls.Add(this.txtbNvlLigne);
+            this.grpAjouter1.Controls.Add(this.cboLigneExistante);
             this.grpAjouter1.Controls.Add(this.rbLigneExistante);
             this.grpAjouter1.Controls.Add(this.rbNouvelleLigne);
             this.grpAjouter1.Location = new System.Drawing.Point(52, 267);
@@ -268,30 +270,33 @@ namespace SAE2._1
             this.grpAjouter1.Text = "groupBox1";
             this.grpAjouter1.Visible = false;
             // 
-            // comboBox1
+            // cboLigneExistante
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 42);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 13;
+            this.cboLigneExistante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboLigneExistante.FormattingEnabled = true;
+            this.cboLigneExistante.Location = new System.Drawing.Point(12, 42);
+            this.cboLigneExistante.Name = "cboLigneExistante";
+            this.cboLigneExistante.Size = new System.Drawing.Size(121, 21);
+            this.cboLigneExistante.TabIndex = 13;
             // 
-            // textBox1
+            // txtbNvlLigne
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 92);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 14;
+            this.txtbNvlLigne.Enabled = false;
+            this.txtbNvlLigne.Location = new System.Drawing.Point(12, 92);
+            this.txtbNvlLigne.Name = "txtbNvlLigne";
+            this.txtbNvlLigne.Size = new System.Drawing.Size(121, 20);
+            this.txtbNvlLigne.TabIndex = 14;
+            this.txtbNvlLigne.Tag = "Saisir le nom de la ligne";
+            this.txtbNvlLigne.Text = "Saisir le nom de la ligne";
             // 
-            // comboBox2
+            // cboTypeTrajetAjout
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(12, 143);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 15;
+            this.cboTypeTrajetAjout.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTypeTrajetAjout.FormattingEnabled = true;
+            this.cboTypeTrajetAjout.Location = new System.Drawing.Point(12, 143);
+            this.cboTypeTrajetAjout.Name = "cboTypeTrajetAjout";
+            this.cboTypeTrajetAjout.Size = new System.Drawing.Size(121, 21);
+            this.cboTypeTrajetAjout.TabIndex = 15;
             // 
             // lblTypeTrajetAdd
             // 
@@ -310,6 +315,7 @@ namespace SAE2._1
             this.cmdValiderAjouter.TabIndex = 17;
             this.cmdValiderAjouter.Text = "Valider";
             this.cmdValiderAjouter.UseVisualStyleBackColor = true;
+            this.cmdValiderAjouter.Click += new System.EventHandler(this.cmdValiderAjouter_Click);
             // 
             // cmdAnnulerAjouter
             // 
@@ -370,10 +376,10 @@ namespace SAE2._1
         private System.Windows.Forms.RadioButton rbLigneExistante;
         private System.Windows.Forms.RadioButton rbNouvelleLigne;
         private System.Windows.Forms.GroupBox grpAjouter1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtbNvlLigne;
+        private System.Windows.Forms.ComboBox cboLigneExistante;
         private System.Windows.Forms.Label lblTypeTrajetAdd;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboTypeTrajetAjout;
         private System.Windows.Forms.Button cmdAnnulerAjouter;
         private System.Windows.Forms.Button cmdValiderAjouter;
     }

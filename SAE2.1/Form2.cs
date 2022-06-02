@@ -40,6 +40,14 @@ namespace SAE2._1
                 MessageBox.Show("Connexion avec la base de donnée établie","OK", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             cboChargement();
+            cboChoixTrajet.Items.Add("Aller");
+            cboChoixTrajet.Items.Add("Retour");
+            cboChoixTrajet.Items.Add("Aller Jour Spécial");
+            cboChoixTrajet.Items.Add("Retour Jour Spécial");
+            cboTypeTrajetAjout.Items.Add("Aller");
+            cboTypeTrajetAjout.Items.Add("Retour");
+            cboTypeTrajetAjout.Items.Add("Aller Jour Spécial");
+            cboTypeTrajetAjout.Items.Add("Retour Jour Spécial");
 
         }
 
@@ -50,13 +58,8 @@ namespace SAE2._1
             foreach (Table t in lesTables)
             {
                 cboChoixLigneModif.Items.Add(t.nomLigne.ToString());
+                cboLigneExistante.Items.Add(t.nomLigne.ToString());
             }
-
-            cboChoixTrajet.Items.Add("Aller");
-            cboChoixTrajet.Items.Add("Retour");
-            cboChoixTrajet.Items.Add("Aller Jour Spécial");
-            cboChoixTrajet.Items.Add("Retour Jour Spécial");
-
         }
 
         private void ChangeVisible(bool Visible)
@@ -160,6 +163,26 @@ namespace SAE2._1
             cboChoixLigneModif.Enabled = true;
             cboChoixTrajet.Enabled = true;
             cboChoixLigneModif_SelectedIndexChanged(0,e);
+        }
+
+        private void rbLigneExistante_CheckedChanged(object sender, EventArgs e)
+        {
+            cboLigneExistante.Enabled = true;
+            txtbNvlLigne.Enabled = false;
+        }
+
+        private void rbNouvelleLigne_CheckedChanged(object sender, EventArgs e)
+        {
+            cboLigneExistante.Enabled = false;
+            txtbNvlLigne.Enabled = true;
+        }
+
+        private void cmdValiderAjouter_Click(object sender, EventArgs e)
+        {
+            if ((rbLigneExistante.Checked == true && cboLigneExistante.SelectedIndex == -1) || (rbNouvelleLigne.Checked == true && (txtbNvlLigne.Text==(string)txtbNvlLigne.Tag || String.IsNullOrEmpty(txtbNvlLigne.Text) == true)))
+            {
+
+            }
         }
     }
 
