@@ -88,27 +88,30 @@ namespace SAE2._1
 
         private void cboChoixLigneModif_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            ChangeVisible(false);
-            tableLayoutPanel1.Controls.Clear();
-            tableLayoutPanel1.RowStyles.Clear();
-            List<Table> lesTables;
-            lesTables = BDD.GetLigne(cboChoixLigneModif.SelectedIndex+1,cboChoixTrajet.SelectedIndex+1);
-            int ligne = 1;
-            foreach (Table t in lesTables)
+            if (cboChoixTrajet.SelectedIndex != -1 || cboChoixLigneModif.SelectedIndex != -1)
             {
-                AjoutLabel(t.numArret.ToString(), ligne, 0);
-                AjoutLabel(t.nomArret, ligne, 1);
-                AjoutLabel(t.Horaire, ligne, 2);
-                AjoutLabel(t.ordrePassage.ToString(), ligne, 3);
-                ligne++;
-                
+                ChangeVisible(false);
+                tableLayoutPanel1.Controls.Clear();
+                tableLayoutPanel1.RowStyles.Clear();
+                List<Table> lesTables;
+                //lblChoixLigne.Text = Convert.ToString(cboChoixTrajet.SelectedIndex); 
+                lesTables = BDD.GetLigne(cboChoixLigneModif.SelectedIndex + 1, cboChoixTrajet.SelectedIndex + 1);
+                int ligne = 1;
+                foreach (Table t in lesTables)
+                {
+                    AjoutLabel(t.numArret.ToString(), ligne, 0);
+                    AjoutLabel(t.nomArret, ligne, 1);
+                    AjoutLabel(t.Horaire, ligne, 2);
+                    AjoutLabel(t.ordrePassage.ToString(), ligne, 3);
+                    ligne++;
+
+                }
+                AjoutLabel(" ", ligne, 0);
+                AjoutLabel(" ", ligne, 1);
+                AjoutLabel(" ", ligne, 2);
+                AjoutLabel(" ", ligne, 3);
+                ChangeVisible(true);
             }
-            AjoutLabel(" ", ligne, 0);
-            AjoutLabel(" ", ligne, 1);
-            AjoutLabel(" ", ligne, 2);
-            AjoutLabel(" ", ligne, 3);
-            ChangeVisible(true);
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
