@@ -202,7 +202,21 @@ namespace SAE2._1
             }
             else
             {
-                MessageBox.Show("Ok", "WIP", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                List<Table> lesTables;
+                lesTables = BDD.CheckPassage(cboLigneExistante.SelectedIndex, cboTypeTrajetAjout.SelectedIndex);
+                int nbpassage = 1;
+                foreach (Table t in lesTables)
+                {
+                    nbpassage = t.numPassage;
+                }
+                if (nbpassage != 0)
+                {
+                    MessageBox.Show($"{nbpassage}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show($"{nbpassage}", "WIP", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
 

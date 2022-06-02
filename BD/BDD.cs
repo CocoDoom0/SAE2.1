@@ -172,5 +172,30 @@ namespace BD
             }
             return retour;
         }
+
+        public static List<Table> CheckPassage(int numLigne, int numTrajet)
+        {
+            List<Table> listeParties = new List<Table>();
+            string sql = $"SELECT COUNT(OrdrePassage) FROM PASSAGE WHERE N_Trajet = {numTrajet} AND N_Ligne={numLigne};";
+            MySqlCommand cmd = new MySqlCommand(sql, maCnx);
+            try
+            {
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    // lecture d'un enregistrement
+                    int numpassage = (int)rdr[0];
+                    Table uneTable = new Table(numpassage);
+                    listeParties.Add(uneTable);
+                }
+                rdr.Close();
+                cmd.Dispose();
+            }
+            catch (Exception ex)
+            {
+                Debug.Print(ex.Message);
+            }
+            return listeParties;
+        }
     }
 }

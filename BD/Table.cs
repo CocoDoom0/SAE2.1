@@ -15,6 +15,11 @@ namespace BD
         private string _nomarret;
         private string _horaire;
         private int _ordrepassage;
+        private int _numpassage;
+        public Table(int numpassage)
+        {
+            _numpassage = numpassage;
+        }
         public Table(int idligne, string nomligne)
         {
             //création de la partie au début du jeu
@@ -28,6 +33,14 @@ namespace BD
             _nomarret = nomarret;
             _horaire = horaire;
             _ordrepassage = ordrepassage;
+        }
+
+        public int numPassage
+        {
+            get
+            {
+                return _numpassage;
+            }
         }
         public string nomLigne
         {
