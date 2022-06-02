@@ -68,6 +68,9 @@ namespace SAE2._1
             lblNArret.Visible = Visible;
             lblNomArret.Visible = Visible;
             lblOrdre.Visible = Visible;
+            cmdAjouter.Enabled = Visible;
+            cmdModif.Enabled = Visible;
+            cmdSupp.Enabled = Visible;
         }
 
         private void AjoutLabel(string val, int colonne, int ligne)
@@ -88,7 +91,7 @@ namespace SAE2._1
 
         private void cboChoixLigneModif_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboChoixTrajet.SelectedIndex != -1 || cboChoixLigneModif.SelectedIndex != -1)
+            if (cboChoixTrajet.SelectedIndex != -1 && cboChoixLigneModif.SelectedIndex != -1)
             {
                 ChangeVisible(false);
                 tableLayoutPanel1.Controls.Clear();

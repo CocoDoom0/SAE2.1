@@ -59,6 +59,7 @@ namespace SAE2._1
             // 
             // cmdModif
             // 
+            this.cmdModif.Enabled = false;
             this.cmdModif.Location = new System.Drawing.Point(50, 187);
             this.cmdModif.Name = "cmdModif";
             this.cmdModif.Size = new System.Drawing.Size(75, 23);
@@ -69,6 +70,7 @@ namespace SAE2._1
             // 
             // cmdSupp
             // 
+            this.cmdSupp.Enabled = false;
             this.cmdSupp.Location = new System.Drawing.Point(131, 187);
             this.cmdSupp.Name = "cmdSupp";
             this.cmdSupp.Size = new System.Drawing.Size(75, 23);
@@ -78,6 +80,7 @@ namespace SAE2._1
             // 
             // cmdAjouter
             // 
+            this.cmdAjouter.Enabled = false;
             this.cmdAjouter.Location = new System.Drawing.Point(52, 227);
             this.cmdAjouter.Name = "cmdAjouter";
             this.cmdAjouter.Size = new System.Drawing.Size(154, 23);
