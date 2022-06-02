@@ -183,6 +183,26 @@ namespace SAE2._1
             if ((rbLigneExistante.Checked == true && cboLigneExistante.SelectedIndex == -1) || (rbNouvelleLigne.Checked == true && (txtbNvlLigne.Text==(string)txtbNvlLigne.Tag || String.IsNullOrEmpty(txtbNvlLigne.Text) == true)))
             {
                 MessageBox.Show("Merci de remplir les champs", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }else if(rbNouvelleLigne.Checked == true)
+            {
+                bool erreur = false;
+                for(int i = 0; i < cboLigneExistante.Items.Count; i++)
+                {
+                    if ((cboLigneExistante.GetItemText(cboLigneExistante.Items[i]) == txtbNvlLigne.Text || cboLigneExistante.GetItemText(cboLigneExistante.Items[i]) == "Ligne " + txtbNvlLigne.Text))
+                    {
+                        MessageBox.Show("Merci de ne pas entrer un nouveau nom de ligne déjà existant ", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        erreur = true;
+                    }
+                    
+                }
+                if (!erreur)
+                {
+                    MessageBox.Show("Ok", "WIP", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ok", "WIP", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
