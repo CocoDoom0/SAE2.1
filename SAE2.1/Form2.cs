@@ -63,7 +63,6 @@ namespace SAE2._1
         {
 
             tableLayoutPanel1.Visible = Visible;
-            lblChoixLigne.Visible = Visible;
             lblHoraire.Visible = Visible;
             lblNArret.Visible = Visible;
             lblNomArret.Visible = Visible;
@@ -141,6 +140,26 @@ namespace SAE2._1
                     MessageBox.Show("La ligne n'a pas pu etre supprimer", "Erreur de suppresion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+        }
+
+        private void cmdAjouter_Click(object sender, EventArgs e)
+        {
+            ChangeVisible(false);
+            cboChoixLigneModif.Enabled = false;
+            cboChoixTrajet.Enabled = false;
+            grpAjouter1.Visible = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+            grpAjouter1.Visible = false;
+            cmdAjouter.Enabled = true;
+            cmdModif.Enabled = true;
+            cmdSupp.Enabled = true;
+            cboChoixLigneModif.Enabled = true;
+            cboChoixTrajet.Enabled = true;
+            cboChoixLigneModif_SelectedIndexChanged(0,e);
         }
     }
 
