@@ -70,7 +70,7 @@ namespace SAE2._1
             lblNArret.Visible = Visible;
             lblNomArret.Visible = Visible;
             lblOrdre.Visible = Visible;
-            cmdAjouter.Enabled = Visible;
+            //cmdAjouter.Enabled = Visible;
             cmdModif.Enabled = Visible;
             cmdSupp.Enabled = Visible;
         }
@@ -151,6 +151,7 @@ namespace SAE2._1
             cboChoixLigneModif.Enabled = false;
             cboChoixTrajet.Enabled = false;
             grpAjouter1.Visible = true;
+            cmdAjouter.Enabled= false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -181,7 +182,23 @@ namespace SAE2._1
         {
             if ((rbLigneExistante.Checked == true && cboLigneExistante.SelectedIndex == -1) || (rbNouvelleLigne.Checked == true && (txtbNvlLigne.Text==(string)txtbNvlLigne.Tag || String.IsNullOrEmpty(txtbNvlLigne.Text) == true)))
             {
+                MessageBox.Show("Merci de remplir les champs", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
 
+        private void txtbNvlLigne_Enter(object sender, EventArgs e)
+        {
+            if(txtbNvlLigne.Text == (string)txtbNvlLigne.Tag)
+            {
+                txtbNvlLigne.Text = "";
+            }
+        }
+
+        private void txtbNvlLigne_Leave(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txtbNvlLigne.Text) == true)
+            {
+                txtbNvlLigne.Text=(string)txtbNvlLigne.Tag;
             }
         }
     }

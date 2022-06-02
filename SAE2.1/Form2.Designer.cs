@@ -91,7 +91,6 @@ namespace SAE2._1
             // 
             // cmdAjouter
             // 
-            this.cmdAjouter.Enabled = false;
             this.cmdAjouter.Location = new System.Drawing.Point(52, 227);
             this.cmdAjouter.Name = "cmdAjouter";
             this.cmdAjouter.Size = new System.Drawing.Size(154, 23);
@@ -288,6 +287,8 @@ namespace SAE2._1
             this.txtbNvlLigne.TabIndex = 14;
             this.txtbNvlLigne.Tag = "Saisir le nom de la ligne";
             this.txtbNvlLigne.Text = "Saisir le nom de la ligne";
+            this.txtbNvlLigne.Enter += new System.EventHandler(this.txtbNvlLigne_Enter);
+            this.txtbNvlLigne.Leave += new System.EventHandler(this.txtbNvlLigne_Leave);
             // 
             // cboTypeTrajetAjout
             // 
