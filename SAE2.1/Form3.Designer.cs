@@ -1,7 +1,7 @@
 ﻿
 namespace SAE2._1
 {
-    partial class frm
+    partial class frmAffichage
     {
         /// <summary>
         /// Required designer variable.
@@ -201,7 +201,7 @@ namespace SAE2._1
             this.cmdRetour.Text = "Retour";
             this.cmdRetour.UseVisualStyleBackColor = true;
             // 
-            // frm
+            // frmAffichage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -214,7 +214,7 @@ namespace SAE2._1
             this.Controls.Add(this.lblChoixTrajet);
             this.Controls.Add(this.cboChoixLigneAff);
             this.Controls.Add(this.lblChoixLigne);
-            this.Name = "frm";
+            this.Name = "frmAffichage";
             this.Text = "Affichage";
             this.Load += new System.EventHandler(this.frm_Load);
             this.grpAffich.ResumeLayout(false);

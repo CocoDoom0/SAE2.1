@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SAE2._1
 {
-    public partial class frm : Form
+    public partial class frmAffichage : Form
     {
-        public frm()
+        public frmAffichage()
         {
             InitializeComponent();
         }

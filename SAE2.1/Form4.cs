@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SAE2._1
 {
-    public partial class Form4 : Form
+    public partial class frmRecherche : Form
     {
-        public Form4()
+        public frmRecherche()
         {
             InitializeComponent();
         }
