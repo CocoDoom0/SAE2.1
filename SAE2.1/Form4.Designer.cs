@@ -1,7 +1,7 @@
 ﻿
 namespace SAE2._1
 {
-    partial class Form4
+    partial class frmRecherche
     {
         /// <summary>
         /// Required designer variable.
@@ -37,8 +37,8 @@ namespace SAE2._1
             this.lblNomArret = new System.Windows.Forms.Label();
             this.lblNArret = new System.Windows.Forms.Label();
             this.cboChoixArretArr = new System.Windows.Forms.ComboBox();
-            this.lblChoixTrajet = new System.Windows.Forms.Label();
-            this.cboChoixLigneAff = new System.Windows.Forms.ComboBox();
+            this.lblArretArr = new System.Windows.Forms.Label();
+            this.cboChoixArretDep = new System.Windows.Forms.ComboBox();
             this.lblArretDep = new System.Windows.Forms.Label();
             this.cmdRetour = new System.Windows.Forms.Button();
             this.cmdRechercher = new System.Windows.Forms.Button();
@@ -59,6 +59,7 @@ namespace SAE2._1
             this.grpRecherche.TabIndex = 6;
             this.grpRecherche.TabStop = false;
             this.grpRecherche.Text = "Trajet";
+            this.grpRecherche.Visible = false;
             // 
             // lblOrdre
             // 
@@ -84,8 +85,8 @@ namespace SAE2._1
             this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 49);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 355F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 355F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 356F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 356F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(724, 355);
             this.tableLayoutPanel1.TabIndex = 8;
             this.tableLayoutPanel1.Visible = false;
@@ -142,24 +143,24 @@ namespace SAE2._1
             this.cboChoixArretArr.TabIndex = 12;
             this.cboChoixArretArr.Text = "Choisir arrêt d\'arrivé";
             // 
-            // lblChoixTrajet
+            // lblArretArr
             // 
-            this.lblChoixTrajet.AutoSize = true;
-            this.lblChoixTrajet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChoixTrajet.Location = new System.Drawing.Point(81, 126);
-            this.lblChoixTrajet.Name = "lblChoixTrajet";
-            this.lblChoixTrajet.Size = new System.Drawing.Size(98, 20);
-            this.lblChoixTrajet.TabIndex = 11;
-            this.lblChoixTrajet.Text = "Arrêt d\'arrivé";
+            this.lblArretArr.AutoSize = true;
+            this.lblArretArr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblArretArr.Location = new System.Drawing.Point(81, 126);
+            this.lblArretArr.Name = "lblArretArr";
+            this.lblArretArr.Size = new System.Drawing.Size(98, 20);
+            this.lblArretArr.TabIndex = 11;
+            this.lblArretArr.Text = "Arrêt d\'arrivé";
             // 
-            // cboChoixLigneAff
+            // cboChoixArretDep
             // 
-            this.cboChoixLigneAff.FormattingEnabled = true;
-            this.cboChoixLigneAff.Location = new System.Drawing.Point(70, 93);
-            this.cboChoixLigneAff.Name = "cboChoixLigneAff";
-            this.cboChoixLigneAff.Size = new System.Drawing.Size(121, 21);
-            this.cboChoixLigneAff.TabIndex = 10;
-            this.cboChoixLigneAff.Text = "Choisir arrêt départ";
+            this.cboChoixArretDep.FormattingEnabled = true;
+            this.cboChoixArretDep.Location = new System.Drawing.Point(70, 93);
+            this.cboChoixArretDep.Name = "cboChoixArretDep";
+            this.cboChoixArretDep.Size = new System.Drawing.Size(121, 21);
+            this.cboChoixArretDep.TabIndex = 10;
+            this.cboChoixArretDep.Text = "Choisir arrêt départ";
             // 
             // lblArretDep
             // 
@@ -190,7 +191,7 @@ namespace SAE2._1
             this.cmdRechercher.Text = "Rechercher";
             this.cmdRechercher.UseVisualStyleBackColor = true;
             // 
-            // Form4
+            // frmRecherche
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -199,11 +200,11 @@ namespace SAE2._1
             this.Controls.Add(this.cmdRetour);
             this.Controls.Add(this.cboChoixArretArr);
             this.Controls.Add(this.grpRecherche);
-            this.Controls.Add(this.lblChoixTrajet);
+            this.Controls.Add(this.lblArretArr);
             this.Controls.Add(this.lblArretDep);
-            this.Controls.Add(this.cboChoixLigneAff);
-            this.Name = "Form4";
-            this.Text = "Form4";
+            this.Controls.Add(this.cboChoixArretDep);
+            this.Name = "frmRecherche";
+            this.Text = "Recherche";
             this.grpRecherche.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -220,8 +221,8 @@ namespace SAE2._1
         private System.Windows.Forms.Label lblNomArret;
         private System.Windows.Forms.Label lblNArret;
         private System.Windows.Forms.ComboBox cboChoixArretArr;
-        private System.Windows.Forms.Label lblChoixTrajet;
-        private System.Windows.Forms.ComboBox cboChoixLigneAff;
+        private System.Windows.Forms.Label lblArretArr;
+        private System.Windows.Forms.ComboBox cboChoixArretDep;
         private System.Windows.Forms.Label lblArretDep;
         private System.Windows.Forms.Button cmdRetour;
         private System.Windows.Forms.Button cmdRechercher;
