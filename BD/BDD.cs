@@ -111,7 +111,7 @@ namespace BD
             // retour de la liste des parties
             return listeParties;
         }
-        public static List<Table> GetLigne(int numLigne)
+        public static List<Table> GetLigne(int numLigne,int numTrajet)
         {
             // lecture des données de la table partie
             // retourne une liste de parties
@@ -120,7 +120,7 @@ namespace BD
             List<Table> listeParties = new List<Table>();
 
             // définition de la requête d'interrogation et instanciation le la commande servant à exécuter la requête
-            string sql = $"SELECT ARRET.N_Arret,NomArret,DelaisArret,OrdrePassage from LIGNE,PASSAGE,ARRET WHERE LIGNE.N_Ligne=PASSAGE.N_Ligne AND ARRET.N_Arret=PASSAGE.N_Arret AND LIGNE.N_Ligne={numLigne} AND N_Trajet=1 ORDER BY OrdrePassage;";
+            string sql = $"SELECT ARRET.N_Arret,NomArret,DelaisArret,OrdrePassage from LIGNE,PASSAGE,ARRET WHERE LIGNE.N_Ligne=PASSAGE.N_Ligne AND ARRET.N_Arret=PASSAGE.N_Arret AND LIGNE.N_Ligne={numLigne} AND N_Trajet={numTrajet} ORDER BY OrdrePassage;";
             MySqlCommand cmd = new MySqlCommand(sql, maCnx);
             
             try

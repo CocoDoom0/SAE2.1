@@ -185,22 +185,23 @@ namespace SAE2._1
             // 
             // cboChoixLigneModif
             // 
+            this.cboChoixLigneModif.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboChoixLigneModif.FormattingEnabled = true;
             this.cboChoixLigneModif.Location = new System.Drawing.Point(70, 96);
             this.cboChoixLigneModif.Name = "cboChoixLigneModif";
             this.cboChoixLigneModif.Size = new System.Drawing.Size(121, 21);
             this.cboChoixLigneModif.TabIndex = 7;
-            this.cboChoixLigneModif.Text = "Choisir une ligne";
             this.cboChoixLigneModif.SelectedIndexChanged += new System.EventHandler(this.cboChoixLigneModif_SelectedIndexChanged);
             // 
             // cboChoixTrajet
             // 
+            this.cboChoixTrajet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboChoixTrajet.FormattingEnabled = true;
             this.cboChoixTrajet.Location = new System.Drawing.Point(70, 156);
             this.cboChoixTrajet.Name = "cboChoixTrajet";
             this.cboChoixTrajet.Size = new System.Drawing.Size(121, 21);
             this.cboChoixTrajet.TabIndex = 9;
-            this.cboChoixTrajet.Text = "Aller";
+            this.cboChoixTrajet.SelectedIndexChanged += new System.EventHandler(this.cboChoixLigneModif_SelectedIndexChanged);
             // 
             // lblTypeTrajet
             // 

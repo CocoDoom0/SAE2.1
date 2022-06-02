@@ -51,6 +51,12 @@ namespace SAE2._1
             {
                 cboChoixLigneModif.Items.Add(t.nomLigne.ToString());
             }
+
+            cboChoixTrajet.Items.Add("Aller");
+            cboChoixTrajet.Items.Add("Retour");
+            cboChoixTrajet.Items.Add("Aller Jour Spécial");
+            cboChoixTrajet.Items.Add("Retour Jour Spécial");
+
         }
 
         private void ChangeVisible(bool Visible)
@@ -87,7 +93,7 @@ namespace SAE2._1
             tableLayoutPanel1.Controls.Clear();
             tableLayoutPanel1.RowStyles.Clear();
             List<Table> lesTables;
-            lesTables = BDD.GetLigne(cboChoixLigneModif.SelectedIndex+1);
+            lesTables = BDD.GetLigne(cboChoixLigneModif.SelectedIndex+1,cboChoixTrajet.SelectedIndex+1);
             int ligne = 1;
             foreach (Table t in lesTables)
             {
