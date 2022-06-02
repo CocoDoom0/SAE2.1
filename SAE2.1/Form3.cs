@@ -21,5 +21,10 @@ namespace SAE2._1
         {
 
         }
+
+        private void cboChoixLigneAff_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

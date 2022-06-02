@@ -34,14 +34,16 @@ namespace SAE2._1
             this.cmdSupp = new System.Windows.Forms.Button();
             this.cmdAjouter = new System.Windows.Forms.Button();
             this.grpModif = new System.Windows.Forms.GroupBox();
+            this.lblOrdre = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblHoraire = new System.Windows.Forms.Label();
             this.cmdValider = new System.Windows.Forms.Button();
+            this.lblNomArret = new System.Windows.Forms.Label();
+            this.lblNArret = new System.Windows.Forms.Label();
             this.cmdRetour = new System.Windows.Forms.Button();
             this.cboChoixLigneModif = new System.Windows.Forms.ComboBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblNArret = new System.Windows.Forms.Label();
-            this.lblNomArret = new System.Windows.Forms.Label();
-            this.lblHoraire = new System.Windows.Forms.Label();
-            this.lblOrdre = new System.Windows.Forms.Label();
+            this.cboChoixTrajet = new System.Windows.Forms.ComboBox();
+            this.lblTypeTrajet = new System.Windows.Forms.Label();
             this.grpModif.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,16 +59,17 @@ namespace SAE2._1
             // 
             // cmdModif
             // 
-            this.cmdModif.Location = new System.Drawing.Point(50, 153);
+            this.cmdModif.Location = new System.Drawing.Point(50, 187);
             this.cmdModif.Name = "cmdModif";
             this.cmdModif.Size = new System.Drawing.Size(75, 23);
             this.cmdModif.TabIndex = 2;
             this.cmdModif.Text = "Modifier";
             this.cmdModif.UseVisualStyleBackColor = true;
+            this.cmdModif.Click += new System.EventHandler(this.cmdModif_Click);
             // 
             // cmdSupp
             // 
-            this.cmdSupp.Location = new System.Drawing.Point(131, 153);
+            this.cmdSupp.Location = new System.Drawing.Point(131, 187);
             this.cmdSupp.Name = "cmdSupp";
             this.cmdSupp.Size = new System.Drawing.Size(75, 23);
             this.cmdSupp.TabIndex = 3;
@@ -75,7 +78,7 @@ namespace SAE2._1
             // 
             // cmdAjouter
             // 
-            this.cmdAjouter.Location = new System.Drawing.Point(52, 193);
+            this.cmdAjouter.Location = new System.Drawing.Point(52, 227);
             this.cmdAjouter.Name = "cmdAjouter";
             this.cmdAjouter.Size = new System.Drawing.Size(154, 23);
             this.cmdAjouter.TabIndex = 4;
@@ -97,6 +100,48 @@ namespace SAE2._1
             this.grpModif.TabStop = false;
             this.grpModif.Text = "Modification :";
             // 
+            // lblOrdre
+            // 
+            this.lblOrdre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblOrdre.Location = new System.Drawing.Point(550, 23);
+            this.lblOrdre.Name = "lblOrdre";
+            this.lblOrdre.Size = new System.Drawing.Size(173, 23);
+            this.lblOrdre.TabIndex = 3;
+            this.lblOrdre.Text = "Ordre de passage";
+            this.lblOrdre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblOrdre.Visible = false;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel1.AutoScroll = true;
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.08662F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.80943F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.05198F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.05198F));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 49);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 354F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 354F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(724, 355);
+            this.tableLayoutPanel1.TabIndex = 8;
+            this.tableLayoutPanel1.Visible = false;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // lblHoraire
+            // 
+            this.lblHoraire.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblHoraire.Location = new System.Drawing.Point(371, 23);
+            this.lblHoraire.Name = "lblHoraire";
+            this.lblHoraire.Size = new System.Drawing.Size(173, 23);
+            this.lblHoraire.TabIndex = 2;
+            this.lblHoraire.Text = "Horaire";
+            this.lblHoraire.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblHoraire.Visible = false;
+            // 
             // cmdValider
             // 
             this.cmdValider.Enabled = false;
@@ -106,6 +151,28 @@ namespace SAE2._1
             this.cmdValider.TabIndex = 6;
             this.cmdValider.Text = "Valider";
             this.cmdValider.UseVisualStyleBackColor = true;
+            // 
+            // lblNomArret
+            // 
+            this.lblNomArret.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblNomArret.Location = new System.Drawing.Point(192, 23);
+            this.lblNomArret.Name = "lblNomArret";
+            this.lblNomArret.Size = new System.Drawing.Size(173, 23);
+            this.lblNomArret.TabIndex = 1;
+            this.lblNomArret.Text = "Nom Arret";
+            this.lblNomArret.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNomArret.Visible = false;
+            // 
+            // lblNArret
+            // 
+            this.lblNArret.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblNArret.Location = new System.Drawing.Point(13, 23);
+            this.lblNArret.Name = "lblNArret";
+            this.lblNArret.Size = new System.Drawing.Size(173, 23);
+            this.lblNArret.TabIndex = 0;
+            this.lblNArret.Text = "N°Arret";
+            this.lblNArret.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNArret.Visible = false;
             // 
             // cmdRetour
             // 
@@ -126,75 +193,32 @@ namespace SAE2._1
             this.cboChoixLigneModif.Text = "Choisir une ligne";
             this.cboChoixLigneModif.SelectedIndexChanged += new System.EventHandler(this.cboChoixLigneModif_SelectedIndexChanged);
             // 
-            // tableLayoutPanel1
+            // cboChoixTrajet
             // 
-            this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tableLayoutPanel1.AutoScroll = true;
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.08662F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.80943F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.05198F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.05198F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 49);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(724, 355);
-            this.tableLayoutPanel1.TabIndex = 8;
-            this.tableLayoutPanel1.Visible = false;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            this.cboChoixTrajet.FormattingEnabled = true;
+            this.cboChoixTrajet.Location = new System.Drawing.Point(70, 156);
+            this.cboChoixTrajet.Name = "cboChoixTrajet";
+            this.cboChoixTrajet.Size = new System.Drawing.Size(121, 21);
+            this.cboChoixTrajet.TabIndex = 9;
+            this.cboChoixTrajet.Text = "Aller";
             // 
-            // lblNArret
+            // lblTypeTrajet
             // 
-            this.lblNArret.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblNArret.Location = new System.Drawing.Point(13, 23);
-            this.lblNArret.Name = "lblNArret";
-            this.lblNArret.Size = new System.Drawing.Size(173, 23);
-            this.lblNArret.TabIndex = 0;
-            this.lblNArret.Text = "N°Arret";
-            this.lblNArret.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblNArret.Visible = false;
-            // 
-            // lblNomArret
-            // 
-            this.lblNomArret.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblNomArret.Location = new System.Drawing.Point(192, 23);
-            this.lblNomArret.Name = "lblNomArret";
-            this.lblNomArret.Size = new System.Drawing.Size(173, 23);
-            this.lblNomArret.TabIndex = 1;
-            this.lblNomArret.Text = "Nom Arret";
-            this.lblNomArret.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblNomArret.Visible = false;
-            // 
-            // lblHoraire
-            // 
-            this.lblHoraire.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblHoraire.Location = new System.Drawing.Point(371, 23);
-            this.lblHoraire.Name = "lblHoraire";
-            this.lblHoraire.Size = new System.Drawing.Size(173, 23);
-            this.lblHoraire.TabIndex = 2;
-            this.lblHoraire.Text = "Horaire";
-            this.lblHoraire.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblHoraire.Visible = false;
-            // 
-            // lblOrdre
-            // 
-            this.lblOrdre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblOrdre.Location = new System.Drawing.Point(550, 23);
-            this.lblOrdre.Name = "lblOrdre";
-            this.lblOrdre.Size = new System.Drawing.Size(173, 23);
-            this.lblOrdre.TabIndex = 3;
-            this.lblOrdre.Text = "Ordre de passage";
-            this.lblOrdre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblOrdre.Visible = false;
+            this.lblTypeTrajet.AutoSize = true;
+            this.lblTypeTrajet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTypeTrajet.Location = new System.Drawing.Point(45, 130);
+            this.lblTypeTrajet.Name = "lblTypeTrajet";
+            this.lblTypeTrajet.Size = new System.Drawing.Size(169, 20);
+            this.lblTypeTrajet.TabIndex = 8;
+            this.lblTypeTrajet.Text = "Choisir le type de trajet";
             // 
             // frmModification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1004, 521);
+            this.Controls.Add(this.cboChoixTrajet);
+            this.Controls.Add(this.lblTypeTrajet);
             this.Controls.Add(this.cboChoixLigneModif);
             this.Controls.Add(this.cmdRetour);
             this.Controls.Add(this.grpModif);
@@ -229,5 +253,7 @@ namespace SAE2._1
         private System.Windows.Forms.Label lblHoraire;
         private System.Windows.Forms.Label lblNomArret;
         private System.Windows.Forms.Label lblNArret;
+        private System.Windows.Forms.ComboBox cboChoixTrajet;
+        private System.Windows.Forms.Label lblTypeTrajet;
     }
 }

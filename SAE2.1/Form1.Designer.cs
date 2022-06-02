@@ -75,6 +75,7 @@ namespace SAE2._1
             this.cmdAffichage.TabIndex = 3;
             this.cmdAffichage.Text = "Affichage";
             this.cmdAffichage.UseVisualStyleBackColor = true;
+            this.cmdAffichage.Click += new System.EventHandler(this.cmdAffichage_Click);
             // 
             // frmAccueil
             // 

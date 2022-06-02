@@ -14,7 +14,7 @@ namespace SAE2._1
     public partial class frmModification : Form
     {
         bool PbConnexion = false;
-        bool debug = true;
+        bool debug = false;
         public frmModification()
         {
             InitializeComponent();
@@ -106,6 +106,11 @@ namespace SAE2._1
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cmdModif_Click(object sender, EventArgs e)
         {
 
         }

@@ -54,6 +54,7 @@ namespace SAE2._1
             this.cboChoixLigneAff.Name = "cboChoixLigneAff";
             this.cboChoixLigneAff.Size = new System.Drawing.Size(121, 21);
             this.cboChoixLigneAff.TabIndex = 2;
+            this.cboChoixLigneAff.SelectedIndexChanged += new System.EventHandler(this.cboChoixLigneAff_SelectedIndexChanged);
             // 
             // cboChoixTrajet
             // 

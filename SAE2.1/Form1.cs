@@ -22,5 +22,10 @@ namespace SAE2._1
             frmModification f2 = new frmModification();
             f2.ShowDialog();
         }
+
+        private void cmdAffichage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
