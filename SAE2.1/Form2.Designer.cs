@@ -77,6 +77,7 @@ namespace SAE2._1
             this.cmdSupp.TabIndex = 3;
             this.cmdSupp.Text = "Supprimer";
             this.cmdSupp.UseVisualStyleBackColor = true;
+            this.cmdSupp.Click += new System.EventHandler(this.cmdSupp_Click);
             // 
             // cmdAjouter
             // 

@@ -126,6 +126,15 @@ namespace SAE2._1
         {
 
         }
+
+        private void cmdSupp_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show($"Voulez vous vraiment supprimer la {cboChoixLigneModif.SelectedItem} en {cboChoixTrajet.SelectedItem}","Suppresion", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                //do something
+            }
+        }
     }
 
 }
