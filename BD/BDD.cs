@@ -155,5 +155,22 @@ namespace BD
             // retour de la liste des parties
             return listeParties;
         }
+
+        public static int SuppLigne(int numLigne,int numTrajet)
+        {
+            int retour=-1;
+            string sql = $"DELETE FROM PASSAGE WHERE N_Ligne={numLigne} AND N_Trajet={numTrajet}";
+            MySqlCommand cmd = new MySqlCommand(sql, maCnx);
+            try
+            {
+                cmd.ExecuteNonQuery();
+                retour = (int)cmd.LastInsertedId;
+            }
+            catch (Exception ex)
+            {
+                Debug.Print(ex.Message);
+            }
+            return retour;
+        }
     }
 }

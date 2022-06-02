@@ -132,7 +132,14 @@ namespace SAE2._1
             DialogResult dialogResult = MessageBox.Show($"Voulez vous vraiment supprimer la {cboChoixLigneModif.SelectedItem} en {cboChoixTrajet.SelectedItem}","Suppresion", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                //do something
+                int resultat = BDD.SuppLigne(cboChoixLigneModif.SelectedIndex + 1, cboChoixTrajet.SelectedIndex + 1);
+                ChangeVisible(false);
+                tableLayoutPanel1.Controls.Clear();
+                tableLayoutPanel1.RowStyles.Clear();
+                if (resultat == -1)
+                {
+                    MessageBox.Show("La ligne n'a pas pu etre supprimer", "Erreur de suppresion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
     }
