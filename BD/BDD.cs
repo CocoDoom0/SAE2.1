@@ -176,7 +176,7 @@ namespace BD
         public static List<Table> CheckPassage(int numLigne, int numTrajet)
         {
             List<Table> listeParties = new List<Table>();
-            string sql = $"SELECT COUNT(OrdrePassage) FROM PASSAGE WHERE N_Trajet = {numTrajet} AND N_Ligne={numLigne};";
+            string sql = $"SELECT OrdrePassage FROM PASSAGE WHERE N_Trajet={numTrajet} AND N_Ligne={numLigne};";
             MySqlCommand cmd = new MySqlCommand(sql, maCnx);
             try
             {

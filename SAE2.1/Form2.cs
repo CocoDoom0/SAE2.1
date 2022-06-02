@@ -150,20 +150,8 @@ namespace SAE2._1
             ChangeVisible(false);
             cboChoixLigneModif.Enabled = false;
             cboChoixTrajet.Enabled = false;
-            grpAjouter1.Visible = true;
+            grpPreAjouter.Visible = true;
             cmdAjouter.Enabled= false;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
-            grpAjouter1.Visible = false;
-            cmdAjouter.Enabled = true;
-            cmdModif.Enabled = true;
-            cmdSupp.Enabled = true;
-            cboChoixLigneModif.Enabled = true;
-            cboChoixTrajet.Enabled = true;
-            cboChoixLigneModif_SelectedIndexChanged(0,e);
         }
 
         private void rbLigneExistante_CheckedChanged(object sender, EventArgs e)
@@ -203,19 +191,22 @@ namespace SAE2._1
             else
             {
                 List<Table> lesTables;
-                lesTables = BDD.CheckPassage(cboLigneExistante.SelectedIndex, cboTypeTrajetAjout.SelectedIndex);
-                int nbpassage = 1;
+
+                lesTables = BDD.CheckPassage(cboLigneExistante.SelectedIndex+1, cboTypeTrajetAjout.SelectedIndex+1);
+                int nbpassage = 0;
                 foreach (Table t in lesTables)
                 {
-                    nbpassage = t.numPassage;
+                    nbpassage++;
                 }
                 if (nbpassage != 0)
                 {
-                    MessageBox.Show($"{nbpassage}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Cette ligne à déjà des passage, merci de la supprimer.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    MessageBox.Show($"{nbpassage}", "WIP", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    grpPreAjouter.Visible = false;
+                    grpAjouter.Visible = true;
+
                 }
             }
         }
@@ -234,6 +225,18 @@ namespace SAE2._1
             {
                 txtbNvlLigne.Text=(string)txtbNvlLigne.Tag;
             }
+        }
+
+        private void cmdAnnuler_Click(object sender, EventArgs e)
+        {
+            grpAjouter.Visible = false;
+            grpPreAjouter.Visible = false;
+            cmdAjouter.Enabled = true;
+            cmdModif.Enabled = true;
+            cmdSupp.Enabled = true;
+            cboChoixLigneModif.Enabled = true;
+            cboChoixTrajet.Enabled = true;
+            cboChoixLigneModif_SelectedIndexChanged(0, e);
         }
     }
 

@@ -46,15 +46,27 @@ namespace SAE2._1
             this.lblTypeTrajet = new System.Windows.Forms.Label();
             this.rbLigneExistante = new System.Windows.Forms.RadioButton();
             this.rbNouvelleLigne = new System.Windows.Forms.RadioButton();
-            this.grpAjouter1 = new System.Windows.Forms.GroupBox();
-            this.cboLigneExistante = new System.Windows.Forms.ComboBox();
-            this.txtbNvlLigne = new System.Windows.Forms.TextBox();
-            this.cboTypeTrajetAjout = new System.Windows.Forms.ComboBox();
-            this.lblTypeTrajetAdd = new System.Windows.Forms.Label();
-            this.cmdValiderAjouter = new System.Windows.Forms.Button();
+            this.grpPreAjouter = new System.Windows.Forms.GroupBox();
             this.cmdAnnulerAjouter = new System.Windows.Forms.Button();
+            this.cmdValiderAjouter = new System.Windows.Forms.Button();
+            this.lblTypeTrajetAdd = new System.Windows.Forms.Label();
+            this.cboTypeTrajetAjout = new System.Windows.Forms.ComboBox();
+            this.txtbNvlLigne = new System.Windows.Forms.TextBox();
+            this.cboLigneExistante = new System.Windows.Forms.ComboBox();
+            this.grpAjouter = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lblResumerAjout = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lblOrdrePassage1 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.cmdAdd = new System.Windows.Forms.Button();
+            this.cmdRemove = new System.Windows.Forms.Button();
+            this.cmdAnnulerAjt = new System.Windows.Forms.Button();
             this.grpModif.SuspendLayout();
-            this.grpAjouter1.SuspendLayout();
+            this.grpPreAjouter.SuspendLayout();
+            this.grpAjouter.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblChoixLigne
@@ -101,6 +113,7 @@ namespace SAE2._1
             // 
             // grpModif
             // 
+            this.grpModif.Controls.Add(this.grpAjouter);
             this.grpModif.Controls.Add(this.lblOrdre);
             this.grpModif.Controls.Add(this.tableLayoutPanel1);
             this.grpModif.Controls.Add(this.lblHoraire);
@@ -138,8 +151,8 @@ namespace SAE2._1
             this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 49);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 354F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 354F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 355F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 355F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(724, 355);
             this.tableLayoutPanel1.TabIndex = 8;
             this.tableLayoutPanel1.Visible = false;
@@ -251,32 +264,61 @@ namespace SAE2._1
             this.rbNouvelleLigne.UseVisualStyleBackColor = true;
             this.rbNouvelleLigne.CheckedChanged += new System.EventHandler(this.rbNouvelleLigne_CheckedChanged);
             // 
-            // grpAjouter1
+            // grpPreAjouter
             // 
-            this.grpAjouter1.Controls.Add(this.cmdAnnulerAjouter);
-            this.grpAjouter1.Controls.Add(this.cmdValiderAjouter);
-            this.grpAjouter1.Controls.Add(this.lblTypeTrajetAdd);
-            this.grpAjouter1.Controls.Add(this.cboTypeTrajetAjout);
-            this.grpAjouter1.Controls.Add(this.txtbNvlLigne);
-            this.grpAjouter1.Controls.Add(this.cboLigneExistante);
-            this.grpAjouter1.Controls.Add(this.rbLigneExistante);
-            this.grpAjouter1.Controls.Add(this.rbNouvelleLigne);
-            this.grpAjouter1.Location = new System.Drawing.Point(52, 267);
-            this.grpAjouter1.Name = "grpAjouter1";
-            this.grpAjouter1.Size = new System.Drawing.Size(154, 242);
-            this.grpAjouter1.TabIndex = 9;
-            this.grpAjouter1.TabStop = false;
-            this.grpAjouter1.Text = "groupBox1";
-            this.grpAjouter1.Visible = false;
+            this.grpPreAjouter.Controls.Add(this.cmdAnnulerAjouter);
+            this.grpPreAjouter.Controls.Add(this.cmdValiderAjouter);
+            this.grpPreAjouter.Controls.Add(this.lblTypeTrajetAdd);
+            this.grpPreAjouter.Controls.Add(this.cboTypeTrajetAjout);
+            this.grpPreAjouter.Controls.Add(this.txtbNvlLigne);
+            this.grpPreAjouter.Controls.Add(this.cboLigneExistante);
+            this.grpPreAjouter.Controls.Add(this.rbLigneExistante);
+            this.grpPreAjouter.Controls.Add(this.rbNouvelleLigne);
+            this.grpPreAjouter.Location = new System.Drawing.Point(52, 267);
+            this.grpPreAjouter.Name = "grpPreAjouter";
+            this.grpPreAjouter.Size = new System.Drawing.Size(154, 242);
+            this.grpPreAjouter.TabIndex = 9;
+            this.grpPreAjouter.TabStop = false;
+            this.grpPreAjouter.Text = "groupBox1";
+            this.grpPreAjouter.Visible = false;
             // 
-            // cboLigneExistante
+            // cmdAnnulerAjouter
             // 
-            this.cboLigneExistante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboLigneExistante.FormattingEnabled = true;
-            this.cboLigneExistante.Location = new System.Drawing.Point(12, 42);
-            this.cboLigneExistante.Name = "cboLigneExistante";
-            this.cboLigneExistante.Size = new System.Drawing.Size(121, 21);
-            this.cboLigneExistante.TabIndex = 13;
+            this.cmdAnnulerAjouter.Location = new System.Drawing.Point(34, 213);
+            this.cmdAnnulerAjouter.Name = "cmdAnnulerAjouter";
+            this.cmdAnnulerAjouter.Size = new System.Drawing.Size(75, 23);
+            this.cmdAnnulerAjouter.TabIndex = 18;
+            this.cmdAnnulerAjouter.Text = "Annuler";
+            this.cmdAnnulerAjouter.UseVisualStyleBackColor = true;
+            this.cmdAnnulerAjouter.Click += new System.EventHandler(this.cmdAnnuler_Click);
+            // 
+            // cmdValiderAjouter
+            // 
+            this.cmdValiderAjouter.Location = new System.Drawing.Point(34, 184);
+            this.cmdValiderAjouter.Name = "cmdValiderAjouter";
+            this.cmdValiderAjouter.Size = new System.Drawing.Size(75, 23);
+            this.cmdValiderAjouter.TabIndex = 17;
+            this.cmdValiderAjouter.Text = "Valider";
+            this.cmdValiderAjouter.UseVisualStyleBackColor = true;
+            this.cmdValiderAjouter.Click += new System.EventHandler(this.cmdValiderAjouter_Click);
+            // 
+            // lblTypeTrajetAdd
+            // 
+            this.lblTypeTrajetAdd.AutoSize = true;
+            this.lblTypeTrajetAdd.Location = new System.Drawing.Point(9, 126);
+            this.lblTypeTrajetAdd.Name = "lblTypeTrajetAdd";
+            this.lblTypeTrajetAdd.Size = new System.Drawing.Size(72, 13);
+            this.lblTypeTrajetAdd.TabIndex = 16;
+            this.lblTypeTrajetAdd.Text = "Type de trajet";
+            // 
+            // cboTypeTrajetAjout
+            // 
+            this.cboTypeTrajetAjout.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTypeTrajetAjout.FormattingEnabled = true;
+            this.cboTypeTrajetAjout.Location = new System.Drawing.Point(12, 143);
+            this.cboTypeTrajetAjout.Name = "cboTypeTrajetAjout";
+            this.cboTypeTrajetAjout.Size = new System.Drawing.Size(121, 21);
+            this.cboTypeTrajetAjout.TabIndex = 15;
             // 
             // txtbNvlLigne
             // 
@@ -290,50 +332,135 @@ namespace SAE2._1
             this.txtbNvlLigne.Enter += new System.EventHandler(this.txtbNvlLigne_Enter);
             this.txtbNvlLigne.Leave += new System.EventHandler(this.txtbNvlLigne_Leave);
             // 
-            // cboTypeTrajetAjout
+            // cboLigneExistante
             // 
-            this.cboTypeTrajetAjout.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTypeTrajetAjout.FormattingEnabled = true;
-            this.cboTypeTrajetAjout.Location = new System.Drawing.Point(12, 143);
-            this.cboTypeTrajetAjout.Name = "cboTypeTrajetAjout";
-            this.cboTypeTrajetAjout.Size = new System.Drawing.Size(121, 21);
-            this.cboTypeTrajetAjout.TabIndex = 15;
+            this.cboLigneExistante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboLigneExistante.FormattingEnabled = true;
+            this.cboLigneExistante.Location = new System.Drawing.Point(12, 42);
+            this.cboLigneExistante.Name = "cboLigneExistante";
+            this.cboLigneExistante.Size = new System.Drawing.Size(121, 21);
+            this.cboLigneExistante.TabIndex = 13;
             // 
-            // lblTypeTrajetAdd
+            // grpAjouter
             // 
-            this.lblTypeTrajetAdd.AutoSize = true;
-            this.lblTypeTrajetAdd.Location = new System.Drawing.Point(9, 126);
-            this.lblTypeTrajetAdd.Name = "lblTypeTrajetAdd";
-            this.lblTypeTrajetAdd.Size = new System.Drawing.Size(72, 13);
-            this.lblTypeTrajetAdd.TabIndex = 16;
-            this.lblTypeTrajetAdd.Text = "Type de trajet";
+            this.grpAjouter.Controls.Add(this.cmdAnnulerAjt);
+            this.grpAjouter.Controls.Add(this.cmdRemove);
+            this.grpAjouter.Controls.Add(this.cmdAdd);
+            this.grpAjouter.Controls.Add(this.lblOrdrePassage1);
+            this.grpAjouter.Controls.Add(this.textBox2);
+            this.grpAjouter.Controls.Add(this.comboBox1);
+            this.grpAjouter.Controls.Add(this.label1);
+            this.grpAjouter.Controls.Add(this.textBox1);
+            this.grpAjouter.Controls.Add(this.lblResumerAjout);
+            this.grpAjouter.Controls.Add(this.button1);
+            this.grpAjouter.Location = new System.Drawing.Point(0, 0);
+            this.grpAjouter.Name = "grpAjouter";
+            this.grpAjouter.Size = new System.Drawing.Size(730, 410);
+            this.grpAjouter.TabIndex = 9;
+            this.grpAjouter.TabStop = false;
+            this.grpAjouter.Text = "Ajouter :";
+            this.grpAjouter.Visible = false;
             // 
-            // cmdValiderAjouter
+            // button1
             // 
-            this.cmdValiderAjouter.Location = new System.Drawing.Point(34, 184);
-            this.cmdValiderAjouter.Name = "cmdValiderAjouter";
-            this.cmdValiderAjouter.Size = new System.Drawing.Size(75, 23);
-            this.cmdValiderAjouter.TabIndex = 17;
-            this.cmdValiderAjouter.Text = "Valider";
-            this.cmdValiderAjouter.UseVisualStyleBackColor = true;
-            this.cmdValiderAjouter.Click += new System.EventHandler(this.cmdValiderAjouter_Click);
+            this.button1.Enabled = false;
+            this.button1.Location = new System.Drawing.Point(649, 381);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Valider";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // cmdAnnulerAjouter
+            // lblResumerAjout
             // 
-            this.cmdAnnulerAjouter.Location = new System.Drawing.Point(34, 213);
-            this.cmdAnnulerAjouter.Name = "cmdAnnulerAjouter";
-            this.cmdAnnulerAjouter.Size = new System.Drawing.Size(75, 23);
-            this.cmdAnnulerAjouter.TabIndex = 18;
-            this.cmdAnnulerAjouter.Text = "Annuler";
-            this.cmdAnnulerAjouter.UseVisualStyleBackColor = true;
-            this.cmdAnnulerAjouter.Click += new System.EventHandler(this.button2_Click);
+            this.lblResumerAjout.AutoSize = true;
+            this.lblResumerAjout.Location = new System.Drawing.Point(10, 23);
+            this.lblResumerAjout.Name = "lblResumerAjout";
+            this.lblResumerAjout.Size = new System.Drawing.Size(0, 13);
+            this.lblResumerAjout.TabIndex = 10;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(13, 60);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(28, 46);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Délai départ";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(237, 59);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(175, 21);
+            this.comboBox1.TabIndex = 13;
+            // 
+            // lblOrdrePassage1
+            // 
+            this.lblOrdrePassage1.AutoSize = true;
+            this.lblOrdrePassage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblOrdrePassage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrdrePassage1.Location = new System.Drawing.Point(213, 60);
+            this.lblOrdrePassage1.Name = "lblOrdrePassage1";
+            this.lblOrdrePassage1.Size = new System.Drawing.Size(18, 20);
+            this.lblOrdrePassage1.TabIndex = 15;
+            this.lblOrdrePassage1.Text = "1";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(418, 59);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(70, 21);
+            this.textBox2.TabIndex = 14;
+            // 
+            // cmdAdd
+            // 
+            this.cmdAdd.Enabled = false;
+            this.cmdAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.cmdAdd.Location = new System.Drawing.Point(494, 58);
+            this.cmdAdd.Name = "cmdAdd";
+            this.cmdAdd.Size = new System.Drawing.Size(18, 22);
+            this.cmdAdd.TabIndex = 16;
+            this.cmdAdd.Text = "+";
+            this.cmdAdd.UseVisualStyleBackColor = true;
+            // 
+            // cmdRemove
+            // 
+            this.cmdRemove.Enabled = false;
+            this.cmdRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.cmdRemove.Location = new System.Drawing.Point(517, 58);
+            this.cmdRemove.Name = "cmdRemove";
+            this.cmdRemove.Size = new System.Drawing.Size(18, 22);
+            this.cmdRemove.TabIndex = 17;
+            this.cmdRemove.Text = "-";
+            this.cmdRemove.UseVisualStyleBackColor = true;
+            // 
+            // cmdAnnulerAjt
+            // 
+            this.cmdAnnulerAjt.Location = new System.Drawing.Point(568, 381);
+            this.cmdAnnulerAjt.Name = "cmdAnnulerAjt";
+            this.cmdAnnulerAjt.Size = new System.Drawing.Size(75, 23);
+            this.cmdAnnulerAjt.TabIndex = 19;
+            this.cmdAnnulerAjt.Text = "Annuler";
+            this.cmdAnnulerAjt.UseVisualStyleBackColor = true;
+            this.cmdAnnulerAjt.Click += new System.EventHandler(this.cmdAnnuler_Click);
             // 
             // frmModification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1004, 521);
-            this.Controls.Add(this.grpAjouter1);
+            this.Controls.Add(this.grpPreAjouter);
             this.Controls.Add(this.cboChoixTrajet);
             this.Controls.Add(this.lblTypeTrajet);
             this.Controls.Add(this.cboChoixLigneModif);
@@ -350,8 +477,10 @@ namespace SAE2._1
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmModification_FormClosed);
             this.Load += new System.EventHandler(this.frmModification_Load);
             this.grpModif.ResumeLayout(false);
-            this.grpAjouter1.ResumeLayout(false);
-            this.grpAjouter1.PerformLayout();
+            this.grpPreAjouter.ResumeLayout(false);
+            this.grpPreAjouter.PerformLayout();
+            this.grpAjouter.ResumeLayout(false);
+            this.grpAjouter.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -376,12 +505,23 @@ namespace SAE2._1
         private System.Windows.Forms.Label lblTypeTrajet;
         private System.Windows.Forms.RadioButton rbLigneExistante;
         private System.Windows.Forms.RadioButton rbNouvelleLigne;
-        private System.Windows.Forms.GroupBox grpAjouter1;
+        private System.Windows.Forms.GroupBox grpPreAjouter;
         private System.Windows.Forms.TextBox txtbNvlLigne;
         private System.Windows.Forms.ComboBox cboLigneExistante;
         private System.Windows.Forms.Label lblTypeTrajetAdd;
         private System.Windows.Forms.ComboBox cboTypeTrajetAjout;
         private System.Windows.Forms.Button cmdAnnulerAjouter;
         private System.Windows.Forms.Button cmdValiderAjouter;
+        private System.Windows.Forms.GroupBox grpAjouter;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button cmdRemove;
+        private System.Windows.Forms.Button cmdAdd;
+        private System.Windows.Forms.Label lblOrdrePassage1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblResumerAjout;
+        private System.Windows.Forms.Button cmdAnnulerAjt;
     }
 }
