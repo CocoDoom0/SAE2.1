@@ -197,5 +197,31 @@ namespace BD
             }
             return listeParties;
         }
+
+        public static List<Arret> GetArret()
+        {
+            List<Arret> arretList = new List<Arret>();
+            string sql = "SELECT * FROM ARRET ORDER BY NomArret";
+            MySqlCommand cmd = new MySqlCommand(sql, maCnx);
+            try
+            {
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    // lecture d'un enregistrement
+                    int numArret = (int)rdr[0];
+                    string nomArret = (string)rdr[1];
+                    Arret uneTable = new Arret(numArret,nomArret);
+                    arretList.Add(uneTable);
+                }
+                rdr.Close();
+                cmd.Dispose();
+            }
+            catch (Exception ex)
+            {
+                Debug.Print(ex.Message);
+            }
+            return arretList;
+        }
     }
 }

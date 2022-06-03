@@ -206,7 +206,12 @@ namespace SAE2._1
                 {
                     grpPreAjouter.Visible = false;
                     grpAjouter.Visible = true;
-
+                    List<Arret> arrets;
+                    arrets = BDD.GetArret();
+                    foreach(Arret arret in arrets)
+                    {
+                        cboChoixArret1.Items.Add(arret.nomArret);
+                    }
                 }
             }
         }
@@ -237,6 +242,12 @@ namespace SAE2._1
             cboChoixLigneModif.Enabled = true;
             cboChoixTrajet.Enabled = true;
             cboChoixLigneModif_SelectedIndexChanged(0, e);
+        }
+
+        private void cboChoixArret_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            //if ($"{cboChoixArret1}{cmdValiderAjouter.Tag}")
         }
     }
 

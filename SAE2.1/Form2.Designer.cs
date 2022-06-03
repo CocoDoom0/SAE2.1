@@ -58,9 +58,9 @@ namespace SAE2._1
             this.lblResumerAjout = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboChoixArret1 = new System.Windows.Forms.ComboBox();
             this.lblOrdrePassage1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtbChoixDelai1 = new System.Windows.Forms.TextBox();
             this.cmdAdd = new System.Windows.Forms.Button();
             this.cmdRemove = new System.Windows.Forms.Button();
             this.cmdAnnulerAjt = new System.Windows.Forms.Button();
@@ -347,8 +347,8 @@ namespace SAE2._1
             this.grpAjouter.Controls.Add(this.cmdRemove);
             this.grpAjouter.Controls.Add(this.cmdAdd);
             this.grpAjouter.Controls.Add(this.lblOrdrePassage1);
-            this.grpAjouter.Controls.Add(this.textBox2);
-            this.grpAjouter.Controls.Add(this.comboBox1);
+            this.grpAjouter.Controls.Add(this.txtbChoixDelai1);
+            this.grpAjouter.Controls.Add(this.cboChoixArret1);
             this.grpAjouter.Controls.Add(this.label1);
             this.grpAjouter.Controls.Add(this.textBox1);
             this.grpAjouter.Controls.Add(this.lblResumerAjout);
@@ -368,6 +368,7 @@ namespace SAE2._1
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 6;
+            this.button1.Tag = "1";
             this.button1.Text = "Valider";
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -395,14 +396,15 @@ namespace SAE2._1
             this.label1.TabIndex = 12;
             this.label1.Text = "Délai départ";
             // 
-            // comboBox1
+            // cboChoixArret1
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(237, 59);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(175, 21);
-            this.comboBox1.TabIndex = 13;
+            this.cboChoixArret1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboChoixArret1.FormattingEnabled = true;
+            this.cboChoixArret1.Location = new System.Drawing.Point(237, 59);
+            this.cboChoixArret1.Name = "cboChoixArret1";
+            this.cboChoixArret1.Size = new System.Drawing.Size(175, 21);
+            this.cboChoixArret1.TabIndex = 13;
+            this.cboChoixArret1.SelectedIndexChanged += new System.EventHandler(this.cboChoixArret_SelectedIndexChanged);
             // 
             // lblOrdrePassage1
             // 
@@ -415,13 +417,13 @@ namespace SAE2._1
             this.lblOrdrePassage1.TabIndex = 15;
             this.lblOrdrePassage1.Text = "1";
             // 
-            // textBox2
+            // txtbChoixDelai1
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(418, 59);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(70, 21);
-            this.textBox2.TabIndex = 14;
+            this.txtbChoixDelai1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbChoixDelai1.Location = new System.Drawing.Point(418, 59);
+            this.txtbChoixDelai1.Name = "txtbChoixDelai1";
+            this.txtbChoixDelai1.Size = new System.Drawing.Size(70, 21);
+            this.txtbChoixDelai1.TabIndex = 14;
             // 
             // cmdAdd
             // 
@@ -517,8 +519,8 @@ namespace SAE2._1
         private System.Windows.Forms.Button cmdRemove;
         private System.Windows.Forms.Button cmdAdd;
         private System.Windows.Forms.Label lblOrdrePassage1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtbChoixDelai1;
+        private System.Windows.Forms.ComboBox cboChoixArret1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblResumerAjout;
