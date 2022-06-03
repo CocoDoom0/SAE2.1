@@ -184,7 +184,7 @@ namespace SAE2._1
                 }
                 if (!erreur)
                 {
-                    MessageBox.Show("Ok", "WIP", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    AjoutArret(txtbNvlLigne.Text,(string)cboTypeTrajetAjout.SelectedItem);
                 }
             }
             else
@@ -203,16 +203,32 @@ namespace SAE2._1
                 }
                 else
                 {
-                    grpPreAjouter.Visible = false;
-                    grpAjouter.Visible = true;
-                    List<Arret> arrets;
-                    arrets = BDD.GetArret();
-                    foreach(Arret arret in arrets)
-                    {
-                        cboChoixArret1.Items.Add(arret.nomArret);
-                    }
+                    AjoutArret((string)cboLigneExistante.SelectedItem,(string)cboTypeTrajetAjout.SelectedItem);
                 }
             }
+        }
+
+        private void AjoutArret(string ligne,string trajet)
+        {
+            string[] subs = ligne.Split(' ');
+            string nomLigne=String.Empty;
+            foreach (var sub in subs)
+            {
+                if (sub.ToUpper() != "LIGNE")
+                {
+                    nomLigne = nomLigne+sub+" ";
+                }
+            }
+            lblResumerAjout.Text = $"Ajout pour la ligne {nomLigne}en {trajet}";
+            grpPreAjouter.Visible = false;
+            grpAjouter.Visible = true;
+            List<Arret> arrets;
+            arrets = BDD.GetArret();
+            foreach (Arret arret in arrets)
+            {
+                cboChoixArret1.Items.Add(arret.nomArret);
+            }
+
         }
 
         private void txtbNvlLigne_Enter(object sender, EventArgs e)
