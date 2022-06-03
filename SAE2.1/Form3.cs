@@ -26,5 +26,10 @@ namespace SAE2._1
         {
 
         }
+
+        private void clickRetour(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -249,6 +249,11 @@ namespace SAE2._1
             
             //if ($"{cboChoixArret1}{cmdValiderAjouter.Tag}")
         }
+
+        private void clickRetour(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 
 }

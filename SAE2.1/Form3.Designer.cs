@@ -50,18 +50,20 @@ namespace SAE2._1
             // 
             this.lblChoixLigne.AutoSize = true;
             this.lblChoixLigne.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChoixLigne.Location = new System.Drawing.Point(66, 70);
+            this.lblChoixLigne.Location = new System.Drawing.Point(88, 86);
+            this.lblChoixLigne.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblChoixLigne.Name = "lblChoixLigne";
-            this.lblChoixLigne.Size = new System.Drawing.Size(125, 20);
+            this.lblChoixLigne.Size = new System.Drawing.Size(157, 25);
             this.lblChoixLigne.TabIndex = 1;
             this.lblChoixLigne.Text = "Choisir une ligne";
             // 
             // cboChoixLigneAff
             // 
             this.cboChoixLigneAff.FormattingEnabled = true;
-            this.cboChoixLigneAff.Location = new System.Drawing.Point(70, 96);
+            this.cboChoixLigneAff.Location = new System.Drawing.Point(93, 118);
+            this.cboChoixLigneAff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboChoixLigneAff.Name = "cboChoixLigneAff";
-            this.cboChoixLigneAff.Size = new System.Drawing.Size(121, 21);
+            this.cboChoixLigneAff.Size = new System.Drawing.Size(160, 24);
             this.cboChoixLigneAff.TabIndex = 2;
             this.cboChoixLigneAff.Text = "Choisir une ligne";
             this.cboChoixLigneAff.SelectedIndexChanged += new System.EventHandler(this.cboChoixLigneAff_SelectedIndexChanged);
@@ -69,9 +71,10 @@ namespace SAE2._1
             // cboChoixTrajet
             // 
             this.cboChoixTrajet.FormattingEnabled = true;
-            this.cboChoixTrajet.Location = new System.Drawing.Point(70, 158);
+            this.cboChoixTrajet.Location = new System.Drawing.Point(93, 194);
+            this.cboChoixTrajet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboChoixTrajet.Name = "cboChoixTrajet";
-            this.cboChoixTrajet.Size = new System.Drawing.Size(121, 21);
+            this.cboChoixTrajet.Size = new System.Drawing.Size(160, 24);
             this.cboChoixTrajet.TabIndex = 4;
             this.cboChoixTrajet.Text = "Choisir un trajet";
             // 
@@ -79,18 +82,20 @@ namespace SAE2._1
             // 
             this.lblChoixTrajet.AutoSize = true;
             this.lblChoixTrajet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChoixTrajet.Location = new System.Drawing.Point(66, 132);
+            this.lblChoixTrajet.Location = new System.Drawing.Point(88, 162);
+            this.lblChoixTrajet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblChoixTrajet.Name = "lblChoixTrajet";
-            this.lblChoixTrajet.Size = new System.Drawing.Size(175, 20);
+            this.lblChoixTrajet.Size = new System.Drawing.Size(216, 25);
             this.lblChoixTrajet.TabIndex = 3;
             this.lblChoixTrajet.Text = "Choisir un type de trajet";
             // 
             // cboChoixAffich
             // 
             this.cboChoixAffich.FormattingEnabled = true;
-            this.cboChoixAffich.Location = new System.Drawing.Point(70, 226);
+            this.cboChoixAffich.Location = new System.Drawing.Point(93, 278);
+            this.cboChoixAffich.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboChoixAffich.Name = "cboChoixAffich";
-            this.cboChoixAffich.Size = new System.Drawing.Size(121, 21);
+            this.cboChoixAffich.Size = new System.Drawing.Size(160, 24);
             this.cboChoixAffich.TabIndex = 6;
             this.cboChoixAffich.Text = "Choisir un affichage";
             // 
@@ -98,9 +103,10 @@ namespace SAE2._1
             // 
             this.cboAffichage.AutoSize = true;
             this.cboAffichage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboAffichage.Location = new System.Drawing.Point(66, 200);
+            this.cboAffichage.Location = new System.Drawing.Point(88, 246);
+            this.cboAffichage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.cboAffichage.Name = "cboAffichage";
-            this.cboAffichage.Size = new System.Drawing.Size(195, 20);
+            this.cboAffichage.Size = new System.Drawing.Size(241, 25);
             this.cboAffichage.TabIndex = 5;
             this.cboAffichage.Text = "Choisir un type d\'affichage";
             // 
@@ -112,9 +118,11 @@ namespace SAE2._1
             this.grpAffich.Controls.Add(this.cmdValider);
             this.grpAffich.Controls.Add(this.lblNomArret);
             this.grpAffich.Controls.Add(this.lblNArret);
-            this.grpAffich.Location = new System.Drawing.Point(262, 12);
+            this.grpAffich.Location = new System.Drawing.Point(349, 15);
+            this.grpAffich.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpAffich.Name = "grpAffich";
-            this.grpAffich.Size = new System.Drawing.Size(730, 410);
+            this.grpAffich.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpAffich.Size = new System.Drawing.Size(973, 505);
             this.grpAffich.TabIndex = 7;
             this.grpAffich.TabStop = false;
             this.grpAffich.Text = "Affichage horaire :";
@@ -122,9 +130,10 @@ namespace SAE2._1
             // lblOrdre
             // 
             this.lblOrdre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblOrdre.Location = new System.Drawing.Point(550, 23);
+            this.lblOrdre.Location = new System.Drawing.Point(733, 28);
+            this.lblOrdre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblOrdre.Name = "lblOrdre";
-            this.lblOrdre.Size = new System.Drawing.Size(173, 23);
+            this.lblOrdre.Size = new System.Drawing.Size(230, 28);
             this.lblOrdre.TabIndex = 3;
             this.lblOrdre.Text = "Ordre de passage";
             this.lblOrdre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -140,21 +149,23 @@ namespace SAE2._1
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.80943F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.05198F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.05198F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 49);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(8, 60);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 355F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 355F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(724, 355);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 438F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 438F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(965, 437);
             this.tableLayoutPanel1.TabIndex = 8;
             this.tableLayoutPanel1.Visible = false;
             // 
             // lblHoraire
             // 
             this.lblHoraire.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblHoraire.Location = new System.Drawing.Point(371, 23);
+            this.lblHoraire.Location = new System.Drawing.Point(495, 28);
+            this.lblHoraire.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHoraire.Name = "lblHoraire";
-            this.lblHoraire.Size = new System.Drawing.Size(173, 23);
+            this.lblHoraire.Size = new System.Drawing.Size(230, 28);
             this.lblHoraire.TabIndex = 2;
             this.lblHoraire.Text = "Horaire";
             this.lblHoraire.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -163,9 +174,10 @@ namespace SAE2._1
             // cmdValider
             // 
             this.cmdValider.Enabled = false;
-            this.cmdValider.Location = new System.Drawing.Point(649, 381);
+            this.cmdValider.Location = new System.Drawing.Point(865, 469);
+            this.cmdValider.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmdValider.Name = "cmdValider";
-            this.cmdValider.Size = new System.Drawing.Size(75, 23);
+            this.cmdValider.Size = new System.Drawing.Size(100, 28);
             this.cmdValider.TabIndex = 6;
             this.cmdValider.Text = "Valider";
             this.cmdValider.UseVisualStyleBackColor = true;
@@ -173,9 +185,10 @@ namespace SAE2._1
             // lblNomArret
             // 
             this.lblNomArret.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblNomArret.Location = new System.Drawing.Point(192, 23);
+            this.lblNomArret.Location = new System.Drawing.Point(256, 28);
+            this.lblNomArret.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNomArret.Name = "lblNomArret";
-            this.lblNomArret.Size = new System.Drawing.Size(173, 23);
+            this.lblNomArret.Size = new System.Drawing.Size(230, 28);
             this.lblNomArret.TabIndex = 1;
             this.lblNomArret.Text = "Nom Arret";
             this.lblNomArret.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -184,9 +197,10 @@ namespace SAE2._1
             // lblNArret
             // 
             this.lblNArret.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblNArret.Location = new System.Drawing.Point(13, 23);
+            this.lblNArret.Location = new System.Drawing.Point(17, 28);
+            this.lblNArret.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNArret.Name = "lblNArret";
-            this.lblNArret.Size = new System.Drawing.Size(173, 23);
+            this.lblNArret.Size = new System.Drawing.Size(230, 28);
             this.lblNArret.TabIndex = 0;
             this.lblNArret.Text = "N°Arret";
             this.lblNArret.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -194,18 +208,20 @@ namespace SAE2._1
             // 
             // cmdRetour
             // 
-            this.cmdRetour.Location = new System.Drawing.Point(465, 443);
+            this.cmdRetour.Location = new System.Drawing.Point(620, 545);
+            this.cmdRetour.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmdRetour.Name = "cmdRetour";
-            this.cmdRetour.Size = new System.Drawing.Size(75, 23);
+            this.cmdRetour.Size = new System.Drawing.Size(100, 28);
             this.cmdRetour.TabIndex = 8;
             this.cmdRetour.Text = "Retour";
             this.cmdRetour.UseVisualStyleBackColor = true;
+            this.cmdRetour.Click += new System.EventHandler(this.clickRetour);
             // 
             // frmAffichage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1004, 521);
+            this.ClientSize = new System.Drawing.Size(1339, 641);
             this.Controls.Add(this.cmdRetour);
             this.Controls.Add(this.grpAffich);
             this.Controls.Add(this.cboChoixAffich);
@@ -214,6 +230,7 @@ namespace SAE2._1
             this.Controls.Add(this.lblChoixTrajet);
             this.Controls.Add(this.cboChoixLigneAff);
             this.Controls.Add(this.lblChoixLigne);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmAffichage";
             this.Text = "Affichage";
             this.Load += new System.EventHandler(this.frm_Load);
