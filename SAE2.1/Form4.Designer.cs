@@ -221,6 +221,7 @@ namespace SAE2._1
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmRecherche";
             this.Text = "Recherche";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmRecherche_FormClosed);
             this.grpRecherche.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

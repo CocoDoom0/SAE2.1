@@ -25,7 +25,14 @@ namespace SAE2._1
 
         private void cmdAffichage_Click(object sender, EventArgs e)
         {
+            frmAffichage f3 = new frmAffichage();
+            f3.ShowDialog();
+        }
 
+        private void cmdRecherche_Click(object sender, EventArgs e)
+        {
+            frmRecherche f4 = new frmRecherche();
+            f4.ShowDialog();
         }
     }
 }

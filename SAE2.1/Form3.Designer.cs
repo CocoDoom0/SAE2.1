@@ -61,7 +61,7 @@ namespace SAE2._1
             // 
             this.cboChoixLigneAff.FormattingEnabled = true;
             this.cboChoixLigneAff.Location = new System.Drawing.Point(93, 118);
-            this.cboChoixLigneAff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboChoixLigneAff.Margin = new System.Windows.Forms.Padding(4);
             this.cboChoixLigneAff.Name = "cboChoixLigneAff";
             this.cboChoixLigneAff.Size = new System.Drawing.Size(160, 24);
             this.cboChoixLigneAff.TabIndex = 2;
@@ -72,7 +72,7 @@ namespace SAE2._1
             // 
             this.cboChoixTrajet.FormattingEnabled = true;
             this.cboChoixTrajet.Location = new System.Drawing.Point(93, 194);
-            this.cboChoixTrajet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboChoixTrajet.Margin = new System.Windows.Forms.Padding(4);
             this.cboChoixTrajet.Name = "cboChoixTrajet";
             this.cboChoixTrajet.Size = new System.Drawing.Size(160, 24);
             this.cboChoixTrajet.TabIndex = 4;
@@ -93,7 +93,7 @@ namespace SAE2._1
             // 
             this.cboChoixAffich.FormattingEnabled = true;
             this.cboChoixAffich.Location = new System.Drawing.Point(93, 278);
-            this.cboChoixAffich.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboChoixAffich.Margin = new System.Windows.Forms.Padding(4);
             this.cboChoixAffich.Name = "cboChoixAffich";
             this.cboChoixAffich.Size = new System.Drawing.Size(160, 24);
             this.cboChoixAffich.TabIndex = 6;
@@ -119,9 +119,9 @@ namespace SAE2._1
             this.grpAffich.Controls.Add(this.lblNomArret);
             this.grpAffich.Controls.Add(this.lblNArret);
             this.grpAffich.Location = new System.Drawing.Point(349, 15);
-            this.grpAffich.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpAffich.Margin = new System.Windows.Forms.Padding(4);
             this.grpAffich.Name = "grpAffich";
-            this.grpAffich.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpAffich.Padding = new System.Windows.Forms.Padding(4);
             this.grpAffich.Size = new System.Drawing.Size(973, 505);
             this.grpAffich.TabIndex = 7;
             this.grpAffich.TabStop = false;
@@ -150,11 +150,11 @@ namespace SAE2._1
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.05198F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.05198F));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(8, 60);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 438F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 438F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 439F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 439F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(965, 437);
             this.tableLayoutPanel1.TabIndex = 8;
             this.tableLayoutPanel1.Visible = false;
@@ -175,7 +175,7 @@ namespace SAE2._1
             // 
             this.cmdValider.Enabled = false;
             this.cmdValider.Location = new System.Drawing.Point(865, 469);
-            this.cmdValider.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmdValider.Margin = new System.Windows.Forms.Padding(4);
             this.cmdValider.Name = "cmdValider";
             this.cmdValider.Size = new System.Drawing.Size(100, 28);
             this.cmdValider.TabIndex = 6;
@@ -209,7 +209,7 @@ namespace SAE2._1
             // cmdRetour
             // 
             this.cmdRetour.Location = new System.Drawing.Point(620, 545);
-            this.cmdRetour.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmdRetour.Margin = new System.Windows.Forms.Padding(4);
             this.cmdRetour.Name = "cmdRetour";
             this.cmdRetour.Size = new System.Drawing.Size(100, 28);
             this.cmdRetour.TabIndex = 8;
@@ -230,9 +230,10 @@ namespace SAE2._1
             this.Controls.Add(this.lblChoixTrajet);
             this.Controls.Add(this.cboChoixLigneAff);
             this.Controls.Add(this.lblChoixLigne);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmAffichage";
             this.Text = "Affichage";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmAffichage_FormClosed);
             this.Load += new System.EventHandler(this.frm_Load);
             this.grpAffich.ResumeLayout(false);
             this.ResumeLayout(false);

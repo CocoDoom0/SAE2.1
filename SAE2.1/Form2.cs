@@ -30,7 +30,7 @@ namespace SAE2._1
 
             if (!retour)
             {
-                MessageBox.Show("Veuillez rétablir la connexion réseau puis relancer le jeu", "Echec de connexion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Veuillez rétablir la connexion réseau puis relancer le logiciel", "Echec de connexion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 PbConnexion = true;
 
                 Application.Exit();
@@ -109,7 +109,6 @@ namespace SAE2._1
                     AjoutLabel(t.Horaire, ligne, 2);
                     AjoutLabel(t.ordrePassage.ToString(), ligne, 3);
                     ligne++;
-
                 }
                 AjoutLabel(" ", ligne, 0);
                 AjoutLabel(" ", ligne, 1);
@@ -121,7 +120,7 @@ namespace SAE2._1
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-
+            
         }
 
         private void cmdModif_Click(object sender, EventArgs e)
