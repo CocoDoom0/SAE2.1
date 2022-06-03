@@ -227,6 +227,7 @@ namespace SAE2._1
             foreach (Arret arret in arrets)
             {
                 cboChoixArret1.Items.Add(arret.nomArret);
+                cboNArretSave.Items.Add(arret.numArret);
             }
 
         }
@@ -261,13 +262,87 @@ namespace SAE2._1
 
         private void cboChoixArret_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            //if ($"{cboChoixArret1}{cmdValiderAjouter.Tag}")
         }
 
         private void clickRetour(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmdAdd_Click(object sender, EventArgs e)
+        {
+            if(cboChoixArret1.SelectedIndex==-1 || String.IsNullOrEmpty(txtbChoixDelai1.Text) == true)
+            {
+                MessageBox.Show("Merci de remplir les champs", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else{
+                tableLayoutPanel2.Visible = false;
+                cmdRemove.Enabled = true;              
+                Label lbl = new Label();
+                lbl.AutoSize = false;
+                lbl.Size = lblSetTaille0.Size;
+                lbl.Text = (string)cboChoixArret1.SelectedItem;
+                tableLayoutPanel2.Controls.Add(lbl, 0, Convert.ToInt32(lblIndex.Text));
+                Label lbl2 = new Label();
+                lbl2.AutoSize = false;
+                lbl2.Size = lblSetTaille1.Size;
+                lbl2.Text = txtbChoixDelai1.Text;
+                tableLayoutPanel2.Controls.Add(lbl2, 1, Convert.ToInt32(lblIndex.Text));
+                Label lbl3 = new Label();
+                lbl3.AutoSize = false;
+                lbl3.Size = lblSetTaille2.Size;
+                lbl3.Text = Convert.ToString(Convert.ToInt32(lblIndex.Text) + 1);
+                tableLayoutPanel2.Controls.Add(lbl3, 2, Convert.ToInt32(lblIndex.Text));
+                lblIndex.Text = Convert.ToString(Convert.ToInt32(lblIndex.Text) + 1);
+                tableLayoutPanel2.Visible = true;
+                cmdValiderAjt.Enabled = true;
+            }
+
+        }
+
+        private void cmdRemove_Click(object sender, EventArgs e)
+        {
+            lblIndex.Text = Convert.ToString(Convert.ToInt32(lblIndex.Text) - 1);
+            for(int i = 0; i < Convert.ToInt32(lblIndex.Text); i++)
+            {
+                tableLayoutPanelSave.Controls.Add(tableLayoutPanel2.GetControlFromPosition(0, i));
+                tableLayoutPanelSave.Controls.Add(tableLayoutPanel2.GetControlFromPosition(1, i));
+            }
+            tableLayoutPanel2.Controls.Clear();
+            for(int i = 0; i < Convert.ToInt32(lblIndex.Text) ; i++)
+            {
+                tableLayoutPanel2.Controls.Add(tableLayoutPanelSave.GetControlFromPosition(0, i));
+                tableLayoutPanel2.Controls.Add(tableLayoutPanelSave.GetControlFromPosition(1, i));
+                Label lbl = new Label();
+                lbl.AutoSize = false;
+                lbl.Size = lblSetTaille2.Size;
+                lbl.Text = Convert.ToString(i+1);
+                tableLayoutPanel2.Controls.Add(lbl);
+            }
+            if (Convert.ToInt32(lblIndex.Text) == 0)
+            {
+                cmdRemove.Enabled = false;
+                cmdValiderAjouter.Enabled = false;
+            }
+        }
+
+        private void cmdValiderAjout_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Voulez vous vraiment ajouter cette ligne ?", "Ajout", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+
+                for (int i = 0; i < Convert.ToInt32(lblIndex.Text); i++)
+                {
+                    string emplacement = string.Empty;
+                    for (int j = 0; j < cboChoixArret1.Items.Count; j++)
+                    {
+                        MessageBox.Show($"{cboChoixArret1.GetItemText(j+1)}");
+                    }
+                    //MessageBox.Show($"{cboLigneExistante.SelectedIndex+1},{cboTypeTrajetAjout.SelectedIndex+1}, {Convert.ToInt32(cboNArretSave.GetItemText(Convert.ToInt32(emplacement)))},{Convert.ToString(tableLayoutPanel2.GetControlFromPosition(2, i))},{i}", "Erreur de suppresion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //BDD.AddLigne(cboLigneExistante.SelectedIndex+1,cboTypeTrajetAjout.SelectedIndex+1, Convert.ToInt32(cboNArretSave.GetItemText(Convert.ToInt32(emplacement))),Convert.ToString(tableLayoutPanel2.GetControlFromPosition(2, i)),i);
+                }
+            }
         }
     }
 
