@@ -277,17 +277,23 @@ namespace SAE2._1
             }
             else{
                 tableLayoutPanel2.Visible = false;
-                cmdRemove.Enabled = true;              
+                cmdRemove.Enabled = true; 
+                
                 Label lbl = new Label();
                 lbl.AutoSize = false;
                 lbl.Size = lblSetTaille0.Size;
                 lbl.Text = (string)cboChoixArret1.SelectedItem;
                 tableLayoutPanel2.Controls.Add(lbl, 0, Convert.ToInt32(lblIndex.Text));
+                cboSaveNomArret.Items.Add(cboChoixArret1.SelectedItem);
+                cboSaveNumArret.Items.Add(cboNArretSave.Items[cboChoixArret1.SelectedIndex]);
+
                 Label lbl2 = new Label();
                 lbl2.AutoSize = false;
                 lbl2.Size = lblSetTaille1.Size;
                 lbl2.Text = txtbChoixDelai1.Text;
+                cboSaveDelai.Items.Add(txtbChoixDelai1.Text);
                 tableLayoutPanel2.Controls.Add(lbl2, 1, Convert.ToInt32(lblIndex.Text));
+
                 Label lbl3 = new Label();
                 lbl3.AutoSize = false;
                 lbl3.Size = lblSetTaille2.Size;
@@ -302,28 +308,38 @@ namespace SAE2._1
 
         private void cmdRemove_Click(object sender, EventArgs e)
         {
+            tableLayoutPanel2.Visible = false;
             lblIndex.Text = Convert.ToString(Convert.ToInt32(lblIndex.Text) - 1);
-            for(int i = 0; i < Convert.ToInt32(lblIndex.Text); i++)
-            {
-                tableLayoutPanelSave.Controls.Add(tableLayoutPanel2.GetControlFromPosition(0, i));
-                tableLayoutPanelSave.Controls.Add(tableLayoutPanel2.GetControlFromPosition(1, i));
-            }
+            cboSaveDelai.Items.RemoveAt(Convert.ToInt32(lblIndex.Text));
+            cboSaveNomArret.Items.RemoveAt(Convert.ToInt32(lblIndex.Text));
+            cboSaveNumArret.Items.RemoveAt(Convert.ToInt32(lblIndex.Text));
             tableLayoutPanel2.Controls.Clear();
             for(int i = 0; i < Convert.ToInt32(lblIndex.Text) ; i++)
             {
-                tableLayoutPanel2.Controls.Add(tableLayoutPanelSave.GetControlFromPosition(0, i));
-                tableLayoutPanel2.Controls.Add(tableLayoutPanelSave.GetControlFromPosition(1, i));
-                Label lbl = new Label();
-                lbl.AutoSize = false;
-                lbl.Size = lblSetTaille2.Size;
-                lbl.Text = Convert.ToString(i+1);
-                tableLayoutPanel2.Controls.Add(lbl);
+                Label lbl1 = new Label();
+                lbl1.AutoSize = false;
+                lbl1.Size = lblSetTaille0.Size;
+                lbl1.Text = (string)cboSaveNomArret.Items[i];
+                tableLayoutPanel2.Controls.Add(lbl1);
+
+                Label lbl2 = new Label();
+                lbl2.AutoSize = false;
+                lbl2.Size = lblSetTaille1.Size;
+                lbl2.Text = (string)cboSaveDelai.Items[i];
+                tableLayoutPanel2.Controls.Add(lbl2);
+
+                Label lbl3 = new Label();
+                lbl3.AutoSize = false;
+                lbl3.Size = lblSetTaille2.Size;
+                lbl3.Text = Convert.ToString(i+1);
+                tableLayoutPanel2.Controls.Add(lbl3);
             }
             if (Convert.ToInt32(lblIndex.Text) == 0)
             {
                 cmdRemove.Enabled = false;
-                cmdValiderAjouter.Enabled = false;
+                cmdValiderAjt.Enabled = false;
             }
+            tableLayoutPanel2.Visible = true;
         }
 
         private void cmdValiderAjout_Click(object sender, EventArgs e)

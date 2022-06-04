@@ -34,18 +34,31 @@ namespace SAE2._1
             this.cmdSupp = new System.Windows.Forms.Button();
             this.cmdAjouter = new System.Windows.Forms.Button();
             this.grpModif = new System.Windows.Forms.GroupBox();
-            this.grpAjouter = new System.Windows.Forms.GroupBox();
-            this.cmdAnnulerAjt = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblResumerAjout = new System.Windows.Forms.Label();
-            this.cmdValiderAjt = new System.Windows.Forms.Button();
             this.lblOrdre = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblHoraire = new System.Windows.Forms.Label();
             this.cmdValider = new System.Windows.Forms.Button();
             this.lblNomArret = new System.Windows.Forms.Label();
             this.lblNArret = new System.Windows.Forms.Label();
+            this.grpAjouter = new System.Windows.Forms.GroupBox();
+            this.lblSaveIndex = new System.Windows.Forms.Label();
+            this.cboNArretSave = new System.Windows.Forms.ComboBox();
+            this.lblChoixDelaiAjt = new System.Windows.Forms.Label();
+            this.lblChoixArretAjt = new System.Windows.Forms.Label();
+            this.lblIndex = new System.Windows.Forms.Label();
+            this.lblSetTaille0 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblSetTaille1 = new System.Windows.Forms.Label();
+            this.cmdRemove = new System.Windows.Forms.Button();
+            this.lblSetTaille2 = new System.Windows.Forms.Label();
+            this.cmdAdd = new System.Windows.Forms.Button();
+            this.cboChoixArret1 = new System.Windows.Forms.ComboBox();
+            this.txtbChoixDelai1 = new System.Windows.Forms.TextBox();
+            this.cmdAnnulerAjt = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblResumerAjout = new System.Windows.Forms.Label();
+            this.cmdValiderAjt = new System.Windows.Forms.Button();
             this.cmdRetour = new System.Windows.Forms.Button();
             this.cboChoixLigneModif = new System.Windows.Forms.ComboBox();
             this.cboChoixTrajet = new System.Windows.Forms.ComboBox();
@@ -59,20 +72,9 @@ namespace SAE2._1
             this.cboTypeTrajetAjout = new System.Windows.Forms.ComboBox();
             this.txtbNvlLigne = new System.Windows.Forms.TextBox();
             this.cboLigneExistante = new System.Windows.Forms.ComboBox();
-            this.cboChoixArret1 = new System.Windows.Forms.ComboBox();
-            this.txtbChoixDelai1 = new System.Windows.Forms.TextBox();
-            this.cmdRemove = new System.Windows.Forms.Button();
-            this.cmdAdd = new System.Windows.Forms.Button();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblSetTaille0 = new System.Windows.Forms.Label();
-            this.lblSetTaille1 = new System.Windows.Forms.Label();
-            this.lblSetTaille2 = new System.Windows.Forms.Label();
-            this.lblIndex = new System.Windows.Forms.Label();
-            this.tableLayoutPanelSave = new System.Windows.Forms.TableLayoutPanel();
-            this.lblChoixArretAjt = new System.Windows.Forms.Label();
-            this.lblChoixDelaiAjt = new System.Windows.Forms.Label();
-            this.cboNArretSave = new System.Windows.Forms.ComboBox();
-            this.lblSaveIndex = new System.Windows.Forms.Label();
+            this.cboSaveNumArret = new System.Windows.Forms.ComboBox();
+            this.cboSaveNomArret = new System.Windows.Forms.ComboBox();
+            this.cboSaveDelai = new System.Windows.Forms.ComboBox();
             this.grpModif.SuspendLayout();
             this.grpAjouter.SuspendLayout();
             this.grpPreAjouter.SuspendLayout();
@@ -135,82 +137,6 @@ namespace SAE2._1
             this.grpModif.TabStop = false;
             this.grpModif.Text = "Modification :";
             // 
-            // grpAjouter
-            // 
-            this.grpAjouter.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.grpAjouter.Controls.Add(this.lblSaveIndex);
-            this.grpAjouter.Controls.Add(this.cboNArretSave);
-            this.grpAjouter.Controls.Add(this.lblChoixDelaiAjt);
-            this.grpAjouter.Controls.Add(this.lblChoixArretAjt);
-            this.grpAjouter.Controls.Add(this.tableLayoutPanelSave);
-            this.grpAjouter.Controls.Add(this.lblIndex);
-            this.grpAjouter.Controls.Add(this.lblSetTaille0);
-            this.grpAjouter.Controls.Add(this.tableLayoutPanel2);
-            this.grpAjouter.Controls.Add(this.lblSetTaille1);
-            this.grpAjouter.Controls.Add(this.cmdRemove);
-            this.grpAjouter.Controls.Add(this.lblSetTaille2);
-            this.grpAjouter.Controls.Add(this.cmdAdd);
-            this.grpAjouter.Controls.Add(this.cboChoixArret1);
-            this.grpAjouter.Controls.Add(this.txtbChoixDelai1);
-            this.grpAjouter.Controls.Add(this.cmdAnnulerAjt);
-            this.grpAjouter.Controls.Add(this.label1);
-            this.grpAjouter.Controls.Add(this.textBox1);
-            this.grpAjouter.Controls.Add(this.lblResumerAjout);
-            this.grpAjouter.Controls.Add(this.cmdValiderAjt);
-            this.grpAjouter.Location = new System.Drawing.Point(262, 12);
-            this.grpAjouter.Name = "grpAjouter";
-            this.grpAjouter.Size = new System.Drawing.Size(730, 410);
-            this.grpAjouter.TabIndex = 9;
-            this.grpAjouter.TabStop = false;
-            this.grpAjouter.Text = "Ajouter :";
-            this.grpAjouter.Visible = false;
-            // 
-            // cmdAnnulerAjt
-            // 
-            this.cmdAnnulerAjt.Location = new System.Drawing.Point(568, 381);
-            this.cmdAnnulerAjt.Name = "cmdAnnulerAjt";
-            this.cmdAnnulerAjt.Size = new System.Drawing.Size(75, 23);
-            this.cmdAnnulerAjt.TabIndex = 19;
-            this.cmdAnnulerAjt.Text = "Annuler";
-            this.cmdAnnulerAjt.UseVisualStyleBackColor = true;
-            this.cmdAnnulerAjt.Click += new System.EventHandler(this.cmdAnnuler_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 46);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Délai départ";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(13, 60);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 11;
-            // 
-            // lblResumerAjout
-            // 
-            this.lblResumerAjout.AutoSize = true;
-            this.lblResumerAjout.Location = new System.Drawing.Point(10, 23);
-            this.lblResumerAjout.Name = "lblResumerAjout";
-            this.lblResumerAjout.Size = new System.Drawing.Size(0, 13);
-            this.lblResumerAjout.TabIndex = 10;
-            // 
-            // cmdValiderAjt
-            // 
-            this.cmdValiderAjt.Enabled = false;
-            this.cmdValiderAjt.Location = new System.Drawing.Point(649, 381);
-            this.cmdValiderAjt.Name = "cmdValiderAjt";
-            this.cmdValiderAjt.Size = new System.Drawing.Size(75, 23);
-            this.cmdValiderAjt.TabIndex = 6;
-            this.cmdValiderAjt.Tag = "1";
-            this.cmdValiderAjt.Text = "Valider";
-            this.cmdValiderAjt.UseVisualStyleBackColor = true;
-            this.cmdValiderAjt.Click += new System.EventHandler(this.cmdValiderAjout_Click);
-            // 
             // lblOrdre
             // 
             this.lblOrdre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -235,8 +161,8 @@ namespace SAE2._1
             this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 49);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 357F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 357F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 358F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 358F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(724, 355);
             this.tableLayoutPanel1.TabIndex = 8;
             this.tableLayoutPanel1.Visible = false;
@@ -284,6 +210,215 @@ namespace SAE2._1
             this.lblNArret.Text = "N°Arret";
             this.lblNArret.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblNArret.Visible = false;
+            // 
+            // grpAjouter
+            // 
+            this.grpAjouter.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.grpAjouter.Controls.Add(this.cboSaveDelai);
+            this.grpAjouter.Controls.Add(this.cboSaveNomArret);
+            this.grpAjouter.Controls.Add(this.cboSaveNumArret);
+            this.grpAjouter.Controls.Add(this.lblSaveIndex);
+            this.grpAjouter.Controls.Add(this.cboNArretSave);
+            this.grpAjouter.Controls.Add(this.lblChoixDelaiAjt);
+            this.grpAjouter.Controls.Add(this.lblChoixArretAjt);
+            this.grpAjouter.Controls.Add(this.lblIndex);
+            this.grpAjouter.Controls.Add(this.lblSetTaille0);
+            this.grpAjouter.Controls.Add(this.tableLayoutPanel2);
+            this.grpAjouter.Controls.Add(this.lblSetTaille1);
+            this.grpAjouter.Controls.Add(this.cmdRemove);
+            this.grpAjouter.Controls.Add(this.lblSetTaille2);
+            this.grpAjouter.Controls.Add(this.cmdAdd);
+            this.grpAjouter.Controls.Add(this.cboChoixArret1);
+            this.grpAjouter.Controls.Add(this.txtbChoixDelai1);
+            this.grpAjouter.Controls.Add(this.cmdAnnulerAjt);
+            this.grpAjouter.Controls.Add(this.label1);
+            this.grpAjouter.Controls.Add(this.textBox1);
+            this.grpAjouter.Controls.Add(this.lblResumerAjout);
+            this.grpAjouter.Controls.Add(this.cmdValiderAjt);
+            this.grpAjouter.Location = new System.Drawing.Point(262, 12);
+            this.grpAjouter.Name = "grpAjouter";
+            this.grpAjouter.Size = new System.Drawing.Size(730, 410);
+            this.grpAjouter.TabIndex = 9;
+            this.grpAjouter.TabStop = false;
+            this.grpAjouter.Text = "Ajouter :";
+            this.grpAjouter.Visible = false;
+            // 
+            // lblSaveIndex
+            // 
+            this.lblSaveIndex.AutoSize = true;
+            this.lblSaveIndex.Location = new System.Drawing.Point(515, 105);
+            this.lblSaveIndex.Name = "lblSaveIndex";
+            this.lblSaveIndex.Size = new System.Drawing.Size(10, 13);
+            this.lblSaveIndex.TabIndex = 26;
+            this.lblSaveIndex.Text = ".";
+            this.lblSaveIndex.Visible = false;
+            // 
+            // cboNArretSave
+            // 
+            this.cboNArretSave.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboNArretSave.FormattingEnabled = true;
+            this.cboNArretSave.Location = new System.Drawing.Point(162, 20);
+            this.cboNArretSave.Name = "cboNArretSave";
+            this.cboNArretSave.Size = new System.Drawing.Size(175, 21);
+            this.cboNArretSave.TabIndex = 25;
+            this.cboNArretSave.Visible = false;
+            // 
+            // lblChoixDelaiAjt
+            // 
+            this.lblChoixDelaiAjt.AutoSize = true;
+            this.lblChoixDelaiAjt.Location = new System.Drawing.Point(341, 43);
+            this.lblChoixDelaiAjt.Name = "lblChoixDelaiAjt";
+            this.lblChoixDelaiAjt.Size = new System.Drawing.Size(31, 13);
+            this.lblChoixDelaiAjt.TabIndex = 24;
+            this.lblChoixDelaiAjt.Text = "Delai";
+            // 
+            // lblChoixArretAjt
+            // 
+            this.lblChoixArretAjt.AutoSize = true;
+            this.lblChoixArretAjt.Location = new System.Drawing.Point(159, 43);
+            this.lblChoixArretAjt.Name = "lblChoixArretAjt";
+            this.lblChoixArretAjt.Size = new System.Drawing.Size(29, 13);
+            this.lblChoixArretAjt.TabIndex = 19;
+            this.lblChoixArretAjt.Text = "Arret";
+            // 
+            // lblIndex
+            // 
+            this.lblIndex.Location = new System.Drawing.Point(515, 91);
+            this.lblIndex.Name = "lblIndex";
+            this.lblIndex.Size = new System.Drawing.Size(89, 18);
+            this.lblIndex.TabIndex = 23;
+            this.lblIndex.Text = "0";
+            this.lblIndex.Visible = false;
+            // 
+            // lblSetTaille0
+            // 
+            this.lblSetTaille0.Location = new System.Drawing.Point(515, 23);
+            this.lblSetTaille0.Name = "lblSetTaille0";
+            this.lblSetTaille0.Size = new System.Drawing.Size(171, 18);
+            this.lblSetTaille0.TabIndex = 21;
+            this.lblSetTaille0.Text = "lblSetTaille0";
+            this.lblSetTaille0.Visible = false;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel2.AutoScroll = true;
+            this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.7482F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.2518F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(162, 84);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(300, 320);
+            this.tableLayoutPanel2.TabIndex = 20;
+            // 
+            // lblSetTaille1
+            // 
+            this.lblSetTaille1.Location = new System.Drawing.Point(515, 46);
+            this.lblSetTaille1.Name = "lblSetTaille1";
+            this.lblSetTaille1.Size = new System.Drawing.Size(100, 18);
+            this.lblSetTaille1.TabIndex = 0;
+            this.lblSetTaille1.Text = "lblSetTaille1";
+            this.lblSetTaille1.Visible = false;
+            // 
+            // cmdRemove
+            // 
+            this.cmdRemove.Enabled = false;
+            this.cmdRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.cmdRemove.Location = new System.Drawing.Point(444, 58);
+            this.cmdRemove.Name = "cmdRemove";
+            this.cmdRemove.Size = new System.Drawing.Size(18, 22);
+            this.cmdRemove.TabIndex = 17;
+            this.cmdRemove.Text = "-";
+            this.cmdRemove.UseVisualStyleBackColor = true;
+            this.cmdRemove.Click += new System.EventHandler(this.cmdRemove_Click);
+            // 
+            // lblSetTaille2
+            // 
+            this.lblSetTaille2.Location = new System.Drawing.Point(515, 73);
+            this.lblSetTaille2.Name = "lblSetTaille2";
+            this.lblSetTaille2.Size = new System.Drawing.Size(89, 18);
+            this.lblSetTaille2.TabIndex = 22;
+            this.lblSetTaille2.Text = "lblSetTaille2";
+            this.lblSetTaille2.Visible = false;
+            // 
+            // cmdAdd
+            // 
+            this.cmdAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.cmdAdd.Location = new System.Drawing.Point(420, 58);
+            this.cmdAdd.Name = "cmdAdd";
+            this.cmdAdd.Size = new System.Drawing.Size(18, 22);
+            this.cmdAdd.TabIndex = 16;
+            this.cmdAdd.Text = "+";
+            this.cmdAdd.UseVisualStyleBackColor = true;
+            this.cmdAdd.Click += new System.EventHandler(this.cmdAdd_Click);
+            // 
+            // cboChoixArret1
+            // 
+            this.cboChoixArret1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboChoixArret1.FormattingEnabled = true;
+            this.cboChoixArret1.Location = new System.Drawing.Point(162, 59);
+            this.cboChoixArret1.Name = "cboChoixArret1";
+            this.cboChoixArret1.Size = new System.Drawing.Size(175, 21);
+            this.cboChoixArret1.TabIndex = 13;
+            // 
+            // txtbChoixDelai1
+            // 
+            this.txtbChoixDelai1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbChoixDelai1.Location = new System.Drawing.Point(344, 59);
+            this.txtbChoixDelai1.Name = "txtbChoixDelai1";
+            this.txtbChoixDelai1.Size = new System.Drawing.Size(70, 21);
+            this.txtbChoixDelai1.TabIndex = 14;
+            this.txtbChoixDelai1.Text = "00:00";
+            // 
+            // cmdAnnulerAjt
+            // 
+            this.cmdAnnulerAjt.Location = new System.Drawing.Point(568, 381);
+            this.cmdAnnulerAjt.Name = "cmdAnnulerAjt";
+            this.cmdAnnulerAjt.Size = new System.Drawing.Size(75, 23);
+            this.cmdAnnulerAjt.TabIndex = 19;
+            this.cmdAnnulerAjt.Text = "Annuler";
+            this.cmdAnnulerAjt.UseVisualStyleBackColor = true;
+            this.cmdAnnulerAjt.Click += new System.EventHandler(this.cmdAnnuler_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(28, 46);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Délai départ";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(13, 60);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 11;
+            // 
+            // lblResumerAjout
+            // 
+            this.lblResumerAjout.AutoSize = true;
+            this.lblResumerAjout.Location = new System.Drawing.Point(10, 23);
+            this.lblResumerAjout.Name = "lblResumerAjout";
+            this.lblResumerAjout.Size = new System.Drawing.Size(0, 13);
+            this.lblResumerAjout.TabIndex = 10;
+            // 
+            // cmdValiderAjt
+            // 
+            this.cmdValiderAjt.Enabled = false;
+            this.cmdValiderAjt.Location = new System.Drawing.Point(649, 381);
+            this.cmdValiderAjt.Name = "cmdValiderAjt";
+            this.cmdValiderAjt.Size = new System.Drawing.Size(75, 23);
+            this.cmdValiderAjt.TabIndex = 6;
+            this.cmdValiderAjt.Tag = "1";
+            this.cmdValiderAjt.Text = "Valider";
+            this.cmdValiderAjt.UseVisualStyleBackColor = true;
+            this.cmdValiderAjt.Click += new System.EventHandler(this.cmdValiderAjout_Click);
             // 
             // cmdRetour
             // 
@@ -426,152 +561,32 @@ namespace SAE2._1
             this.cboLigneExistante.Size = new System.Drawing.Size(121, 21);
             this.cboLigneExistante.TabIndex = 13;
             // 
-            // cboChoixArret1
+            // cboSaveNumArret
             // 
-            this.cboChoixArret1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboChoixArret1.FormattingEnabled = true;
-            this.cboChoixArret1.Location = new System.Drawing.Point(162, 59);
-            this.cboChoixArret1.Name = "cboChoixArret1";
-            this.cboChoixArret1.Size = new System.Drawing.Size(175, 21);
-            this.cboChoixArret1.TabIndex = 13;
+            this.cboSaveNumArret.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSaveNumArret.FormattingEnabled = true;
+            this.cboSaveNumArret.Location = new System.Drawing.Point(511, 150);
+            this.cboSaveNumArret.Name = "cboSaveNumArret";
+            this.cboSaveNumArret.Size = new System.Drawing.Size(175, 21);
+            this.cboSaveNumArret.TabIndex = 27;
             // 
-            // txtbChoixDelai1
+            // cboSaveNomArret
             // 
-            this.txtbChoixDelai1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbChoixDelai1.Location = new System.Drawing.Point(344, 59);
-            this.txtbChoixDelai1.Name = "txtbChoixDelai1";
-            this.txtbChoixDelai1.Size = new System.Drawing.Size(70, 21);
-            this.txtbChoixDelai1.TabIndex = 14;
-            this.txtbChoixDelai1.Text = "00:00";
+            this.cboSaveNomArret.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSaveNomArret.FormattingEnabled = true;
+            this.cboSaveNomArret.Location = new System.Drawing.Point(511, 177);
+            this.cboSaveNomArret.Name = "cboSaveNomArret";
+            this.cboSaveNomArret.Size = new System.Drawing.Size(175, 21);
+            this.cboSaveNomArret.TabIndex = 28;
             // 
-            // cmdRemove
+            // cboSaveDelai
             // 
-            this.cmdRemove.Enabled = false;
-            this.cmdRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.cmdRemove.Location = new System.Drawing.Point(444, 58);
-            this.cmdRemove.Name = "cmdRemove";
-            this.cmdRemove.Size = new System.Drawing.Size(18, 22);
-            this.cmdRemove.TabIndex = 17;
-            this.cmdRemove.Text = "-";
-            this.cmdRemove.UseVisualStyleBackColor = true;
-            this.cmdRemove.Click += new System.EventHandler(this.cmdRemove_Click);
-            // 
-            // cmdAdd
-            // 
-            this.cmdAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.cmdAdd.Location = new System.Drawing.Point(420, 58);
-            this.cmdAdd.Name = "cmdAdd";
-            this.cmdAdd.Size = new System.Drawing.Size(18, 22);
-            this.cmdAdd.TabIndex = 16;
-            this.cmdAdd.Text = "+";
-            this.cmdAdd.UseVisualStyleBackColor = true;
-            this.cmdAdd.Click += new System.EventHandler(this.cmdAdd_Click);
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tableLayoutPanel2.AutoScroll = true;
-            this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.7482F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.2518F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(162, 84);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(300, 320);
-            this.tableLayoutPanel2.TabIndex = 20;
-            // 
-            // lblSetTaille0
-            // 
-            this.lblSetTaille0.Location = new System.Drawing.Point(515, 23);
-            this.lblSetTaille0.Name = "lblSetTaille0";
-            this.lblSetTaille0.Size = new System.Drawing.Size(171, 18);
-            this.lblSetTaille0.TabIndex = 21;
-            this.lblSetTaille0.Text = "lblSetTaille0";
-            this.lblSetTaille0.Visible = false;
-            // 
-            // lblSetTaille1
-            // 
-            this.lblSetTaille1.Location = new System.Drawing.Point(515, 46);
-            this.lblSetTaille1.Name = "lblSetTaille1";
-            this.lblSetTaille1.Size = new System.Drawing.Size(100, 18);
-            this.lblSetTaille1.TabIndex = 0;
-            this.lblSetTaille1.Text = "lblSetTaille1";
-            this.lblSetTaille1.Visible = false;
-            // 
-            // lblSetTaille2
-            // 
-            this.lblSetTaille2.Location = new System.Drawing.Point(515, 73);
-            this.lblSetTaille2.Name = "lblSetTaille2";
-            this.lblSetTaille2.Size = new System.Drawing.Size(89, 18);
-            this.lblSetTaille2.TabIndex = 22;
-            this.lblSetTaille2.Text = "lblSetTaille2";
-            this.lblSetTaille2.Visible = false;
-            // 
-            // lblIndex
-            // 
-            this.lblIndex.Location = new System.Drawing.Point(515, 91);
-            this.lblIndex.Name = "lblIndex";
-            this.lblIndex.Size = new System.Drawing.Size(89, 18);
-            this.lblIndex.TabIndex = 23;
-            this.lblIndex.Text = "0";
-            this.lblIndex.Visible = false;
-            // 
-            // tableLayoutPanelSave
-            // 
-            this.tableLayoutPanelSave.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tableLayoutPanelSave.AutoScroll = true;
-            this.tableLayoutPanelSave.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanelSave.ColumnCount = 2;
-            this.tableLayoutPanelSave.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.7482F));
-            this.tableLayoutPanelSave.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tableLayoutPanelSave.Location = new System.Drawing.Point(31, 105);
-            this.tableLayoutPanelSave.Name = "tableLayoutPanelSave";
-            this.tableLayoutPanelSave.RowCount = 1;
-            this.tableLayoutPanelSave.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelSave.Size = new System.Drawing.Size(94, 121);
-            this.tableLayoutPanelSave.TabIndex = 21;
-            this.tableLayoutPanelSave.Visible = false;
-            // 
-            // lblChoixArretAjt
-            // 
-            this.lblChoixArretAjt.AutoSize = true;
-            this.lblChoixArretAjt.Location = new System.Drawing.Point(159, 43);
-            this.lblChoixArretAjt.Name = "lblChoixArretAjt";
-            this.lblChoixArretAjt.Size = new System.Drawing.Size(29, 13);
-            this.lblChoixArretAjt.TabIndex = 19;
-            this.lblChoixArretAjt.Text = "Arret";
-            // 
-            // lblChoixDelaiAjt
-            // 
-            this.lblChoixDelaiAjt.AutoSize = true;
-            this.lblChoixDelaiAjt.Location = new System.Drawing.Point(341, 43);
-            this.lblChoixDelaiAjt.Name = "lblChoixDelaiAjt";
-            this.lblChoixDelaiAjt.Size = new System.Drawing.Size(31, 13);
-            this.lblChoixDelaiAjt.TabIndex = 24;
-            this.lblChoixDelaiAjt.Text = "Delai";
-            // 
-            // cboNArretSave
-            // 
-            this.cboNArretSave.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboNArretSave.FormattingEnabled = true;
-            this.cboNArretSave.Location = new System.Drawing.Point(162, 20);
-            this.cboNArretSave.Name = "cboNArretSave";
-            this.cboNArretSave.Size = new System.Drawing.Size(175, 21);
-            this.cboNArretSave.TabIndex = 25;
-            this.cboNArretSave.Visible = false;
-            // 
-            // lblSaveIndex
-            // 
-            this.lblSaveIndex.AutoSize = true;
-            this.lblSaveIndex.Location = new System.Drawing.Point(515, 105);
-            this.lblSaveIndex.Name = "lblSaveIndex";
-            this.lblSaveIndex.Size = new System.Drawing.Size(10, 13);
-            this.lblSaveIndex.TabIndex = 26;
-            this.lblSaveIndex.Text = ".";
-            this.lblSaveIndex.Visible = false;
+            this.cboSaveDelai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSaveDelai.FormattingEnabled = true;
+            this.cboSaveDelai.Location = new System.Drawing.Point(511, 204);
+            this.cboSaveDelai.Name = "cboSaveDelai";
+            this.cboSaveDelai.Size = new System.Drawing.Size(175, 21);
+            this.cboSaveDelai.TabIndex = 29;
             // 
             // frmModification
             // 
@@ -646,10 +661,12 @@ namespace SAE2._1
         private System.Windows.Forms.Label lblSetTaille1;
         private System.Windows.Forms.Label lblSetTaille2;
         private System.Windows.Forms.Label lblIndex;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelSave;
         private System.Windows.Forms.Label lblChoixDelaiAjt;
         private System.Windows.Forms.Label lblChoixArretAjt;
         private System.Windows.Forms.ComboBox cboNArretSave;
         private System.Windows.Forms.Label lblSaveIndex;
+        private System.Windows.Forms.ComboBox cboSaveDelai;
+        private System.Windows.Forms.ComboBox cboSaveNomArret;
+        private System.Windows.Forms.ComboBox cboSaveNumArret;
     }
 }
