@@ -93,6 +93,11 @@ namespace SAE2._1
 
         private void cboChoixLigneModif_SelectedIndexChanged(object sender, EventArgs e)
         {
+            AjoutTable();
+        }
+
+        private void AjoutTable()
+        {
             if (cboChoixTrajet.SelectedIndex != -1 && cboChoixLigneModif.SelectedIndex != -1)
             {
                 ChangeVisible(false);
@@ -117,7 +122,6 @@ namespace SAE2._1
                 ChangeVisible(true);
             }
         }
-
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
             
@@ -250,14 +254,24 @@ namespace SAE2._1
 
         private void cmdAnnuler_Click(object sender, EventArgs e)
         {
+            CloseGrpAjout();
+        }
+        private void CloseGrpAjout()
+        {
             grpAjouter.Visible = false;
+            cmdValiderAjt.Enabled = false;
             grpPreAjouter.Visible = false;
+            tableLayoutPanel2.Controls.Clear();
+            cboSaveDelai.Items.Clear();
+            cboSaveNomArret.Items.Clear();
+            cboSaveNumArret.Items.Clear();
+            lblIndex.Text = "0";
             cmdAjouter.Enabled = true;
-            cmdModif.Enabled = true;
-            cmdSupp.Enabled = true;
+            cmdModif.Enabled = false;
+            cmdSupp.Enabled = false;
             cboChoixLigneModif.Enabled = true;
             cboChoixTrajet.Enabled = true;
-            cboChoixLigneModif_SelectedIndexChanged(0, e);
+            AjoutTable();
         }
 
         private void cboChoixArret_SelectedIndexChanged(object sender, EventArgs e)
@@ -350,14 +364,14 @@ namespace SAE2._1
 
                 for (int i = 0; i < Convert.ToInt32(lblIndex.Text); i++)
                 {
-                    string emplacement = string.Empty;
-                    for (int j = 0; j < cboChoixArret1.Items.Count; j++)
+                    int id = BDD.AddLigne(cboLigneExistante.SelectedIndex + 1, cboTypeTrajetAjout.SelectedIndex + 1, Convert.ToInt32(cboSaveNumArret.Items[i]), Convert.ToString(cboSaveDelai.Items[i]),i+1);
+                    if (id == -1)
                     {
-                        MessageBox.Show($"{cboChoixArret1.GetItemText(j+1)}");
+                        MessageBox.Show($"{cboLigneExistante.SelectedIndex + 1} | {cboTypeTrajetAjout.SelectedIndex + 1} | {Convert.ToInt32(cboSaveNumArret.Items[i])} | {Convert.ToString(cboSaveDelai.Items[i])} | {i+1}");
                     }
-                    //MessageBox.Show($"{cboLigneExistante.SelectedIndex+1},{cboTypeTrajetAjout.SelectedIndex+1}, {Convert.ToInt32(cboNArretSave.GetItemText(Convert.ToInt32(emplacement)))},{Convert.ToString(tableLayoutPanel2.GetControlFromPosition(2, i))},{i}", "Erreur de suppresion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    //BDD.AddLigne(cboLigneExistante.SelectedIndex+1,cboTypeTrajetAjout.SelectedIndex+1, Convert.ToInt32(cboNArretSave.GetItemText(Convert.ToInt32(emplacement))),Convert.ToString(tableLayoutPanel2.GetControlFromPosition(2, i)),i);
+                    
                 }
+                CloseGrpAjout();
             }
         }
     }

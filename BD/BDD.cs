@@ -226,7 +226,7 @@ namespace BD
         public static int AddLigne(int nLigne,int nTrajet,int nArret,string delai,int numPassage)
         {
             int retour = -1;
-            string sql = $"INSERT INTO PASSAGE (N_Ligne,N_Trajet,N_Arret,Delais,OrdreDePassage) VALUES ({nLigne},{nTrajet},{nArret},{delai},{numPassage}";
+            string sql = $"INSERT INTO PASSAGE (N_Ligne,N_Trajet,N_Arret,DelaisArret,OrdrePassage) VALUES ({nLigne},{nTrajet},{nArret},'{delai}',{numPassage});";
             MySqlCommand cmd = new MySqlCommand(sql, maCnx);
             try
             {

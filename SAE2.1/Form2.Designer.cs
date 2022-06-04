@@ -395,10 +395,12 @@ namespace SAE2._1
             // 
             // textBox1
             // 
+            this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(13, 60);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 11;
+            this.textBox1.Text = "W.I.P";
             // 
             // lblResumerAjout
             // 
