@@ -27,5 +27,10 @@ namespace SAE2._1
         {
             BDD.FermerConnexion();
         }
+
+        private void frmRecherche_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -75,6 +75,7 @@ namespace SAE2._1
         {
             if (cboChoixTrajet.SelectedIndex != -1 && cboChoixLigneAff.SelectedIndex != -1)
             {
+                tableLayoutPanel1.Visible = false;
                 tableLayoutPanel1.Controls.Clear();
                 tableLayoutPanel1.RowStyles.Clear();
                 List<Table> lesTables;
@@ -93,6 +94,7 @@ namespace SAE2._1
                 AjoutLabel(" ", ligne, 1);
                 AjoutLabel(" ", ligne, 2);
                 AjoutLabel(" ", ligne, 3);
+                tableLayoutPanel1.Visible = true;
             }
         }
 

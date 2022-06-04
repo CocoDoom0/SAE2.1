@@ -122,15 +122,6 @@ namespace SAE2._1
                 ChangeVisible(true);
             }
         }
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
-        private void cmdModif_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void cmdSupp_Click(object sender, EventArgs e)
         {

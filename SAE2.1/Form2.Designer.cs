@@ -93,20 +93,20 @@ namespace SAE2._1
             // cmdModif
             // 
             this.cmdModif.Enabled = false;
-            this.cmdModif.Location = new System.Drawing.Point(50, 187);
+            this.cmdModif.Location = new System.Drawing.Point(12, 12);
             this.cmdModif.Name = "cmdModif";
             this.cmdModif.Size = new System.Drawing.Size(75, 23);
             this.cmdModif.TabIndex = 2;
             this.cmdModif.Text = "Modifier";
             this.cmdModif.UseVisualStyleBackColor = true;
-            this.cmdModif.Click += new System.EventHandler(this.cmdModif_Click);
+            this.cmdModif.Visible = false;
             // 
             // cmdSupp
             // 
             this.cmdSupp.Enabled = false;
-            this.cmdSupp.Location = new System.Drawing.Point(131, 187);
+            this.cmdSupp.Location = new System.Drawing.Point(52, 187);
             this.cmdSupp.Name = "cmdSupp";
-            this.cmdSupp.Size = new System.Drawing.Size(75, 23);
+            this.cmdSupp.Size = new System.Drawing.Size(154, 23);
             this.cmdSupp.TabIndex = 3;
             this.cmdSupp.Text = "Supprimer";
             this.cmdSupp.UseVisualStyleBackColor = true;
@@ -114,7 +114,7 @@ namespace SAE2._1
             // 
             // cmdAjouter
             // 
-            this.cmdAjouter.Location = new System.Drawing.Point(52, 227);
+            this.cmdAjouter.Location = new System.Drawing.Point(52, 216);
             this.cmdAjouter.Name = "cmdAjouter";
             this.cmdAjouter.Size = new System.Drawing.Size(154, 23);
             this.cmdAjouter.TabIndex = 4;
@@ -166,7 +166,6 @@ namespace SAE2._1
             this.tableLayoutPanel1.Size = new System.Drawing.Size(724, 355);
             this.tableLayoutPanel1.TabIndex = 8;
             this.tableLayoutPanel1.Visible = false;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // lblHoraire
             // 
