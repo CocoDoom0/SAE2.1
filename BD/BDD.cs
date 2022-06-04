@@ -223,10 +223,27 @@ namespace BD
             }
             return arretList;
         }
-        public static int AddLigne(int nLigne,int nTrajet,int nArret,string delai,int numPassage)
+        public static int AddPassage(int nLigne,int nTrajet,int nArret,string delai,int numPassage)
         {
             int retour = -1;
             string sql = $"INSERT INTO PASSAGE (N_Ligne,N_Trajet,N_Arret,DelaisArret,OrdrePassage) VALUES ({nLigne},{nTrajet},{nArret},'{delai}',{numPassage});";
+            MySqlCommand cmd = new MySqlCommand(sql, maCnx);
+            try
+            {
+                cmd.ExecuteNonQuery();
+                retour = (int)cmd.LastInsertedId;
+            }
+            catch (Exception ex)
+            {
+                Debug.Print(ex.Message);
+            }
+            return retour;
+        }
+
+        public static int AddLigne(int nLigne,string nomLigne)
+        {
+            int retour = -1;
+            string sql = $"INSERT INTO LIGNE (N_Ligne,NomLigne) VALUES ({nLigne},'{nomLigne}');";
             MySqlCommand cmd = new MySqlCommand(sql, maCnx);
             try
             {

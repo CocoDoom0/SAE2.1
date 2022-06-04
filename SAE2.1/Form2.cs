@@ -145,6 +145,7 @@ namespace SAE2._1
                 {
                     MessageBox.Show("La ligne n'a pas pu etre supprimer", "Erreur de suppresion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+                AjoutTable();
             }
         }
 
@@ -356,21 +357,56 @@ namespace SAE2._1
             tableLayoutPanel2.Visible = true;
         }
 
-        private void cmdValiderAjout_Click(object sender, EventArgs e)
+        private void cmdValiderAjt_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Voulez vous vraiment ajouter cette ligne ?", "Ajout", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-
-                for (int i = 0; i < Convert.ToInt32(lblIndex.Text); i++)
+                if (rbNouvelleLigne.Checked)
                 {
-                    int id = BDD.AddLigne(cboLigneExistante.SelectedIndex + 1, cboTypeTrajetAjout.SelectedIndex + 1, Convert.ToInt32(cboSaveNumArret.Items[i]), Convert.ToString(cboSaveDelai.Items[i]),i+1);
+                    string[] subs = txtbNvlLigne.Text.Split(' ');
+                    string nomLigne = String.Empty;
+                    foreach (var sub in subs)
+                    {
+                        if (sub.ToUpper() != "LIGNE")
+                        {
+                            nomLigne = nomLigne+" "+sub;
+                        }
+                    }
+                    nomLigne = "Ligne" + nomLigne;
+                    cboLigneExistante.Items.Add(nomLigne);
+                    cboChoixLigneModif.Items.Add(nomLigne);
+                    int id = BDD.AddLigne(cboLigneExistante.Items.Count, nomLigne);
                     if (id == -1)
                     {
-                        MessageBox.Show($"{cboLigneExistante.SelectedIndex + 1} | {cboTypeTrajetAjout.SelectedIndex + 1} | {Convert.ToInt32(cboSaveNumArret.Items[i])} | {Convert.ToString(cboSaveDelai.Items[i])} | {i+1}");
+                        MessageBox.Show($"Une erreur est survenu (Ajout Ligne) {cboLigneExistante.Items.Count},{nomLigne}");
                     }
-                    
+                    else
+                    {
+                        for (int i = 0; i < Convert.ToInt32(lblIndex.Text); i++)
+                        {
+                            int id1 = BDD.AddPassage(cboLigneExistante.Items.Count, cboTypeTrajetAjout.SelectedIndex + 1, Convert.ToInt32(cboSaveNumArret.Items[i]), Convert.ToString(cboSaveDelai.Items[i]), i + 1);
+                            if (id1 == -1)
+                            {
+                                MessageBox.Show($"Une erreur est survenu {cboLigneExistante.SelectedIndex + 1},{cboTypeTrajetAjout.SelectedIndex + 1},{Convert.ToInt32(cboSaveNumArret.Items[i])},{Convert.ToString(cboSaveDelai.Items[i])},{i + 1}");
+                            }
+
+                        }
+                    }
                 }
+                else
+                {
+                    for (int i = 0; i < Convert.ToInt32(lblIndex.Text); i++)
+                    {
+                        int id = BDD.AddPassage(cboLigneExistante.SelectedIndex + 1, cboTypeTrajetAjout.SelectedIndex + 1, Convert.ToInt32(cboSaveNumArret.Items[i]), Convert.ToString(cboSaveDelai.Items[i]), i + 1);
+                        if (id == -1)
+                        {
+                            MessageBox.Show($"Une erreur est survenu {cboLigneExistante.SelectedIndex + 1},{cboTypeTrajetAjout.SelectedIndex + 1},{Convert.ToInt32(cboSaveNumArret.Items[i])},{Convert.ToString(cboSaveDelai.Items[i])},{i + 1}");
+                        }
+
+                    }
+                }
+                
                 CloseGrpAjout();
             }
         }

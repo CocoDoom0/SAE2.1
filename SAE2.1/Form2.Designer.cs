@@ -420,7 +420,7 @@ namespace SAE2._1
             this.cmdValiderAjt.Tag = "1";
             this.cmdValiderAjt.Text = "Valider";
             this.cmdValiderAjt.UseVisualStyleBackColor = true;
-            this.cmdValiderAjt.Click += new System.EventHandler(this.cmdValiderAjout_Click);
+            this.cmdValiderAjt.Click += new System.EventHandler(this.cmdValiderAjt_Click);
             // 
             // cmdRetour
             // 
@@ -501,7 +501,6 @@ namespace SAE2._1
             this.grpPreAjouter.Size = new System.Drawing.Size(154, 242);
             this.grpPreAjouter.TabIndex = 9;
             this.grpPreAjouter.TabStop = false;
-            this.grpPreAjouter.Text = "groupBox1";
             this.grpPreAjouter.Visible = false;
             // 
             // cmdAnnulerAjouter
@@ -571,6 +570,7 @@ namespace SAE2._1
             this.cboSaveNumArret.Name = "cboSaveNumArret";
             this.cboSaveNumArret.Size = new System.Drawing.Size(175, 21);
             this.cboSaveNumArret.TabIndex = 27;
+            this.cboSaveNumArret.Visible = false;
             // 
             // cboSaveNomArret
             // 
@@ -580,6 +580,7 @@ namespace SAE2._1
             this.cboSaveNomArret.Name = "cboSaveNomArret";
             this.cboSaveNomArret.Size = new System.Drawing.Size(175, 21);
             this.cboSaveNomArret.TabIndex = 28;
+            this.cboSaveNomArret.Visible = false;
             // 
             // cboSaveDelai
             // 
@@ -589,6 +590,7 @@ namespace SAE2._1
             this.cboSaveDelai.Name = "cboSaveDelai";
             this.cboSaveDelai.Size = new System.Drawing.Size(175, 21);
             this.cboSaveDelai.TabIndex = 29;
+            this.cboSaveDelai.Visible = false;
             // 
             // frmModification
             // 
