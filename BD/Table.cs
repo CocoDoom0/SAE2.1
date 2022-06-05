@@ -18,17 +18,19 @@ namespace BD
         private int _numpassage;
         public Table(int numpassage)
         {
+            //création de la table pour les num de passage
             _numpassage = numpassage;
         }
         public Table(int idligne, string nomligne)
         {
-            //création de la partie au début du jeu
+            //création de la table pour les id et nom de ligne
             _idligne = idligne;
             _nomligne = nomligne;
             
         }
         public Table(int numarret, string nomarret, string horaire, int ordrepassage)
         {
+            //création de la table pour les num arret, nom arret, horaire, ordre de passage
             _numarret = numarret;
             _nomarret = nomarret;
             _horaire = horaire;
@@ -37,6 +39,7 @@ namespace BD
 
         public int numPassage
         {
+            //Getters num passage
             get
             {
                 return _numpassage;
@@ -44,6 +47,7 @@ namespace BD
         }
         public string nomLigne
         {
+            //Getters nom ligne
             get
             {
                 return _nomligne;
@@ -52,6 +56,7 @@ namespace BD
 
         public int numArret
         {
+            //Getters num arret
             get
             {
                 return _numarret;
@@ -60,6 +65,7 @@ namespace BD
 
         public string nomArret
         {
+            //Getters nom arret
             get
             {
                 return _nomarret;
@@ -68,6 +74,7 @@ namespace BD
 
         public string Horaire
         {
+            //Getters horaire
             get
             {
                 return _horaire;
@@ -76,6 +83,7 @@ namespace BD
 
         public int ordrePassage
         {
+            //Getters ordre de passage
             get
             {
                 return _ordrepassage;
