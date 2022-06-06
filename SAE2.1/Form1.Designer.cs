@@ -30,6 +30,7 @@ namespace SAE2._1
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAccueil));
             this.lblTitle = new System.Windows.Forms.Label();
             this.cmdModification = new System.Windows.Forms.Button();
             this.cmdRecherche = new System.Windows.Forms.Button();
@@ -90,9 +91,10 @@ namespace SAE2._1
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(296, 22);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(349, -2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 116);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);

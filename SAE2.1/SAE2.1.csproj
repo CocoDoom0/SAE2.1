@@ -122,5 +122,8 @@
   <ItemGroup>
     <None Include="obj\Image\CorolisLogo-removebg-preview.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CorolisLogo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
