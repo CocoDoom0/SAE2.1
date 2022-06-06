@@ -41,6 +41,10 @@ namespace SAE2._1
             this.lblNomArret = new System.Windows.Forms.Label();
             this.lblNArret = new System.Windows.Forms.Label();
             this.grpAjouter = new System.Windows.Forms.GroupBox();
+            this.lblDerniereHeure = new System.Windows.Forms.Label();
+            this.txtbDerniereHeure = new System.Windows.Forms.TextBox();
+            this.lblDelai = new System.Windows.Forms.Label();
+            this.txtbDelai = new System.Windows.Forms.TextBox();
             this.cboSaveDelai = new System.Windows.Forms.ComboBox();
             this.cboSaveNomArret = new System.Windows.Forms.ComboBox();
             this.cboSaveNumArret = new System.Windows.Forms.ComboBox();
@@ -75,10 +79,6 @@ namespace SAE2._1
             this.cboTypeTrajetAjout = new System.Windows.Forms.ComboBox();
             this.txtbNvlLigne = new System.Windows.Forms.TextBox();
             this.cboLigneExistante = new System.Windows.Forms.ComboBox();
-            this.txtbDelai = new System.Windows.Forms.TextBox();
-            this.lblDelai = new System.Windows.Forms.Label();
-            this.txtbDerniereHeure = new System.Windows.Forms.TextBox();
-            this.lblDerniereHeure = new System.Windows.Forms.Label();
             this.grpModif.SuspendLayout();
             this.grpAjouter.SuspendLayout();
             this.grpPreAjouter.SuspendLayout();
@@ -165,8 +165,8 @@ namespace SAE2._1
             this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 49);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 359F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 359F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 360F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 360F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(724, 355);
             this.tableLayoutPanel1.TabIndex = 8;
             this.tableLayoutPanel1.Visible = false;
@@ -249,6 +249,40 @@ namespace SAE2._1
             this.grpAjouter.TabStop = false;
             this.grpAjouter.Text = "Ajouter :";
             this.grpAjouter.Visible = false;
+            // 
+            // lblDerniereHeure
+            // 
+            this.lblDerniereHeure.AutoSize = true;
+            this.lblDerniereHeure.Location = new System.Drawing.Point(19, 128);
+            this.lblDerniereHeure.Name = "lblDerniereHeure";
+            this.lblDerniereHeure.Size = new System.Drawing.Size(77, 13);
+            this.lblDerniereHeure.TabIndex = 33;
+            this.lblDerniereHeure.Text = "Derniere heure";
+            // 
+            // txtbDerniereHeure
+            // 
+            this.txtbDerniereHeure.Location = new System.Drawing.Point(13, 144);
+            this.txtbDerniereHeure.Name = "txtbDerniereHeure";
+            this.txtbDerniereHeure.Size = new System.Drawing.Size(100, 20);
+            this.txtbDerniereHeure.TabIndex = 32;
+            this.txtbDerniereHeure.Text = "20:00:00";
+            // 
+            // lblDelai
+            // 
+            this.lblDelai.AutoSize = true;
+            this.lblDelai.Location = new System.Drawing.Point(12, 87);
+            this.lblDelai.Name = "lblDelai";
+            this.lblDelai.Size = new System.Drawing.Size(101, 13);
+            this.lblDelai.TabIndex = 31;
+            this.lblDelai.Text = "Délai entre passage";
+            // 
+            // txtbDelai
+            // 
+            this.txtbDelai.Location = new System.Drawing.Point(13, 102);
+            this.txtbDelai.Name = "txtbDelai";
+            this.txtbDelai.Size = new System.Drawing.Size(100, 20);
+            this.txtbDelai.TabIndex = 30;
+            this.txtbDelai.Text = "00:30:00";
             // 
             // cboSaveDelai
             // 
@@ -344,7 +378,7 @@ namespace SAE2._1
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.7482F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.2518F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel2.Location = new System.Drawing.Point(162, 84);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
@@ -597,40 +631,6 @@ namespace SAE2._1
             this.cboLigneExistante.Name = "cboLigneExistante";
             this.cboLigneExistante.Size = new System.Drawing.Size(121, 21);
             this.cboLigneExistante.TabIndex = 13;
-            // 
-            // txtbDelai
-            // 
-            this.txtbDelai.Location = new System.Drawing.Point(13, 102);
-            this.txtbDelai.Name = "txtbDelai";
-            this.txtbDelai.Size = new System.Drawing.Size(100, 20);
-            this.txtbDelai.TabIndex = 30;
-            this.txtbDelai.Text = "00:30:00";
-            // 
-            // lblDelai
-            // 
-            this.lblDelai.AutoSize = true;
-            this.lblDelai.Location = new System.Drawing.Point(12, 87);
-            this.lblDelai.Name = "lblDelai";
-            this.lblDelai.Size = new System.Drawing.Size(101, 13);
-            this.lblDelai.TabIndex = 31;
-            this.lblDelai.Text = "Délai entre passage";
-            // 
-            // txtbDerniereHeure
-            // 
-            this.txtbDerniereHeure.Location = new System.Drawing.Point(13, 144);
-            this.txtbDerniereHeure.Name = "txtbDerniereHeure";
-            this.txtbDerniereHeure.Size = new System.Drawing.Size(100, 20);
-            this.txtbDerniereHeure.TabIndex = 32;
-            this.txtbDerniereHeure.Text = "20:00:00";
-            // 
-            // lblDerniereHeure
-            // 
-            this.lblDerniereHeure.AutoSize = true;
-            this.lblDerniereHeure.Location = new System.Drawing.Point(19, 128);
-            this.lblDerniereHeure.Name = "lblDerniereHeure";
-            this.lblDerniereHeure.Size = new System.Drawing.Size(77, 13);
-            this.lblDerniereHeure.TabIndex = 33;
-            this.lblDerniereHeure.Text = "Derniere heure";
             // 
             // frmModification
             // 

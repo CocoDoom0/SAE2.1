@@ -19,8 +19,25 @@ namespace BD
             _dernierpassage = dernierpassage;
         }
         
-        public string Horairedepart { get { return _horairedepart; } }
-        public string Delaispassage { get { return _delaispassage; } }
-        public string Dernierpassage { get { return _dernierpassage; } }
+        public string Horairedepart
+        { 
+            get
+            { 
+                return _horairedepart; 
+            } 
+        }
+        public string Delaispassage
+        {
+            get 
+            { 
+                return _delaispassage; 
+            } 
+        }
+        public string Dernierpassage 
+        { 
+            get {
+                return _dernierpassage;
+            }
+        }
     }
 }

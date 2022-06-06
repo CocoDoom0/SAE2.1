@@ -292,28 +292,28 @@ namespace BD
             List<Delais> listeDelais = new List<Delais>();
 
             // définition de la requête d'interrogation et instanciation le la commande servant à exécuter la requête
-            string sql = $"SELECT HeureDepart,DelaiNvDepart,DernierDepart FROM DEPART WHERE N_Ligne = {numLigne} AND N_Trajet = {numTrajet};";
+            string sql = $"SELECT * FROM DEPART WHERE N_Ligne = {numLigne} AND N_Trajet = {numTrajet};";
             MySqlCommand cmd = new MySqlCommand(sql, maCnx);
 
             try
             {
                 // exécution de la requête et récupération des données dans un DataReader
                 MySqlDataReader rdr = cmd.ExecuteReader();
-
                 //Parcours du DataReader
+
                 while (rdr.Read())
                 {
                     // lecture d'un enregistrement
-
-                    string horairedepart = (string)rdr[0];
-                    string delaispassage = (string)rdr[1];
-                    string dernierpassage = (string)rdr[2];
-                    // définition d'une partie
-                    Delais uneTable = new Delais(horairedepart, delaispassage, dernierpassage);
-                    // ajout de la partie définie à la liste des parties
-                    listeDelais.Add(uneTable);
+                    string test1 = Convert.ToString(rdr[2]);
+                    string test2 = Convert.ToString(rdr[3]);
+                    string test3 = Convert.ToString(rdr[4]);
+                    Delais unDelais = new Delais(test1, test2, test3);
+                    listeDelais.Add(unDelais);
                 }
-
+                // définition d'une partie
+                
+                // ajout de la partie définie à la liste des parties
+                
                 // fermeture du reader et libération de la mémoire
                 rdr.Close();
                 cmd.Dispose();
