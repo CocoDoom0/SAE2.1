@@ -20,7 +20,7 @@ namespace BD
             //retourne false si echec de connexion
 
             // définition chaine de connexion
-            string serveur = "10.1.139.236";
+            string serveur = "127.0.0.1";
             string login = "f3";
             string passwd = "mdp";
             string BD = "basef3";
@@ -172,6 +172,22 @@ namespace BD
             }
             return retour;
         }
+        public static int SuppDepart(int numLigne,int numTrajet)
+        {
+            int retour = -1;
+            string sql = $"DELETE FROM DEPART WHERE N_Ligne={numLigne} AND N_Trajet={numTrajet}";
+            MySqlCommand cmd = new MySqlCommand(sql, maCnx);
+            try
+            {
+                cmd.ExecuteNonQuery();
+                retour = (int)cmd.LastInsertedId;
+            }
+            catch (Exception ex)
+            {
+                Debug.Print(ex.Message);
+            }
+            return retour;
+        }
 
         public static List<Table> CheckPassage(int numLigne, int numTrajet)
         {
@@ -244,6 +260,22 @@ namespace BD
         {
             int retour = -1;
             string sql = $"INSERT INTO LIGNE (N_Ligne,NomLigne) VALUES ({nLigne},'{nomLigne}');";
+            MySqlCommand cmd = new MySqlCommand(sql, maCnx);
+            try
+            {
+                cmd.ExecuteNonQuery();
+                retour = (int)cmd.LastInsertedId;
+            }
+            catch (Exception ex)
+            {
+                Debug.Print(ex.Message);
+            }
+            return retour;
+        }
+        public static int AddDepart(int nLigne,int nTrajet,string HeureDepart,string Delais,string DerniereHeure)
+        {
+            int retour = -1;
+            string sql = $"INSERT INTO DEPART (N_Ligne,N_Trajet,HeureDepart,DelaiNvDepart,DernierDepart) VALUES ({nLigne},{nTrajet},'{HeureDepart}','{Delais}','{DerniereHeure}');";
             MySqlCommand cmd = new MySqlCommand(sql, maCnx);
             try
             {

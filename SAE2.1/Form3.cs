@@ -65,8 +65,6 @@ namespace SAE2._1
             Label lbl = new Label();
             lbl.AutoSize = false;
             lbl.Size = lblChoixLigne.Size;
-            //lbl.Font = new Font(FontFamily.GenericSansSerif, 9, FontStyle.Regular);
-            //lbl.TextAlign = ContentAlignment.MiddleCenter;
             lbl.Text = val;
             tableLayoutPanel1.Controls.Add(lbl, ligne, colonne);
         }
@@ -79,7 +77,6 @@ namespace SAE2._1
                 tableLayoutPanel1.Controls.Clear();
                 tableLayoutPanel1.RowStyles.Clear();
                 List<Table> lesTables;
-                //lblChoixLigne.Text = Convert.ToString(cboChoixTrajet.SelectedIndex); 
                 lesTables = BDD.GetLigne(cboChoixLigneAff.SelectedIndex + 1, cboChoixTrajet.SelectedIndex + 1);
                 int ligne = 1;
                 foreach (Table t in lesTables)

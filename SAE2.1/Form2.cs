@@ -160,6 +160,14 @@ namespace SAE2._1
                 {
                     MessageBox.Show("La ligne n'a pas pu etre supprimer", "Erreur de suppresion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+                else
+                {
+                    int resultat1 = BDD.SuppDepart(cboChoixLigneModif.SelectedIndex + 1, cboChoixTrajet.SelectedIndex + 1);
+                    if(resultat1 == -1)
+                    {
+                        MessageBox.Show("Le heures de departs n'ont pas pu etre supprimer", "Erreur de suppresion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
 
                 //Reajoute la table selectionner dans les combobox meme si elles sont vides
                 AjoutTable();
@@ -467,69 +475,85 @@ namespace SAE2._1
 
         private void cmdValiderAjt_Click(object sender, EventArgs e)
         {
-            //Confirmation de l'ajout dans la BD
-            DialogResult dialogResult = MessageBox.Show("Voulez vous vraiment ajouter cette ligne ?", "Ajout", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            if(String.IsNullOrEmpty(txtbHeureDepart.Text) == true || String.IsNullOrEmpty(txtbDelai.Text) == true || String.IsNullOrEmpty(txtbDerniereHeure.Text) == true)
             {
-                //Si c'est une nouvelle ligne
-                if (rbNouvelleLigne.Checked)
+                MessageBox.Show("Merci de remplir les champs de delais", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                //Confirmation de l'ajout dans la BD
+                DialogResult dialogResult = MessageBox.Show("Voulez vous vraiment ajouter cette ligne ?", "Ajout", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    //On decoupe la chaine de caractere du nom de la ligne afin de ne pas avoir de double "Ligne" dans le nom
-                    string[] subs = txtbNvlLigne.Text.Split(' ');
-                    string nomLigne = String.Empty;
-                    foreach (var sub in subs)
+                    //Si c'est une nouvelle ligne
+                    if (rbNouvelleLigne.Checked)
                     {
-                        if (sub.ToUpper() != "LIGNE")
+                        //On decoupe la chaine de caractere du nom de la ligne afin de ne pas avoir de double "Ligne" dans le nom
+                        string[] subs = txtbNvlLigne.Text.Split(' ');
+                        string nomLigne = String.Empty;
+                        foreach (var sub in subs)
                         {
-                            nomLigne = nomLigne+" "+sub;
+                            if (sub.ToUpper() != "LIGNE")
+                            {
+                                nomLigne = nomLigne + " " + sub;
+                            }
+                        }
+                        nomLigne = "Ligne" + nomLigne;
+
+                        //Ajoute la nouvelle ligne dans les combobox avec le choix des lignes
+                        cboLigneExistante.Items.Add(nomLigne);
+                        cboChoixLigneModif.Items.Add(nomLigne);
+
+                        //Ajoute la nouvelle ligne dans la bd
+                        int id = BDD.AddLigne(cboLigneExistante.Items.Count, nomLigne);
+
+                        //Si erreur d'insertion
+                        if (id == -1)
+                        {
+                            MessageBox.Show("Une erreur est survenu (Ajout Ligne)");
+                        }
+                        //Sinon on ajoute les passages selectionner dans la BD
+                        else
+                        {
+                            for (int i = 0; i < Convert.ToInt32(lblIndex.Text); i++)
+                            {
+                                int id1 = BDD.AddPassage(cboLigneExistante.Items.Count, cboTypeTrajetAjout.SelectedIndex + 1, Convert.ToInt32(cboSaveNumArret.Items[i]), Convert.ToString(cboSaveDelai.Items[i]), i + 1);
+                                if (id1 == -1)
+                                {
+                                    MessageBox.Show("Une erreur est survenu (Ajout Passage)");
+                                }
+
+                            }
+                            int id2 = BDD.AddDepart(cboLigneExistante.Items.Count, cboTypeTrajetAjout.SelectedIndex + 1, txtbHeureDepart.Text, txtbDelai.Text, txtbDerniereHeure.Text);
+                            if (id2 == -1)
+                            {
+                                MessageBox.Show("Une erreur est survenu (Ajout Depart)");
+                            }
                         }
                     }
-                    nomLigne = "Ligne" + nomLigne;
-
-                    //Ajoute la nouvelle ligne dans les combobox avec le choix des lignes
-                    cboLigneExistante.Items.Add(nomLigne);
-                    cboChoixLigneModif.Items.Add(nomLigne);
-
-                    //Ajoute la nouvelle ligne dans la bd
-                    int id = BDD.AddLigne(cboLigneExistante.Items.Count, nomLigne);
-
-                    //Si erreur d'insertion
-                    if (id == -1)
-                    {
-                        MessageBox.Show("Une erreur est survenu (Ajout Ligne)");
-                    }
-                    //Sinon on ajoute les passages selectionner dans la BD
+                    //Sinon si Ligne existante
                     else
                     {
                         for (int i = 0; i < Convert.ToInt32(lblIndex.Text); i++)
                         {
-                            int id1 = BDD.AddPassage(cboLigneExistante.Items.Count, cboTypeTrajetAjout.SelectedIndex + 1, Convert.ToInt32(cboSaveNumArret.Items[i]), Convert.ToString(cboSaveDelai.Items[i]), i + 1);
-                            if (id1 == -1)
+                            int id = BDD.AddPassage(cboLigneExistante.SelectedIndex + 1, cboTypeTrajetAjout.SelectedIndex + 1, Convert.ToInt32(cboSaveNumArret.Items[i]), Convert.ToString(cboSaveDelai.Items[i]), i + 1);
+                            if (id == -1)
                             {
                                 MessageBox.Show("Une erreur est survenu (Ajout Passage)");
                             }
 
                         }
-                    }
-                }
-                //Sinon si Ligne existante
-                else
-                {
-                    for (int i = 0; i < Convert.ToInt32(lblIndex.Text); i++)
-                    {
-                        int id = BDD.AddPassage(cboLigneExistante.SelectedIndex + 1, cboTypeTrajetAjout.SelectedIndex + 1, Convert.ToInt32(cboSaveNumArret.Items[i]), Convert.ToString(cboSaveDelai.Items[i]), i + 1);
-                        if (id == -1)
+                        int id1 = BDD.AddDepart(cboLigneExistante.SelectedIndex + 1, cboTypeTrajetAjout.SelectedIndex + 1, txtbHeureDepart.Text, txtbDelai.Text, txtbDerniereHeure.Text);
+                        if (id1 == -1)
                         {
-                            MessageBox.Show("Une erreur est survenu (Ajout Passage)");
+                            MessageBox.Show($"Une erreur est survenu (Ajout Depart) {cboLigneExistante.SelectedIndex + 1},{cboTypeTrajetAjout.SelectedIndex + 1},{txtbHeureDepart.Text},{txtbDelai.Text},{txtbDerniereHeure.Text}");
                         }
-
                     }
+
+                    //Ferme le groupe de l'ajout
+                    CloseGrpAjout();
                 }
-                
-                //Ferme le groupe de l'ajout
-                CloseGrpAjout();
             }
         }
     }
-
 }

@@ -41,6 +41,9 @@ namespace SAE2._1
             this.lblNomArret = new System.Windows.Forms.Label();
             this.lblNArret = new System.Windows.Forms.Label();
             this.grpAjouter = new System.Windows.Forms.GroupBox();
+            this.cboSaveDelai = new System.Windows.Forms.ComboBox();
+            this.cboSaveNomArret = new System.Windows.Forms.ComboBox();
+            this.cboSaveNumArret = new System.Windows.Forms.ComboBox();
             this.lblSaveIndex = new System.Windows.Forms.Label();
             this.cboNArretSave = new System.Windows.Forms.ComboBox();
             this.lblChoixDelaiAjt = new System.Windows.Forms.Label();
@@ -55,8 +58,8 @@ namespace SAE2._1
             this.cboChoixArret1 = new System.Windows.Forms.ComboBox();
             this.txtbChoixDelai1 = new System.Windows.Forms.TextBox();
             this.cmdAnnulerAjt = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblHeureDepart = new System.Windows.Forms.Label();
+            this.txtbHeureDepart = new System.Windows.Forms.TextBox();
             this.lblResumerAjout = new System.Windows.Forms.Label();
             this.cmdValiderAjt = new System.Windows.Forms.Button();
             this.cmdRetour = new System.Windows.Forms.Button();
@@ -72,9 +75,10 @@ namespace SAE2._1
             this.cboTypeTrajetAjout = new System.Windows.Forms.ComboBox();
             this.txtbNvlLigne = new System.Windows.Forms.TextBox();
             this.cboLigneExistante = new System.Windows.Forms.ComboBox();
-            this.cboSaveNumArret = new System.Windows.Forms.ComboBox();
-            this.cboSaveNomArret = new System.Windows.Forms.ComboBox();
-            this.cboSaveDelai = new System.Windows.Forms.ComboBox();
+            this.txtbDelai = new System.Windows.Forms.TextBox();
+            this.lblDelai = new System.Windows.Forms.Label();
+            this.txtbDerniereHeure = new System.Windows.Forms.TextBox();
+            this.lblDerniereHeure = new System.Windows.Forms.Label();
             this.grpModif.SuspendLayout();
             this.grpAjouter.SuspendLayout();
             this.grpPreAjouter.SuspendLayout();
@@ -161,8 +165,8 @@ namespace SAE2._1
             this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 49);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 358F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 358F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 359F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 359F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(724, 355);
             this.tableLayoutPanel1.TabIndex = 8;
             this.tableLayoutPanel1.Visible = false;
@@ -213,6 +217,10 @@ namespace SAE2._1
             // grpAjouter
             // 
             this.grpAjouter.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.grpAjouter.Controls.Add(this.lblDerniereHeure);
+            this.grpAjouter.Controls.Add(this.txtbDerniereHeure);
+            this.grpAjouter.Controls.Add(this.lblDelai);
+            this.grpAjouter.Controls.Add(this.txtbDelai);
             this.grpAjouter.Controls.Add(this.cboSaveDelai);
             this.grpAjouter.Controls.Add(this.cboSaveNomArret);
             this.grpAjouter.Controls.Add(this.cboSaveNumArret);
@@ -230,8 +238,8 @@ namespace SAE2._1
             this.grpAjouter.Controls.Add(this.cboChoixArret1);
             this.grpAjouter.Controls.Add(this.txtbChoixDelai1);
             this.grpAjouter.Controls.Add(this.cmdAnnulerAjt);
-            this.grpAjouter.Controls.Add(this.label1);
-            this.grpAjouter.Controls.Add(this.textBox1);
+            this.grpAjouter.Controls.Add(this.lblHeureDepart);
+            this.grpAjouter.Controls.Add(this.txtbHeureDepart);
             this.grpAjouter.Controls.Add(this.lblResumerAjout);
             this.grpAjouter.Controls.Add(this.cmdValiderAjt);
             this.grpAjouter.Location = new System.Drawing.Point(262, 12);
@@ -241,6 +249,36 @@ namespace SAE2._1
             this.grpAjouter.TabStop = false;
             this.grpAjouter.Text = "Ajouter :";
             this.grpAjouter.Visible = false;
+            // 
+            // cboSaveDelai
+            // 
+            this.cboSaveDelai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSaveDelai.FormattingEnabled = true;
+            this.cboSaveDelai.Location = new System.Drawing.Point(511, 204);
+            this.cboSaveDelai.Name = "cboSaveDelai";
+            this.cboSaveDelai.Size = new System.Drawing.Size(175, 21);
+            this.cboSaveDelai.TabIndex = 29;
+            this.cboSaveDelai.Visible = false;
+            // 
+            // cboSaveNomArret
+            // 
+            this.cboSaveNomArret.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSaveNomArret.FormattingEnabled = true;
+            this.cboSaveNomArret.Location = new System.Drawing.Point(511, 177);
+            this.cboSaveNomArret.Name = "cboSaveNomArret";
+            this.cboSaveNomArret.Size = new System.Drawing.Size(175, 21);
+            this.cboSaveNomArret.TabIndex = 28;
+            this.cboSaveNomArret.Visible = false;
+            // 
+            // cboSaveNumArret
+            // 
+            this.cboSaveNumArret.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSaveNumArret.FormattingEnabled = true;
+            this.cboSaveNumArret.Location = new System.Drawing.Point(511, 150);
+            this.cboSaveNumArret.Name = "cboSaveNumArret";
+            this.cboSaveNumArret.Size = new System.Drawing.Size(175, 21);
+            this.cboSaveNumArret.TabIndex = 27;
+            this.cboSaveNumArret.Visible = false;
             // 
             // lblSaveIndex
             // 
@@ -306,7 +344,7 @@ namespace SAE2._1
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.7482F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.2518F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel2.Location = new System.Drawing.Point(162, 84);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
@@ -383,23 +421,22 @@ namespace SAE2._1
             this.cmdAnnulerAjt.UseVisualStyleBackColor = true;
             this.cmdAnnulerAjt.Click += new System.EventHandler(this.cmdAnnuler_Click);
             // 
-            // label1
+            // lblHeureDepart
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 46);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Délai départ";
+            this.lblHeureDepart.AutoSize = true;
+            this.lblHeureDepart.Location = new System.Drawing.Point(19, 44);
+            this.lblHeureDepart.Name = "lblHeureDepart";
+            this.lblHeureDepart.Size = new System.Drawing.Size(84, 13);
+            this.lblHeureDepart.TabIndex = 12;
+            this.lblHeureDepart.Text = "Heure de depart";
             // 
-            // textBox1
+            // txtbHeureDepart
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(13, 60);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 11;
-            this.textBox1.Text = "W.I.P";
+            this.txtbHeureDepart.Location = new System.Drawing.Point(13, 60);
+            this.txtbHeureDepart.Name = "txtbHeureDepart";
+            this.txtbHeureDepart.Size = new System.Drawing.Size(100, 20);
+            this.txtbHeureDepart.TabIndex = 11;
+            this.txtbHeureDepart.Text = "06:00:00";
             // 
             // lblResumerAjout
             // 
@@ -561,35 +598,39 @@ namespace SAE2._1
             this.cboLigneExistante.Size = new System.Drawing.Size(121, 21);
             this.cboLigneExistante.TabIndex = 13;
             // 
-            // cboSaveNumArret
+            // txtbDelai
             // 
-            this.cboSaveNumArret.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSaveNumArret.FormattingEnabled = true;
-            this.cboSaveNumArret.Location = new System.Drawing.Point(511, 150);
-            this.cboSaveNumArret.Name = "cboSaveNumArret";
-            this.cboSaveNumArret.Size = new System.Drawing.Size(175, 21);
-            this.cboSaveNumArret.TabIndex = 27;
-            this.cboSaveNumArret.Visible = false;
+            this.txtbDelai.Location = new System.Drawing.Point(13, 102);
+            this.txtbDelai.Name = "txtbDelai";
+            this.txtbDelai.Size = new System.Drawing.Size(100, 20);
+            this.txtbDelai.TabIndex = 30;
+            this.txtbDelai.Text = "00:30:00";
             // 
-            // cboSaveNomArret
+            // lblDelai
             // 
-            this.cboSaveNomArret.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSaveNomArret.FormattingEnabled = true;
-            this.cboSaveNomArret.Location = new System.Drawing.Point(511, 177);
-            this.cboSaveNomArret.Name = "cboSaveNomArret";
-            this.cboSaveNomArret.Size = new System.Drawing.Size(175, 21);
-            this.cboSaveNomArret.TabIndex = 28;
-            this.cboSaveNomArret.Visible = false;
+            this.lblDelai.AutoSize = true;
+            this.lblDelai.Location = new System.Drawing.Point(12, 87);
+            this.lblDelai.Name = "lblDelai";
+            this.lblDelai.Size = new System.Drawing.Size(101, 13);
+            this.lblDelai.TabIndex = 31;
+            this.lblDelai.Text = "Délai entre passage";
             // 
-            // cboSaveDelai
+            // txtbDerniereHeure
             // 
-            this.cboSaveDelai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSaveDelai.FormattingEnabled = true;
-            this.cboSaveDelai.Location = new System.Drawing.Point(511, 204);
-            this.cboSaveDelai.Name = "cboSaveDelai";
-            this.cboSaveDelai.Size = new System.Drawing.Size(175, 21);
-            this.cboSaveDelai.TabIndex = 29;
-            this.cboSaveDelai.Visible = false;
+            this.txtbDerniereHeure.Location = new System.Drawing.Point(13, 144);
+            this.txtbDerniereHeure.Name = "txtbDerniereHeure";
+            this.txtbDerniereHeure.Size = new System.Drawing.Size(100, 20);
+            this.txtbDerniereHeure.TabIndex = 32;
+            this.txtbDerniereHeure.Text = "20:00:00";
+            // 
+            // lblDerniereHeure
+            // 
+            this.lblDerniereHeure.AutoSize = true;
+            this.lblDerniereHeure.Location = new System.Drawing.Point(19, 128);
+            this.lblDerniereHeure.Name = "lblDerniereHeure";
+            this.lblDerniereHeure.Size = new System.Drawing.Size(77, 13);
+            this.lblDerniereHeure.TabIndex = 33;
+            this.lblDerniereHeure.Text = "Derniere heure";
             // 
             // frmModification
             // 
@@ -651,8 +692,8 @@ namespace SAE2._1
         private System.Windows.Forms.Button cmdValiderAjouter;
         private System.Windows.Forms.GroupBox grpAjouter;
         private System.Windows.Forms.Button cmdValiderAjt;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblHeureDepart;
+        private System.Windows.Forms.TextBox txtbHeureDepart;
         private System.Windows.Forms.Label lblResumerAjout;
         private System.Windows.Forms.Button cmdAnnulerAjt;
         private System.Windows.Forms.ComboBox cboChoixArret1;
@@ -671,5 +712,9 @@ namespace SAE2._1
         private System.Windows.Forms.ComboBox cboSaveDelai;
         private System.Windows.Forms.ComboBox cboSaveNomArret;
         private System.Windows.Forms.ComboBox cboSaveNumArret;
+        private System.Windows.Forms.Label lblDerniereHeure;
+        private System.Windows.Forms.TextBox txtbDerniereHeure;
+        private System.Windows.Forms.Label lblDelai;
+        private System.Windows.Forms.TextBox txtbDelai;
     }
 }
