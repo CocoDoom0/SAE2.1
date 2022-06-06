@@ -20,7 +20,7 @@ namespace BD
             //retourne false si echec de connexion
 
             // définition chaine de connexion
-            string serveur = "127.0.0.1";
+            string serveur = "10.1.139.236";
             string login = "f3";
             string passwd = "mdp";
             string BD = "basef3";
