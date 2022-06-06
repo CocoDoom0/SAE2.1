@@ -59,7 +59,6 @@ namespace SAE2._1
             this.grpRecherche.TabIndex = 6;
             this.grpRecherche.TabStop = false;
             this.grpRecherche.Text = "Trajet";
-            this.grpRecherche.Visible = false;
             // 
             // lblOrdre
             // 
@@ -85,8 +84,8 @@ namespace SAE2._1
             this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 49);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 358F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 358F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 359F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 359F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(724, 355);
             this.tableLayoutPanel1.TabIndex = 8;
             this.tableLayoutPanel1.Visible = false;
@@ -142,6 +141,7 @@ namespace SAE2._1
             this.cboChoixArretArr.Size = new System.Drawing.Size(121, 21);
             this.cboChoixArretArr.TabIndex = 12;
             this.cboChoixArretArr.Text = "Choisir arrêt d\'arrivé";
+            this.cboChoixArretArr.SelectedIndexChanged += new System.EventHandler(this.cbo_SelectedIndexChanged);
             // 
             // lblArretArr
             // 
@@ -161,6 +161,7 @@ namespace SAE2._1
             this.cboChoixArretDep.Size = new System.Drawing.Size(121, 21);
             this.cboChoixArretDep.TabIndex = 10;
             this.cboChoixArretDep.Text = "Choisir arrêt départ";
+            this.cboChoixArretDep.SelectedIndexChanged += new System.EventHandler(this.cbo_SelectedIndexChanged);
             // 
             // lblArretDep
             // 
@@ -191,6 +192,7 @@ namespace SAE2._1
             this.cmdRechercher.TabIndex = 14;
             this.cmdRechercher.Text = "Rechercher";
             this.cmdRechercher.UseVisualStyleBackColor = true;
+            this.cmdRechercher.Click += new System.EventHandler(this.cmdRechercher_Click);
             // 
             // frmRecherche
             // 

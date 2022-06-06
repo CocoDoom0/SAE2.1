@@ -36,10 +36,6 @@ namespace SAE2._1
 
                 Application.Exit();
             }
-            else if (debug)
-            {
-                MessageBox.Show("Connexion avec la base de donnée établie", "OK", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
             cboChargement();
             cboChoixTrajet.Items.Add("Aller");
             cboChoixTrajet.Items.Add("Retour");

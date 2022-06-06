@@ -30,7 +30,37 @@ namespace SAE2._1
 
         private void frmRecherche_Load(object sender, EventArgs e)
         {
+            bool retour = BDD.InitConnexion();
 
+            if (!retour)
+            {
+                MessageBox.Show("Veuillez rétablir la connexion réseau puis relancer le logiciel", "Echec de connexion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Application.Exit();
+            }
+            List<Arret> lesArrets;
+            lesArrets = BDD.GetArret();
+            foreach (Arret t in lesArrets)
+            {
+                cboChoixArretArr.Items.Add(t.nomArret.ToString());
+                cboChoixArretDep.Items.Add(t.nomArret.ToString());
+            }
+        }
+
+        private void cmdRechercher_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("La recherche d'itinéraire n'est pas terminer.");
+        }
+
+        private void cbo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cboChoixArretArr.SelectedIndex!=-1 && cboChoixArretDep.SelectedIndex != -1)
+            {
+                cmdRechercher.Enabled = true;
+            }
+            else
+            {
+                cmdRechercher.Enabled = false;
+            }
         }
     }
 }
