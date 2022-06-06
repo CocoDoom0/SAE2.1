@@ -44,7 +44,6 @@ namespace BD
             }
             return retour;
         }
-
         public static bool FermerConnexion()
         {
             // fermeture de la connexion 
@@ -155,7 +154,6 @@ namespace BD
             // retour de la liste des parties
             return listeParties;
         }
-
         public static int SuppLigne(int numLigne,int numTrajet)
         {
             int retour=-1;
@@ -188,7 +186,6 @@ namespace BD
             }
             return retour;
         }
-
         public static List<Table> CheckPassage(int numLigne, int numTrajet)
         {
             List<Table> listeParties = new List<Table>();
@@ -213,7 +210,6 @@ namespace BD
             }
             return listeParties;
         }
-
         public static List<Arret> GetArret()
         {
             List<Arret> arretList = new List<Arret>();
@@ -255,7 +251,6 @@ namespace BD
             }
             return retour;
         }
-
         public static int AddLigne(int nLigne,string nomLigne)
         {
             int retour = -1;
@@ -287,6 +282,49 @@ namespace BD
                 Debug.Print(ex.Message);
             }
             return retour;
+        }
+        public static List<Delais> GetDelais(int numLigne, int numTrajet)
+        {
+            // lecture des données de la table partie
+            // retourne une liste de parties
+
+            // instanciation d'une liste de partie
+            List<Delais> listeDelais = new List<Delais>();
+
+            // définition de la requête d'interrogation et instanciation le la commande servant à exécuter la requête
+            string sql = $"SELECT HeureDepart,DelaiNvDepart,DernierDepart FROM DEPART WHERE N_Ligne = {numLigne} AND N_Trajet = {numTrajet};";
+            MySqlCommand cmd = new MySqlCommand(sql, maCnx);
+
+            try
+            {
+                // exécution de la requête et récupération des données dans un DataReader
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                //Parcours du DataReader
+                while (rdr.Read())
+                {
+                    // lecture d'un enregistrement
+
+                    string horairedepart = (string)rdr[0];
+                    string delaispassage = (string)rdr[1];
+                    string dernierpassage = (string)rdr[2];
+                    // définition d'une partie
+                    Delais uneTable = new Delais(horairedepart, delaispassage, dernierpassage);
+                    // ajout de la partie définie à la liste des parties
+                    listeDelais.Add(uneTable);
+                }
+
+                // fermeture du reader et libération de la mémoire
+                rdr.Close();
+                cmd.Dispose();
+            }
+            catch (Exception ex)
+            {
+                Debug.Print(ex.Message);
+            }
+
+            // retour de la liste des parties
+            return listeDelais;
         }
     }
 }
