@@ -37,6 +37,9 @@ namespace SAE2._1
                 MessageBox.Show("Veuillez rétablir la connexion réseau puis relancer le logiciel", "Echec de connexion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Application.Exit();
             }
+
+
+            cboChargement();
             List<Arret> lesArrets;
             lesArrets = BDD.GetArret();
             foreach (Arret t in lesArrets)
@@ -46,9 +49,41 @@ namespace SAE2._1
             }
         }
 
+        private void cboChargement()
+        {
+            List<Table> lesTables;
+            lesTables = BDD.GetNomLigne();
+            foreach (Table t in lesTables)
+            {
+                cboChoixLigne.Items.Add(t.nomLigne.ToString());
+            }
+
+        }
         private void cmdRechercher_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("La recherche d'itinéraire n'est pas terminer.");
+
+
+            List<Table> lesTables = new List<Table>();
+            lesTables = BDD.RechercheArret(cboChoixLigne.SelectedIndex + 1,cboChoixArretDep.SelectedIndex + 1, cboChoixArretArr.SelectedIndex + 1);
+            //
+            int ligne = 1;
+            //
+            foreach (Table t in lesTables)
+            {
+                AjoutLabelRecherche(t.numArret.ToString(), ligne, 0);
+                AjoutLabelRecherche(t.nomArret, ligne, 1);
+                AjoutLabelRecherche(t.ordrePassage.ToString(), ligne, 2);
+                ligne++;
+            }
+
+        }
+        private void AjoutLabelRecherche(string val, int colonne, int ligne)
+        {
+            Label lbl = new Label();
+            lbl.AutoSize = false;
+            lbl.Size = lblArretDep.Size;
+            lbl.Text = val;
+            tableLayoutPanelRecherche.Controls.Add(lbl, ligne, colonne);
         }
 
         private void cbo_SelectedIndexChanged(object sender, EventArgs e)

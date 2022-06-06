@@ -31,8 +31,7 @@ namespace SAE2._1
         {
             this.grpRecherche = new System.Windows.Forms.GroupBox();
             this.lblOrdre = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblHoraire = new System.Windows.Forms.Label();
+            this.tableLayoutPanelRecherche = new System.Windows.Forms.TableLayoutPanel();
             this.cmdValider = new System.Windows.Forms.Button();
             this.lblNomArret = new System.Windows.Forms.Label();
             this.lblNArret = new System.Windows.Forms.Label();
@@ -42,14 +41,15 @@ namespace SAE2._1
             this.lblArretDep = new System.Windows.Forms.Label();
             this.cmdRetour = new System.Windows.Forms.Button();
             this.cmdRechercher = new System.Windows.Forms.Button();
+            this.cboChoixLigne = new System.Windows.Forms.ComboBox();
+            this.lblLigne = new System.Windows.Forms.Label();
             this.grpRecherche.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpRecherche
             // 
             this.grpRecherche.Controls.Add(this.lblOrdre);
-            this.grpRecherche.Controls.Add(this.tableLayoutPanel1);
-            this.grpRecherche.Controls.Add(this.lblHoraire);
+            this.grpRecherche.Controls.Add(this.tableLayoutPanelRecherche);
             this.grpRecherche.Controls.Add(this.cmdValider);
             this.grpRecherche.Controls.Add(this.lblNomArret);
             this.grpRecherche.Controls.Add(this.lblNArret);
@@ -63,7 +63,7 @@ namespace SAE2._1
             // lblOrdre
             // 
             this.lblOrdre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblOrdre.Location = new System.Drawing.Point(550, 23);
+            this.lblOrdre.Location = new System.Drawing.Point(522, 23);
             this.lblOrdre.Name = "lblOrdre";
             this.lblOrdre.Size = new System.Drawing.Size(173, 23);
             this.lblOrdre.TabIndex = 3;
@@ -71,35 +71,24 @@ namespace SAE2._1
             this.lblOrdre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblOrdre.Visible = false;
             // 
-            // tableLayoutPanel1
+            // tableLayoutPanelRecherche
             // 
-            this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tableLayoutPanel1.AutoScroll = true;
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.08662F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.80943F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.05198F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.05198F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 49);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 359F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 359F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(724, 355);
-            this.tableLayoutPanel1.TabIndex = 8;
-            this.tableLayoutPanel1.Visible = false;
-            // 
-            // lblHoraire
-            // 
-            this.lblHoraire.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblHoraire.Location = new System.Drawing.Point(371, 23);
-            this.lblHoraire.Name = "lblHoraire";
-            this.lblHoraire.Size = new System.Drawing.Size(173, 23);
-            this.lblHoraire.TabIndex = 2;
-            this.lblHoraire.Text = "Horaire";
-            this.lblHoraire.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblHoraire.Visible = false;
+            this.tableLayoutPanelRecherche.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanelRecherche.AutoScroll = true;
+            this.tableLayoutPanelRecherche.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanelRecherche.ColumnCount = 3;
+            this.tableLayoutPanelRecherche.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.08662F));
+            this.tableLayoutPanelRecherche.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.80943F));
+            this.tableLayoutPanelRecherche.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.05198F));
+            this.tableLayoutPanelRecherche.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.05198F));
+            this.tableLayoutPanelRecherche.Location = new System.Drawing.Point(6, 49);
+            this.tableLayoutPanelRecherche.Name = "tableLayoutPanelRecherche";
+            this.tableLayoutPanelRecherche.RowCount = 1;
+            this.tableLayoutPanelRecherche.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 360F));
+            this.tableLayoutPanelRecherche.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 360F));
+            this.tableLayoutPanelRecherche.Size = new System.Drawing.Size(724, 355);
+            this.tableLayoutPanelRecherche.TabIndex = 8;
+            this.tableLayoutPanelRecherche.Visible = false;
             // 
             // cmdValider
             // 
@@ -114,7 +103,7 @@ namespace SAE2._1
             // lblNomArret
             // 
             this.lblNomArret.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblNomArret.Location = new System.Drawing.Point(192, 23);
+            this.lblNomArret.Location = new System.Drawing.Point(274, 23);
             this.lblNomArret.Name = "lblNomArret";
             this.lblNomArret.Size = new System.Drawing.Size(173, 23);
             this.lblNomArret.TabIndex = 1;
@@ -125,7 +114,7 @@ namespace SAE2._1
             // lblNArret
             // 
             this.lblNArret.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblNArret.Location = new System.Drawing.Point(13, 23);
+            this.lblNArret.Location = new System.Drawing.Point(42, 23);
             this.lblNArret.Name = "lblNArret";
             this.lblNArret.Size = new System.Drawing.Size(173, 23);
             this.lblNArret.TabIndex = 0;
@@ -136,7 +125,7 @@ namespace SAE2._1
             // cboChoixArretArr
             // 
             this.cboChoixArretArr.FormattingEnabled = true;
-            this.cboChoixArretArr.Location = new System.Drawing.Point(70, 149);
+            this.cboChoixArretArr.Location = new System.Drawing.Point(69, 228);
             this.cboChoixArretArr.Name = "cboChoixArretArr";
             this.cboChoixArretArr.Size = new System.Drawing.Size(121, 21);
             this.cboChoixArretArr.TabIndex = 12;
@@ -147,7 +136,7 @@ namespace SAE2._1
             // 
             this.lblArretArr.AutoSize = true;
             this.lblArretArr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblArretArr.Location = new System.Drawing.Point(81, 126);
+            this.lblArretArr.Location = new System.Drawing.Point(71, 205);
             this.lblArretArr.Name = "lblArretArr";
             this.lblArretArr.Size = new System.Drawing.Size(98, 20);
             this.lblArretArr.TabIndex = 11;
@@ -156,7 +145,7 @@ namespace SAE2._1
             // cboChoixArretDep
             // 
             this.cboChoixArretDep.FormattingEnabled = true;
-            this.cboChoixArretDep.Location = new System.Drawing.Point(70, 93);
+            this.cboChoixArretDep.Location = new System.Drawing.Point(69, 172);
             this.cboChoixArretDep.Name = "cboChoixArretDep";
             this.cboChoixArretDep.Size = new System.Drawing.Size(121, 21);
             this.cboChoixArretDep.TabIndex = 10;
@@ -167,7 +156,7 @@ namespace SAE2._1
             // 
             this.lblArretDep.AutoSize = true;
             this.lblArretDep.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblArretDep.Location = new System.Drawing.Point(72, 70);
+            this.lblArretDep.Location = new System.Drawing.Point(71, 149);
             this.lblArretDep.Name = "lblArretDep";
             this.lblArretDep.Size = new System.Drawing.Size(116, 20);
             this.lblArretDep.TabIndex = 9;
@@ -186,7 +175,7 @@ namespace SAE2._1
             // cmdRechercher
             // 
             this.cmdRechercher.Enabled = false;
-            this.cmdRechercher.Location = new System.Drawing.Point(70, 185);
+            this.cmdRechercher.Location = new System.Drawing.Point(69, 264);
             this.cmdRechercher.Name = "cmdRechercher";
             this.cmdRechercher.Size = new System.Drawing.Size(121, 23);
             this.cmdRechercher.TabIndex = 14;
@@ -194,11 +183,32 @@ namespace SAE2._1
             this.cmdRechercher.UseVisualStyleBackColor = true;
             this.cmdRechercher.Click += new System.EventHandler(this.cmdRechercher_Click);
             // 
+            // cboChoixLigne
+            // 
+            this.cboChoixLigne.FormattingEnabled = true;
+            this.cboChoixLigne.Location = new System.Drawing.Point(69, 98);
+            this.cboChoixLigne.Name = "cboChoixLigne";
+            this.cboChoixLigne.Size = new System.Drawing.Size(121, 21);
+            this.cboChoixLigne.TabIndex = 15;
+            this.cboChoixLigne.Text = "Choix Ligne";
+            // 
+            // lblLigne
+            // 
+            this.lblLigne.AutoSize = true;
+            this.lblLigne.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLigne.Location = new System.Drawing.Point(71, 75);
+            this.lblLigne.Name = "lblLigne";
+            this.lblLigne.Size = new System.Drawing.Size(48, 20);
+            this.lblLigne.TabIndex = 16;
+            this.lblLigne.Text = "Ligne";
+            // 
             // frmRecherche
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1004, 521);
+            this.Controls.Add(this.lblLigne);
+            this.Controls.Add(this.cboChoixLigne);
             this.Controls.Add(this.cmdRechercher);
             this.Controls.Add(this.cmdRetour);
             this.Controls.Add(this.cboChoixArretArr);
@@ -220,8 +230,7 @@ namespace SAE2._1
 
         private System.Windows.Forms.GroupBox grpRecherche;
         private System.Windows.Forms.Label lblOrdre;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label lblHoraire;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelRecherche;
         private System.Windows.Forms.Button cmdValider;
         private System.Windows.Forms.Label lblNomArret;
         private System.Windows.Forms.Label lblNArret;
@@ -231,5 +240,7 @@ namespace SAE2._1
         private System.Windows.Forms.Label lblArretDep;
         private System.Windows.Forms.Button cmdRetour;
         private System.Windows.Forms.Button cmdRechercher;
+        private System.Windows.Forms.ComboBox cboChoixLigne;
+        private System.Windows.Forms.Label lblLigne;
     }
 }

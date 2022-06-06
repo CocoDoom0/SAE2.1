@@ -326,5 +326,38 @@ namespace BD
             // retour de la liste des parties
             return listeDelais;
         }
+
+        public static List<Table> RechercheArret(int numLigne, int narretdep, int narretarr)
+        {
+            List<Table> ListeArret = new List<Table>();
+
+            string sql = $"select N_Arret from LIGNE where N_Ligne={numLigne} OrdrePassage>= (Select OrdrePassage from LIGNE where N_Arret = {narretdep}) and OrdrePassage<=  (Select OrdrePassage from LIGNE where N_Arret = {narretarr}) ORDER BY OrdrePassage ASC; ";
+            MySqlCommand cmd = new MySqlCommand(sql, maCnx);
+            try
+            {
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    // lecture d'un enregistrement
+
+                    int numarret = (int)rdr[0];
+                    string nomarret = (string)rdr[1];
+                    string horaire = Convert.ToString(rdr[2]);
+                    int ordrepassage = (int)rdr[3];
+                    // définition d'une partie
+                    Table uneTable = new Table(numarret, nomarret, horaire, ordrepassage);
+                    // ajout de la partie définie à la liste des parties
+                    ListeArret.Add(uneTable);
+                }
+                rdr.Close();
+                cmd.Dispose();
+            }
+            catch (Exception ex)
+            {
+                Debug.Print(ex.Message);
+            }
+
+            return ListeArret;
+        }
     }
 }
