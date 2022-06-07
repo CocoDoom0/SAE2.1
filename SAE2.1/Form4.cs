@@ -88,7 +88,7 @@ namespace SAE2._1
 
         private void cbo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cboChoixArretArr.SelectedIndex!=-1 && cboChoixArretDep.SelectedIndex != -1)
+            if(cboChoixArretArr.SelectedIndex!=-1 && cboChoixArretDep.SelectedIndex != -1 && cboChoixLigne.SelectedIndex != -1)
             {
                 cmdRechercher.Enabled = true;
             }

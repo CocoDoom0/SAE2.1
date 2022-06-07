@@ -69,7 +69,6 @@ namespace SAE2._1
             this.lblOrdre.TabIndex = 3;
             this.lblOrdre.Text = "Ordre de passage";
             this.lblOrdre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblOrdre.Visible = false;
             // 
             // tableLayoutPanelRecherche
             // 
@@ -84,11 +83,10 @@ namespace SAE2._1
             this.tableLayoutPanelRecherche.Location = new System.Drawing.Point(6, 49);
             this.tableLayoutPanelRecherche.Name = "tableLayoutPanelRecherche";
             this.tableLayoutPanelRecherche.RowCount = 1;
-            this.tableLayoutPanelRecherche.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 360F));
-            this.tableLayoutPanelRecherche.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 360F));
+            this.tableLayoutPanelRecherche.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 361F));
+            this.tableLayoutPanelRecherche.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 361F));
             this.tableLayoutPanelRecherche.Size = new System.Drawing.Size(724, 355);
             this.tableLayoutPanelRecherche.TabIndex = 8;
-            this.tableLayoutPanelRecherche.Visible = false;
             // 
             // cmdValider
             // 
@@ -109,7 +107,6 @@ namespace SAE2._1
             this.lblNomArret.TabIndex = 1;
             this.lblNomArret.Text = "Nom Arret";
             this.lblNomArret.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblNomArret.Visible = false;
             // 
             // lblNArret
             // 
@@ -120,23 +117,22 @@ namespace SAE2._1
             this.lblNArret.TabIndex = 0;
             this.lblNArret.Text = "N°Arret";
             this.lblNArret.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblNArret.Visible = false;
             // 
             // cboChoixArretArr
             // 
+            this.cboChoixArretArr.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboChoixArretArr.FormattingEnabled = true;
             this.cboChoixArretArr.Location = new System.Drawing.Point(69, 228);
             this.cboChoixArretArr.Name = "cboChoixArretArr";
             this.cboChoixArretArr.Size = new System.Drawing.Size(121, 21);
             this.cboChoixArretArr.TabIndex = 12;
-            this.cboChoixArretArr.Text = "Choisir arrêt d\'arrivé";
             this.cboChoixArretArr.SelectedIndexChanged += new System.EventHandler(this.cbo_SelectedIndexChanged);
             // 
             // lblArretArr
             // 
             this.lblArretArr.AutoSize = true;
             this.lblArretArr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblArretArr.Location = new System.Drawing.Point(71, 205);
+            this.lblArretArr.Location = new System.Drawing.Point(65, 205);
             this.lblArretArr.Name = "lblArretArr";
             this.lblArretArr.Size = new System.Drawing.Size(98, 20);
             this.lblArretArr.TabIndex = 11;
@@ -144,19 +140,19 @@ namespace SAE2._1
             // 
             // cboChoixArretDep
             // 
+            this.cboChoixArretDep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboChoixArretDep.FormattingEnabled = true;
             this.cboChoixArretDep.Location = new System.Drawing.Point(69, 172);
             this.cboChoixArretDep.Name = "cboChoixArretDep";
             this.cboChoixArretDep.Size = new System.Drawing.Size(121, 21);
             this.cboChoixArretDep.TabIndex = 10;
-            this.cboChoixArretDep.Text = "Choisir arrêt départ";
             this.cboChoixArretDep.SelectedIndexChanged += new System.EventHandler(this.cbo_SelectedIndexChanged);
             // 
             // lblArretDep
             // 
             this.lblArretDep.AutoSize = true;
             this.lblArretDep.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblArretDep.Location = new System.Drawing.Point(71, 149);
+            this.lblArretDep.Location = new System.Drawing.Point(65, 149);
             this.lblArretDep.Name = "lblArretDep";
             this.lblArretDep.Size = new System.Drawing.Size(116, 20);
             this.lblArretDep.TabIndex = 9;
@@ -185,18 +181,19 @@ namespace SAE2._1
             // 
             // cboChoixLigne
             // 
+            this.cboChoixLigne.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboChoixLigne.FormattingEnabled = true;
             this.cboChoixLigne.Location = new System.Drawing.Point(69, 98);
             this.cboChoixLigne.Name = "cboChoixLigne";
             this.cboChoixLigne.Size = new System.Drawing.Size(121, 21);
             this.cboChoixLigne.TabIndex = 15;
-            this.cboChoixLigne.Text = "Choix Ligne";
+            this.cboChoixLigne.SelectedIndexChanged += new System.EventHandler(this.cbo_SelectedIndexChanged);
             // 
             // lblLigne
             // 
             this.lblLigne.AutoSize = true;
             this.lblLigne.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLigne.Location = new System.Drawing.Point(71, 75);
+            this.lblLigne.Location = new System.Drawing.Point(65, 75);
             this.lblLigne.Name = "lblLigne";
             this.lblLigne.Size = new System.Drawing.Size(48, 20);
             this.lblLigne.TabIndex = 16;
