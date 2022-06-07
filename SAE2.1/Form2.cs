@@ -371,51 +371,68 @@ namespace SAE2._1
                 //Affiche un message d'erreur
                 MessageBox.Show("Merci de remplir les champs", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
+            
             else{
-                //Cache la table ajout pour eviter les bug visuel
-                tableLayoutPanel2.Visible = false;
+                bool itemExiste = false;
+                for (int i = 0; i < cboSaveNomArret.Items.Count; i++)
+                {
+                    //Boucle permettant de voir si l'arret à déjà été ajouter a la liste des arret ajouter
+                    if (cboSaveNomArret.Items[i] == cboChoixArret1.Items[cboChoixArret1.SelectedIndex])
+                    {
+                        itemExiste = true;
+                    }
+                }
+                if (itemExiste)
+                {
+                    MessageBox.Show("Cet arret a déjà été ajouter.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    //Cache la table ajout pour eviter les bug visuel
+                    tableLayoutPanel2.Visible = false;
 
-                //Active le bouton pour supprimer l'arret qui va etre ajouter
-                cmdRemove.Enabled = true; 
+                    //Active le bouton pour supprimer l'arret qui va etre ajouter
+                    cmdRemove.Enabled = true;
+
+                    //Ajout un label avec le nom de l'arret a la table des nouveau arret
+                    Label lbl = new Label();
+                    lbl.AutoSize = false;
+                    lbl.Size = lblSetTaille0.Size;
+                    lbl.Text = (string)cboChoixArret1.SelectedItem;
+                    tableLayoutPanel2.Controls.Add(lbl, 0, Convert.ToInt32(lblIndex.Text));
+
+                    //Sauvegarde les passage des arret dans des combobox non visible 
+                    // Sauvegarde dans les combobox pour une recuperation simple des items pour l'ajout dans la BD
+                    cboSaveNomArret.Items.Add(cboChoixArret1.SelectedItem);
+                    cboSaveNumArret.Items.Add(cboNArretSave.Items[cboChoixArret1.SelectedIndex]);
+
+                    //Ajout un label avec le delai a la table des nouveau arret
+                    Label lbl2 = new Label();
+                    lbl2.AutoSize = false;
+                    lbl2.Size = lblSetTaille1.Size;
+                    lbl2.Text = txtbChoixDelai1.Text;
+                    tableLayoutPanel2.Controls.Add(lbl2, 1, Convert.ToInt32(lblIndex.Text));
+
+                    //Sauvegarde le delai dans un combobox non visible 
+                    // Sauvegarde dans les combobox pour une recuperation simple des items pour l'ajout dans la BD
+                    cboSaveDelai.Items.Add(txtbChoixDelai1.Text);
+
+                    //Ajout un label avec le numero de passage a la table des nouveau arret
+                    Label lbl3 = new Label();
+                    lbl3.AutoSize = false;
+                    lbl3.Size = lblSetTaille2.Size;
+                    lbl3.Text = Convert.ToString(Convert.ToInt32(lblIndex.Text) + 1);
+                    tableLayoutPanel2.Controls.Add(lbl3, 2, Convert.ToInt32(lblIndex.Text));
+
+                    //Augmente de 1 le numero de passage pour le suivant 
+                    lblIndex.Text = Convert.ToString(Convert.ToInt32(lblIndex.Text) + 1);
+
+                    //reaffiche le tableau avec les nouvelles infos
+                    tableLayoutPanel2.Visible = true;
+                    //Active le bouton valider afin d'envoyer a la bd
+                    cmdValiderAjt.Enabled = true;
+                }
                 
-                //Ajout un label avec le nom de l'arret a la table des nouveau arret
-                Label lbl = new Label();
-                lbl.AutoSize = false;
-                lbl.Size = lblSetTaille0.Size;
-                lbl.Text = (string)cboChoixArret1.SelectedItem;
-                tableLayoutPanel2.Controls.Add(lbl, 0, Convert.ToInt32(lblIndex.Text));
-
-                //Sauvegarde les passage des arret dans des combobox non visible 
-                // Sauvegarde dans les combobox pour une recuperation simple des items pour l'ajout dans la BD
-                cboSaveNomArret.Items.Add(cboChoixArret1.SelectedItem);
-                cboSaveNumArret.Items.Add(cboNArretSave.Items[cboChoixArret1.SelectedIndex]);
-
-                //Ajout un label avec le delai a la table des nouveau arret
-                Label lbl2 = new Label();
-                lbl2.AutoSize = false;
-                lbl2.Size = lblSetTaille1.Size;
-                lbl2.Text = txtbChoixDelai1.Text;
-                tableLayoutPanel2.Controls.Add(lbl2, 1, Convert.ToInt32(lblIndex.Text));
-
-                //Sauvegarde le delai dans un combobox non visible 
-                // Sauvegarde dans les combobox pour une recuperation simple des items pour l'ajout dans la BD
-                cboSaveDelai.Items.Add(txtbChoixDelai1.Text);
-
-                //Ajout un label avec le numero de passage a la table des nouveau arret
-                Label lbl3 = new Label();
-                lbl3.AutoSize = false;
-                lbl3.Size = lblSetTaille2.Size;
-                lbl3.Text = Convert.ToString(Convert.ToInt32(lblIndex.Text) + 1);
-                tableLayoutPanel2.Controls.Add(lbl3, 2, Convert.ToInt32(lblIndex.Text));
-
-                //Augmente de 1 le numero de passage pour le suivant 
-                lblIndex.Text = Convert.ToString(Convert.ToInt32(lblIndex.Text) + 1);
-
-                //reaffiche le tableau avec les nouvelles infos
-                tableLayoutPanel2.Visible = true;
-                //Active le bouton valider afin d'envoyer a la bd
-                cmdValiderAjt.Enabled = true;
             }
 
         }
